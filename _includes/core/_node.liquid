@@ -1,4 +1,6 @@
 {%-      assign stage = stages[layer]           -%}
+{%-      assign title = titles[layer]           -%}
+{%-      assign baseurl = title | prepend: "/"  -%}
 
 {%-      assign class = ''                      -%}
 {%-      if site.baseurl == baseurl             -%}
@@ -17,7 +19,7 @@
            | append: title
            | append: '</a>'                     -%}
 
-{%-      assign group_title = 'group'                 -%}
+{%-      assign group_title = 'group'           -%}
 {%-      assign _node = list
            | append: '><a href="/'
            | append: group_title
