@@ -1,10 +1,13 @@
 {%- assign index = include.index | default: 0   -%}
 
 {%- unless grammar[index]                       -%}
+
 {%-   assign var = '' | split: ','              -%}
 {%-   assign var = var | push: property         -%}
 {%-	  assign grammar = grammar | push: var      -%}
+
 {%- else  -%}
+
 {%-   assign var = grammar[index]               -%}
 {%-   assign var = var | push: property         -%}
 
@@ -21,10 +24,10 @@
 {%-       assign grammar = grammar | push: item -%}
 {%-     endif                                   -%}
 {%-   endfor                                    -%}
+
 {%- endunless                                   -%}
 
 {%-	assign property = var | size                -%}
-
 {%-	if var contains property                    -%}
 
 {%-   assign _parts = nodes 
