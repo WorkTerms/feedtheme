@@ -60,10 +60,9 @@
 {%-     assign array = array | push: id          -%}
 {%-   endif                                      -%}
 
-{%-     for item in grammar                      -%}
-{%-       assign array = array | push: item      -%}
-{%-     endfor                                   -%}
-{%-     assign tag = grammar | jsonify           -%}
+{%-   for item in grammar                        -%}
+{%-     assign array = array | push: item        -%}
+{%-   endfor                                     -%}
 
 {%-   assign array_size = array | size           -%}
 {%-   assign layer_size = array[layer] | size    -%}
