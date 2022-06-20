@@ -12,15 +12,15 @@
        | append: order
        | append: ';'
        | append: width
-       | append: ';'
+       | append: ']('
        | append: weight
-       | append: ']'                         -%}
-
-{%-  assign details = '['
+       | append: ';'
        | append: expanse
        | append: ';'
        | append: property
-       | append: ']('
+       | append: ')'                         -%}
+
+{%-  assign details = '('
        | append: layer
        | append: ','
        | append: array_size
