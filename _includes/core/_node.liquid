@@ -19,6 +19,7 @@
            | append: title
            | append: '</a>'                     -%}
 
+{%-      assign group = group | plus: 1         -%}
 {%-      assign group_title = 'group'           -%}
 {%-      assign _node = list
            | append: '><a href="/'
