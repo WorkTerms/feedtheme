@@ -92,7 +92,7 @@ Scheme:
  Φ = 1000/618 = 1,618 (Golden Ratio) 
  Δ(1,6,18) = 61+28 = 89 (Mersenne Primes) 
  
- The scenario:
+ Lexer:
  π(10000) = 1229 = 1000 + 229
  229 = 50th will stand as last means
  168 = π(1229-229)= π(1000) on the 1st-layer
@@ -100,7 +100,7 @@ Scheme:
  289 = 229 + 30 + 30 as the 50 to 5th on the 3rd-layer
  The 30+30 square 900 by 90 or 89² stand 1000 by next layer.
  
- Faktor:
+ Parser:
  168 = 12x14 = 8x21 = 7x24 = 6x28 = 4x42 = 3x56 = 2x84
  618 = 6x103 = 6x(100+3) = 3x206 = 3x(200+6) = 2x309 = 2x(300+9)
  1+6+8 = π(1x6x8) = π(1x48) = π(2x24) = π(3x16)= π(4x12) = π(6x8)
@@ -109,13 +109,19 @@ Scheme:
  168 = 102 + 66 = 2x3x((8+9)+(2+9)) = π(Φ(289+329)) = π(Φ((8+9)²+(1+2)&29))
  168 + 618 = 168 + 329 + 289 = (7x24) + (7x47) + (8+9)² = (7x71) + (17x17)
 
- Direction:
+ Scenario:
  1 = 0 + 1
  30 = 10th prime + 1 = 29 + 1 = 30 - 1 + 1
  110 = (10th)th prime + 1 = 29th prime + 1 = (30 - 1)th prime + 1 
  230 = (10 x 5)th prime + 1 = 50th prime + 1 = 229 + 1 = π(10000) - 1000 + 1 
  
+ Direction:
+ The overall scheme will convert the 102 as 100+2 to 200 as 100x2.
+ Then the 100x2 to 100² or 10000 as the prime source.
+ At last they will separate to 100 and 2
+
 {%-  endcomment -%}
+
 {%- assign _keys = _keys 
 	| push: 4 
 	| push: 8                    -%}
