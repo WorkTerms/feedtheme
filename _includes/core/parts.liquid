@@ -69,16 +69,16 @@
 
 {%-   if layer_size == 10                        -%}
 
-{%-     assign node_type = "main"                -%}
 {%-     include core/node.liquid                 -%}
+{%-     assign node_type = "main"                -%}
 {%-     assign layer = layer | plus: 1           -%}
 
 {%-     include core/_node.liquid                -%}
 
 {%-   elsif keys contains width                  -%}
 
-{%-     assign node_type = "lexer"               -%}
 {%-     include core/node.liquid                 -%}
+{%-     assign node_type = "lexer"               -%}
 {%-     assign group = group | plus: 1           -%}
 
 {%-     include core/_node.liquid                -%}
