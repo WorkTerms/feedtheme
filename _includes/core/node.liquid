@@ -6,7 +6,7 @@
 {%- assign weight = bond | size | default: 0 -%}
 {%- assign width = parts | size | default: 0 -%}
 
-{%-  assign title = '('
+{%-  assign title_order = '('
        | append: width
        | append: ') '
        | append: order                       -%}
@@ -44,7 +44,7 @@
        | append: ' aria-details="'
        | append: details
        | append: '">'
-       | append: title
+       | append: title_order
        | append: '</a></li>'                 -%}
 
 {%-  capture nodes                           -%}

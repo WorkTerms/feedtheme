@@ -18,22 +18,22 @@
            | append: title
            | append: '</a>'                     -%}
 
-{%-      assign title = 'group'                 -%}
+{%-      assign group_title = 'group'                 -%}
 {%-      assign _node = list
            | append: '><a href="/'
-           | append: title
+           | append: group_title
            | append: '-'
            | append: group
            | append: '" id="'
-           | append: title
+           | append: group_title
            | append: '-'
            | append: group
            | append: '" title="'
-           | append: title
+           | append: group_title
            | append: '-'
            | append: group
            | append: '">'
-           | append: title
+           | append: group_title
            | append: '-'
            | append: group
            | append: '</a>'                     -%}
