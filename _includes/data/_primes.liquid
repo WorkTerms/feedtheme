@@ -1,4 +1,7 @@
 {%- assign strip = nodes     
-          | strip 
-          | newline_to_br 
-          | split: "<br />"                 -%}
+      | strip 
+      | newline_to_br 
+      | split: "<br />"                     -%}
+
+{%- assign nodes = nodes     
+      | replace: "(0,)[]", "(0,0)[]"        -%}
