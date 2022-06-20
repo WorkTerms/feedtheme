@@ -69,6 +69,7 @@
 {%-     assign array = array | push: item        -%}
 {%-   endfor                                     -%}
 
+{%-   assign tag = grammar | json                -%}
 {%-   include core/node.liquid                   -%}
 
 {%-   assign array_size = array | size           -%}
