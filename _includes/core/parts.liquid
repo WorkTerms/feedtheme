@@ -67,24 +67,20 @@
 {%-   assign array_size = array | size           -%}
 {%-   assign layer_size = array[layer] | size    -%}
 
+{%-   include core/node.liquid                   -%}
+
 {%-   if layer_size == 10                        -%}
 
-{%-     include core/node.liquid                 -%}
 {%-     assign node_type = "main"                -%}
 {%-     assign layer = layer | plus: 1           -%}
-
 {%-     include core/_node.liquid                -%}
 
 {%-   elsif keys contains width                  -%}
 
-{%-     include core/node.liquid                 -%}
 {%-     assign node_type = "lexer"               -%}
 {%-     assign group = group | plus: 1           -%}
-
 {%-     include core/_node.liquid                -%}
 
-{%-   else                                       -%}
-{%-     include core/node.liquid                 -%}
 {%-   endif                                      -%}
 
 {%- endif                                        -%}
