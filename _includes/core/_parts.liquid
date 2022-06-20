@@ -1,27 +1,27 @@
 {%- assign index = include.index | default: 0   -%}
 
-{%- unless grammar[index]                       -%}
+{%- unless array[index]                       -%}
 
 {%-   assign var = '' | split: ','              -%}
 {%-   assign var = var | push: property         -%}
-{%-	  assign grammar = grammar | push: var      -%}
+{%-	  assign array = array | push: var      -%}
 
 {%- else  -%}
 
-{%-   assign var = grammar[index]               -%}
+{%-   assign var = array[index]               -%}
 {%-   assign var = var | push: property         -%}
 
 {%-   assign dummy = '' | split: ','            -%}
-{%-   for item in grammar                       -%}
+{%-   for item in array                       -%}
 {%-     assign dummy = dummy | push: item       -%}
 {%-   endfor                                    -%}
 
-{%-   assign grammar = '' | split: ','          -%}
+{%-   assign array = '' | split: ','          -%}
 {%-   for item in dummy                         -%}
 {%-	    if forloop.index0 == index              -%}
-{%-	      assign grammar = grammar | push: var  -%}
+{%-	      assign array = array | push: var  -%}
 {%-     else                                    -%}
-{%-       assign grammar = grammar | push: item -%}
+{%-       assign array = array | push: item -%}
 {%-     endif                                   -%}
 {%-   endfor                                    -%}
 
