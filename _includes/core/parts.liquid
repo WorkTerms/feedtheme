@@ -70,9 +70,9 @@
 {%-   if layer_size == 10                        -%}
 
 {%-     assign node_type = "main"                -%}
+{%-     assign layer = layer | plus: 1           -%}
 {%-     include core/node.liquid                 -%}
 
-{%-     assign layer = layer | plus: 1           -%}
 {%-     include core/_node.liquid                -%}
 
 {%-   elsif keys contains width                  -%}
