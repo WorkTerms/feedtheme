@@ -1,3 +1,6 @@
+{%- assign title = titles[layer]             -%}
+{%- assign baseurl = title | prepend: "/"    -%}
+
 {%-	assign property = id | size | default: 0 -%}
 {%-	assign expanse = arm | size | default: 0 -%}
 {%- assign weight = bond | size | default: 0 -%}
