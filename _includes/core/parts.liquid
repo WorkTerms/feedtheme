@@ -1,4 +1,4 @@
-{%- assign tag = ""                              -%}
+{%- assign tag = "[]"                              -%}
 
 {%- assign primes = primes | push: num           -%}
 {%- assign order = primes | size                 -%}
@@ -65,11 +65,14 @@
 {%-     assign array = array | push: id          -%}
 {%-   endif                                      -%}
 
+{%-   if tag                                     -%}
+{%-     assign tag = grammar | jsonify           -%}
+{%-   endif                                      -%}
+
 {%-   for item in grammar                        -%}
 {%-     assign array = array | push: item        -%}
 {%-   endfor                                     -%}
 
-{%-   assign tag = grammar | jsonify             -%}
 {%-   include core/node.liquid                   -%}
 
 {%-   assign array_size = array | size           -%}
