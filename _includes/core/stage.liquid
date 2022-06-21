@@ -124,6 +124,9 @@ Scheme:
  Since all the primes numbers is generated from the number of 2 by the power of n, 
  (minus 1) then they will conseqently be carried out by the same scheme of this 2.
  
+ How to proof:
+ Let's start by 4 as 2x2 and 8 as 2x2x2:
+ 
 {%-  endcomment -%}
 
 {%- assign _keys = _keys 
@@ -135,19 +138,5 @@ Scheme:
 	| push: 30 
 	| push: 30  
 	| push: 5                    -%}
-
-{%- for key in _layer %}
-
-{%-  capture stage                        -%}
-{%-    case forloop.index                 -%}
-{%-      when 1 -%}[29;69;114;168](618)
-{%-      when 2 -%}[7;13;29;109](102): Spin 7 of 168=π(1000)=π(π(89²))
-{%-      when 3 -%}[13;43;66;139](329): Spin 13 of 329=π(10000)-(10th)²=1229-900
-{%-      when 4 -%}[19;68;89;169](289): Spin 19 of 289=229+2(10th)=π((29+60)²)=π(89²)=1000
-{%-    endcase                            -%}
-{%-  endcapture                           -%}
-
-{%-  assign stages = stages | push: stage -%}
-{%- endfor -%}
 
 {%- include core/_stage.liquid -%}
