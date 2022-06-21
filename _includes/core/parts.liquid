@@ -39,56 +39,14 @@
 {%-           unless grammar                         -%}
 {%-             assign grammar = '' | split: ','     -%}
 {%-           endunless                              -%}
-{%-           include core/_parts.liquid             -%}
+
+{%-           include core/bond.liquid               -%}
 
 {%-	        endif                                    -%}
 {%-	      endif                                      -%}
 {%-	    endif                                        -%}
 {%-   endif                                          -%}
 
-{%-   assign array = '' | split: ','                 -%}
-{%-	  assign property = id | size | default: 0       -%}
-{%-	  assign expanse = arm | size | default: 0       -%}
-{%-   assign weight = bond | size | default: 0       -%}
-{%-   assign width = parts | size | default: 0       -%}
-
-{%-   if parts                                       -%}
-{%-     assign array = array | push: parts           -%}
-{%-   endif                                          -%}
-{%-   if bond                                        -%}
-{%-     assign array = array | push: bond            -%}
-{%-   endif                                          -%}
-{%-   if arm                                         -%}
-{%-     assign array = array | push: arm             -%}
-{%-   endif                                          -%}
-{%-   if id                                          -%}
-{%-     assign array = array | push: id              -%}
-{%-   endif                                          -%}
-
-{%-   if grammar                                     -%}
-{%-     assign tag = grammar | jsonify               -%}
-{%-   endif                                          -%}
-
-{%-   for item in grammar                            -%}
-{%-     assign array = array | push: item            -%}
-{%-   endfor                                         -%}
-
-{%-   include core/node.liquid                       -%}
-
-{%-   assign array_size = array | size | default: 0  -%}
-{%-   assign layer_size = array[layer] | size        -%}
-
-{%-   if layer_size == 10                            -%}
-
-{%-     assign node_type = "main"                    -%}
-{%-     include core/_node.liquid                    -%}
-
-{%-   elsif keys contains width                      -%}
-
-{%-     assign node_type = "lexer"                   -%}
-{%-     include core/_node.liquid                    -%}
-
-{%-   endif                                          -%}
+{%-   include core/_parts.liquid                     -%}
 
 {%- endif                                            -%}
-
