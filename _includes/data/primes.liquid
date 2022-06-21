@@ -1,7 +1,14 @@
+{%- assign primes = '' | split: ','             -%}
 {%- if site.data.roots                          -%}
+
 {%-   assign my_roots = site.data.roots 
         | where_exp:'item', 'item.key < 100000' -%}
-{%-   include core/parts.liquid                 -%}
+
+{%-   for item in my_roots                      -%}
+{%-     assign num = item.key                   -%}
+{%-     include core/parts.liquid               -%}
+{%-   endfor                                    -%}
+
 {%- else                                        -%}
 {%-   include data/_primes.liquid               -%}
 {%- endif                                       -%}
