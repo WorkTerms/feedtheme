@@ -4,9 +4,11 @@
 {%- assign order = primes | size                     -%}
 
 {%- if primes contains order                         -%}
+
 {%-   unless parts                                   -%}
 {%-     assign parts = '' | split: ','               -%}
 {%-   endunless                                      -%}
+
 {%-   assign parts = parts | push: order             -%}
 {%-   assign width = parts | size                    -%}
 

@@ -1,8 +1,4 @@
 {%-   assign array = '' | split: ','                 -%}
-{%-	  assign property = id | size | default: 0       -%}
-{%-	  assign expanse = arm | size | default: 0       -%}
-{%-   assign weight = bond | size | default: 0       -%}
-{%-   assign width = parts | size | default: 0       -%}
 
 {%-   if parts                                       -%}
 {%-     assign array = array | push: parts           -%}
@@ -28,6 +24,10 @@
 {%-   include core/node.liquid                       -%}
 
 {%-   assign array_size = array | size | default: 0  -%}
+{%-	  assign property = id | size | default: 0       -%}
+{%-	  assign expanse = arm | size | default: 0       -%}
+{%-   assign weight = bond | size | default: 0       -%}
+{%-   assign width = parts | size | default: 0       -%}
 {%-   assign layer_size = array[layer] | size        -%}
 
 {%-   if layer_size == 10                            -%}
