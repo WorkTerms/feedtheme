@@ -1,36 +1,16 @@
-{%- assign index = include.index | default: 0   -%}
+{%- unless id                                -%}
+{%-   assign id = '' | split: ','            -%}
+{%- endunless                                -%}
 
-{%- unless grammar[index]                       -%}
+{%-	assign id = id | push: expanse           -%}
+{%-	assign property = id | size              -%}
 
-{%-   assign var = '' | split: ','              -%}
-{%-   assign var = var | push: property         -%}
-{%-	  assign grammar = grammar | push: var      -%}
+{%-	if id contains property                  -%}
 
-{%- else  -%}
+{%-   unless grammar                         -%}
+{%-     assign grammar = '' | split: ','     -%}
+{%-   endunless                              -%}
 
-{%-   assign var = grammar[index]               -%}
-{%-   assign var = var | push: property         -%}
+{%-   include core/_bond.liquid              -%}
 
-{%-   assign dummy = '' | split: ','            -%}
-{%-   for item in grammar                       -%}
-{%-     assign dummy = dummy | push: item       -%}
-{%-   endfor                                    -%}
-
-{%-   assign grammar = '' | split: ','          -%}
-{%-   for item in dummy                         -%}
-{%-	    if forloop.index0 == index              -%}
-{%-	      assign grammar = grammar | push: var  -%}
-{%-     else                                    -%}
-{%-       assign grammar = grammar | push: item -%}
-{%-     endif                                   -%}
-{%-   endfor                                    -%}
-
-{%- endunless                                   -%}
-
-{%-	assign property = var | size                -%}
-{%-	if var contains property                    -%}
-
-{%-   assign index = index | plus: 1            -%}
-{%-   include core/bond.liquid index=index      -%}
-
-{%- endif                                       -%}
+{%-	endif                                    -%}
