@@ -30,11 +30,6 @@
 {%-	assign property = var | size                -%}
 {%-	if var contains property                    -%}
 
-{%-   assign _parts = nodes 
-          | strip 
-          | newline_to_br 
-          | split: "<br />"                     -%}
-
 {%-   assign index = index | plus: 1            -%}
 {%-   include core/bond.liquid index=index      -%}
 
