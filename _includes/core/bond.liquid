@@ -1,16 +1,34 @@
-{%- unless id                                -%}
-{%-   assign id = '' | split: ','            -%}
+{%- unless bond                              -%}
+{%-   assign bond = '' | split: ','          -%}
 {%- endunless                                -%}
+{%- assign bond = bond | push: width         -%}
+{%- assign weight = bond | size              -%}
 
-{%-	assign id = id | push: expanse           -%}
-{%-	assign property = id | size              -%}
-
-{%-	if id contains property                  -%}
-
-{%-   unless grammar                         -%}
-{%-     assign grammar = '' | split: ','     -%}
+{%- if bond contains weight                  -%}
+{%-   unless arm                             -%}
+{%-     assign arm = '' | split: ','         -%}
 {%-   endunless                              -%}
+{%-   assign arm = arm | push: weight        -%}
+{%-	  assign expanse = arm | size            -%}
 
-{%-   include core/_bond.liquid              -%}
+{%-	  if arm contains expanse                -%}
+{%-     unless id                            -%}
+{%-       assign id = '' | split: ','        -%}
+{%-     endunless                            -%}
 
+{%-	    assign id = id | push: expanse       -%}
+{%-    	assign property = id | size          -%}
+
+{%-   	if id contains property              -%}
+{%-       unless grammar                     -%}
+{%-         assign grammar = '' | split: ',' -%}
+{%-       endunless                          -%}
+
+{%-      include core/_bond.liquid           -%}
+
+{%-	    endif                                -%}
+{%-	  endif                                  -%}
 {%-	endif                                    -%}
+
+
+

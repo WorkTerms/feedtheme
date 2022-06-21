@@ -15,23 +15,7 @@
 {%-   endif                                          -%}
 
 {%-   if parts contains width                        -%}
-{%-     unless bond                                  -%}
-{%-       assign bond = '' | split: ','              -%}
-{%-     endunless                                    -%}
-{%-     assign bond = bond | push: width             -%}
-{%-     assign weight = bond | size                  -%}
-
-{%-     if bond contains weight                      -%}
-{%-       unless arm                                 -%}
-{%-         assign arm = '' | split: ','             -%}
-{%-       endunless                                  -%}
-{%-       assign arm = arm | push: weight            -%}
-{%-	      assign expanse = arm | size                -%}
-
-{%-	      if arm contains expanse                    -%}
-{%-         include core/bond.liquid                 -%}
-{%-	      endif                                      -%}
-{%-	    endif                                        -%}
+{%-     include core/bond.liquid                     -%}
 {%-   endif                                          -%}
 
 {%-   include core/_parts.liquid                     -%}
