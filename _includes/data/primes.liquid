@@ -6,7 +6,7 @@
 {%- if site.data.roots                          -%}
 
 {%-   assign my_roots = site.data.roots 
-        | where_exp:'item', 'item.key > 10000'  -%}
+        | where_exp:'item', 'item.key < 100000' -%}
 
 {%-   for item in my_roots                      -%}
 {%-     assign num = item.key                   -%}
