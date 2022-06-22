@@ -30,7 +30,7 @@
 {%-   assign width = parts | size | default: 0       -%}
 {%-   assign layer_size = array[layer] | size        -%}
 
-{%-   if layer_size == 10                            -%}
+{%-   if order == 102 or order == 168                -%}
 
 {%-     assign node_type = "main"                    -%}
 {%-     include core/_node.liquid                    -%}
