@@ -5,9 +5,7 @@
 
 {%- if site.data.roots                          -%}
 
-{%-   assign my_roots = site.data.roots         -%}
-
-{%-   for item in my_roots                      -%}
+{%-   for item in site.data.roots               -%}
 {%-     assign num = item.key | times: 1        -%}
 {%-     if num < 100000                         -%}
 {%-       include core/parts.liquid             -%}
