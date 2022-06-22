@@ -5,8 +5,22 @@
 
 {%- if primes contains order                         -%}
 
-{%-     include core/bond.liquid                     -%}
+{%-   unless parts                                   -%}
+{%-     assign parts = '' | split: ','               -%}
+{%-   endunless                                      -%}
 
-{%-   include core/_parts.liquid                     -%}
+{%-   assign parts = parts | push: order             -%}
+{%-   assign width = parts | size                    -%}
+
+{%-   if _keys contains width                        -%}
+{%-     assign tag = "[]*"                           -%}
+{%-   endif                                          -%}
+
+{%-   if parts contains width                        -%}
+{%-     include core/bond.liquid                     -%}
+{%-   endif                                          -%}
 
 {%- endif                                            -%}
+
+{%- include core/_parts.liquid                       -%}
+
