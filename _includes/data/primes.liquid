@@ -1,8 +1,10 @@
-{%- assign order = 1                    -%}
-{%- assign group = 1                        -%}
-{%- assign baseurl = "/"                    -%}
-
+{%- assign num 2                                -%}
+{%- assign order = 1                            -%}
+{%- assign group = 1                            -%}
+{%- assign baseurl = "/"                        -%}
 {%- assign primes = '' | split: ','             -%}
+{%- include core/parts.liquid                   -%}
+
 {%- if site.data.roots                          -%}
 
 {%-   assign my_roots = site.data.roots 
