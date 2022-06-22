@@ -1,3 +1,5 @@
+{%- assign primes = '' | split: ','   -%}
+
 {%- unless nodes                      -%}
 {%-   include data/primes.liquid      -%}
 {%- endunless                         -%}
