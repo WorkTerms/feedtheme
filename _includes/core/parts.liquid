@@ -16,7 +16,7 @@
 {%-     assign tag = "[]*"                           -%}
 {%-   endif                                          -%}
 
-{%-   if i>1000 and parts contains width             -%}
+{%-   if parts contains width and num>1000           -%}
 {%-     include core/bond.liquid                     -%}
 {%-   endif                                          -%}
 
