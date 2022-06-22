@@ -4,7 +4,8 @@
 {%- assign order = primes | size                     -%}
 
 {%- if num < 1000                                    -%}
-{%-   include core/_parts.liquid                       -%}
+{%-   assign id = order                              -%}
+{%-   include core/_parts.liquid                     -%}
 {%- endif                                            -%}
 
 {%- if primes contains order                         -%}
@@ -24,7 +25,8 @@
 {%-     include core/bond.liquid                     -%}
 {%-   endif                                          -%}
 
-{%-   include core/_parts.liquid                       -%}
+{%-   assign id = id | plus: 1                       -%}
+{%-   include core/_parts.liquid                     -%}
 {%- endif                                            -%}
 
 
