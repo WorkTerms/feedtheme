@@ -1,33 +1,39 @@
-{%- assign tag = "[]"                                -%}
+{%- assign tag = "[]"                     -%}
 
-{%- assign primes = primes | push: num               -%}
-{%- assign order = primes | size                     -%}
+{%- assign primes = primes | push: num    -%}
+{%- assign order = primes | size          -%}
 
-{%- if num < 1000                                    -%}
-{%-   assign id = order                              -%}
-{%-   include core/_parts.liquid                     -%}
-{%- endif                                            -%}
+{%- if num < 1000                         -%}
+{%-   assign id = order                   -%}
+{%-   include core/_parts.liquid          -%}
+{%- endif                                 -%}
 
-{%- if primes contains order                         -%}
+{%- if primes contains order              -%}
 
-{%-   unless parts                                   -%}
-{%-     assign parts = '' | split: ','               -%}
-{%-   endunless                                      -%}
+{%-   unless parts                        -%}
+{%-     assign parts = '' | split: ','    -%}
+{%-   endunless                           -%}
 
-{%-   assign parts = parts | push: order             -%}
-{%-   assign width = parts | size                    -%}
+{%-   assign parts = parts | push: order  -%}
+{%-   assign width = parts | size         -%}
 
-{%-   if _keys contains width                        -%}
-{%-     assign tag = "[]*"                           -%}
-{%-   endif                                          -%}
+{%-   if _keys contains width             -%}
+{%-     assign tag = "[]*"                -%}
+{%-   endif                               -%}
 
-{%-   if parts contains width                        -%}
-{%-     include core/bond.liquid                     -%}
-{%-   endif                                          -%}
+{%-   if parts contains width             -%}
+{%-     include core/bond.liquid          -%}
 
-{%-   if num > 1000 and num < 10000                  -%}
-{%-     assign id = id | plus: 1                     -%}
-{%-     include core/_parts.liquid                   -%}
-{%-   endif                                          -%}
+{%-     if num > 10000                    -%}
+{%-       assign id = id | plus: 1        -%}
+{%-       include core/_parts.liquid      -%}
+{%-     endif                             -%}
 
-{%- endif                                            -%}
+{%-   endif                               -%}
+
+{%-   if num > 1000 and num < 10000       -%}
+{%-     assign id = id | plus: 1          -%}
+{%-     include core/_parts.liquid        -%}
+{%-   endif                               -%}
+
+{%- endif                                 -%}
