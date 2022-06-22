@@ -1,10 +1,7 @@
-{%- assign group = 1                        -%}
-{%- assign baseurl = "/"                    -%}
-
 {%- assign primes = primes | push: 2        -%}
-{%-  include core/parts.liquid              -%}
-{%- assign n = include.n | default: 100     -%}
+{%- include core/parts.liquid               -%}
 
+{%- assign n = include.n | default: 100     -%}
 {%- assign j = n | times: n                 -%}
 {%- assign min = include.min | default: 2   -%}
 {%- assign max = include.max | default: j   -%}
