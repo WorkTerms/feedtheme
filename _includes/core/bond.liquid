@@ -1,3 +1,19 @@
+
+{%-   unless parts                                   -%}
+{%-     assign parts = '' | split: ','               -%}
+{%-   endunless                                      -%}
+
+{%-   assign parts = parts | push: order             -%}
+{%-   assign width = parts | size                    -%}
+
+{%-   if _keys contains width                        -%}
+{%-     assign tag = "[]*"                           -%}
+{%-   endif                                          -%}
+
+{%-   if parts contains width                        -%}
+
+
+
 {%- unless bond                              -%}
 {%-   assign bond = '' | split: ','          -%}
 {%- endunless                                -%}
@@ -30,5 +46,6 @@
 {%-	  endif                                  -%}
 {%-	endif                                    -%}
 
+{%-   endif                                   -%}
 
 
