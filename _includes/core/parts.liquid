@@ -2,6 +2,7 @@
 
 {%- assign primes = primes | push: num               -%}
 {%- assign order = primes | size                     -%}
+{%- include core/_parts.liquid                       -%}
 
 {%- if primes contains order                         -%}
 
@@ -22,5 +23,4 @@
 
 {%- endif                                            -%}
 
-{%- include core/_parts.liquid                       -%}
 
