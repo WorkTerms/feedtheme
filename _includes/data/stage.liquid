@@ -4,6 +4,7 @@
 {%- assign _keys = '' | split: ',' -%}
 {%- assign _layer = '' | split: ',' -%}
 {%- assign stages = '' | split: ',' -%}
+{%- assign _stages = '' | split: ',' -%}
 
 {%- comment -%}
 
@@ -142,4 +143,10 @@ Scheme:
 	| push: 30  
 	| push: 5                    -%}
 
-{%- include data/_stage.liquid -%}
+{%- assign _stages = _stages 
+	| push: 102 
+	| push: 168 
+	| push: 329  
+	| push: 289                  -%}
+
+{%- include data/_stage.liquid   -%}
