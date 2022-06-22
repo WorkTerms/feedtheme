@@ -1,17 +1,17 @@
-{%- assign num = 2                              -%}
 {%- assign group = 1                            -%}
 {%- assign baseurl = "/"                        -%}
-{%- include core/parts.liquid                   -%}
 
 {%- if site.data.roots                          -%}
 
 {%-   for item in site.data.roots               -%}
 {%-     assign num = item.key | times: 1        -%}
-{%-     if num < 100000                         -%}
+{%-     if num < limit                          -%}
 {%-       include core/parts.liquid             -%}
 {%-     endif                                   -%}
 {%-   endfor                                    -%}
 
 {%- else                                        -%}
+{%-   assign num = 2                            -%}
+{%-   include core/parts.liquid                 -%}
 {%-   include data/_primes.liquid               -%}
 {%- endif                                       -%}
