@@ -31,11 +31,12 @@
        | append: stage
        | append: '"'                         -%}
 
+{%-  assign id = width | plus: 168           -%}
 {%-  assign node = list
        | append: '><a href="'
        | append: baseurl
        | append: '" id='
-       | append: width
+       | append: id
        | append: ' aria-details="'
        | append: details
        | append: '">'
