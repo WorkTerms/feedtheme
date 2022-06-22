@@ -25,7 +25,7 @@
 {%-     include core/bond.liquid                     -%}
 {%-   endif                                          -%}
 
-{%-   if num > 1000                                  -%}
+{%-   if num > 1000 and num < 10000                  -%}
 {%-     assign id = id | plus: 1                     -%}
 {%-     include core/_parts.liquid                   -%}
 {%-   endif                                          -%}
