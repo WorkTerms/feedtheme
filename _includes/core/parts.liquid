@@ -3,7 +3,7 @@
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
 
-{%- if order <= 168 or order > 900        -%}
+{%- if order <= 168 or order > 863        -%}
 {%-   assign id = id | plus: 1            -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
@@ -25,7 +25,7 @@
 {%-     include core/bond.liquid          -%}
 {%-   endif                               -%}
 
-{%-   if order > 168 and order <= 900     -%}
+{%-   if order > 168 and order <= 863     -%}
 {%-     assign id = id | plus: 1          -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
