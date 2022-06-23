@@ -1,3 +1,4 @@
+{%- assign id = 0                               -%}
 {%- assign group = 1                            -%}
 {%- assign baseurl = "/"                        -%}
 
@@ -11,7 +12,9 @@
 {%-   endfor                                    -%}
 
 {%- else                                        -%}
+
 {%-   assign num = 2                            -%}
 {%-   include core/parts.liquid                 -%}
 {%-   include data/_primes.liquid               -%}
+
 {%- endif                                       -%}

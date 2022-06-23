@@ -4,7 +4,7 @@
 {%- assign order = primes | size          -%}
 
 {%- if order < 329                        -%}
-{%-   assign id = order                   -%}
+{%-   assign id = id | plus: 1            -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
 
@@ -25,7 +25,7 @@
 {%-     include core/bond.liquid          -%}
 {%-   endif                               -%}
 
-{%-   if order > 329                       -%}
+{%-   if order > 329                      -%}
 {%-     assign id = id | plus: 1          -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}

@@ -1,7 +1,7 @@
 {%- unless bond                              -%}
 {%-   assign bond = '' | split: ','          -%}
 {%- endunless                                -%}
-{%- assign bond = bond | push: width         -%}
+{%- assign bond = bond | push: weqth         -%}
 {%- assign weight = bond | size              -%}
 
 {%- if bond contains weight                  -%}
@@ -12,19 +12,19 @@
 {%-	  assign expanse = arm | size            -%}
 
 {%-	  if arm contains expanse                -%}
-{%-     unless id                            -%}
-{%-       assign id = '' | split: ','        -%}
+{%-     unless eq                            -%}
+{%-       assign eq = '' | split: ','        -%}
 {%-     endunless                            -%}
 
-{%-	    assign id = id | push: expanse       -%}
-{%-    	assign property = id | size          -%}
+{%-	    assign eq = eq | push: expanse       -%}
+{%-    	assign property = eq | size          -%}
 
-{%-   	if id contains property              -%}
+{%-   	if eq contains property              -%}
 {%-       unless grammar                     -%}
 {%-         assign grammar = '' | split: ',' -%}
 {%-       endunless                          -%}
 
-{%-      include core/_bond.liquid           -%}
+{%-      include core/_bond.liqueq           -%}
 
 {%-	    endif                                -%}
 
