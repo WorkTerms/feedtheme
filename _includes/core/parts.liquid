@@ -1,10 +1,10 @@
 {%- assign tag = "[]"                     -%}
-{%- assign lead = 895                     -%}
+{%- assign lead = 289                     -%}
 
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
 
-{%- if num < 1000 or order > lead         -%}
+{%- if num < 1000 or id > lead            -%}
 {%-   assign id = id | plus: 1            -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
@@ -26,7 +26,7 @@
 {%-     include core/bond.liquid          -%}
 {%-   endif                               -%}
 
-{%-   if num > 1000 and order <= lead     -%}
+{%-   if num > 1000 and id <= lead        -%}
 {%-     assign id = id | plus: 1          -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
