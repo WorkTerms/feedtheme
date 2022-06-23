@@ -135,18 +135,20 @@ Scheme:
 
 {%- assign _keys = _keys 
 	| push: 4 
-	| push: 8                    -%}
+	| push: 8                    
+-%}
 
 {%- assign _layer = _layer 
 	| push: 1 
 	| push: 30 
 	| push: 30  
-	| push: 5                    -%}
+	| push: 5                    
+-%}
 
 {%- assign _stages = _stages
 	| push: 102 
 	| push: 168 
-	| push: 229  
-	| push: 329                  -%}
+	| push: 329                  
+-%}
 
 {%- include data/_stage.liquid   -%}
