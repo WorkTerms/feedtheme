@@ -13,5 +13,5 @@
 {%- else                                        -%}
 {%-   assign num = 2                            -%}
 {%-   include core/parts.liquid                 -%}
-{%-   include data/_primes.liquid               -%}
+{%-   include data/_primes.liquid max=10000     -%}
 {%- endif                                       -%}
