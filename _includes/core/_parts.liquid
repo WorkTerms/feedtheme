@@ -32,9 +32,8 @@
 
 {%-   assign title = titles[layer]                   -%}
 {%-   assign baseurl = title | prepend: "/"          -%}
-{%-   if site.baseurl == baseurl                     -%}
-{%-     include core/node.liquid                     -%}
-{%-   endif                                          -%}
+
+{%-   include core/node.liquid                       -%}
 
 {%-   if _stage contains id                          -%}
 
