@@ -132,4 +132,10 @@ Scheme:
  Let's start by 4 as 2x2 and 8 as 2x2x2:
  
 {%-  endcomment -%}
+
+{%- assign _keys = _keys 
+	| push: 4 
+	| push: 8                    
+-%}
+
 {%- include data/_stage.liquid   -%}
