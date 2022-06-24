@@ -33,7 +33,11 @@
 {%-   assign title = titles[layer]                   -%}
 {%-   assign baseurl = title | prepend: "/"          -%}
 
-{%-   include core/node.liquid                       -%}
+{%-   assign class = ''                              -%}
+{%-   if site.baseurl == baseurl                     -%}
+{%-     assign class = ' class="current"'            -%}
+{%-     include core/node.liquid                    -%}
+{%-   endif                                          -%}
 
 {%-   if _stage contains id                          -%}
 
