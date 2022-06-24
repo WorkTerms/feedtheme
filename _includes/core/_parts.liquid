@@ -30,6 +30,9 @@
 {%-   assign layer_size = array[layer] | size        -%}
 {%-   assign array_size = array | size | default: 0  -%}
 
+{%-   assign title = titles[layer]                   -%}
+{%-   assign baseurl = title | prepend: "/"          -%}
+
 {%-   include core/node.liquid                       -%}
 
 {%-   if _stage contains id                          -%}
