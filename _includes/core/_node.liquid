@@ -19,7 +19,8 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   assign ul = '<ul dislay="none">'          -%}
+{%-   assign ul = '<ul style="display: none;">' -%}
+
 {%-   if node_type == "main"                    -%}
 
 {%-      assign layer = layer | plus: 1         -%}
