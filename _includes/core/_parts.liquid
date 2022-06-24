@@ -1,3 +1,4 @@
+{%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
 
 {%-   if parts                                       -%}
@@ -9,8 +10,8 @@
 {%-   if arm                                         -%}
 {%-     assign array = array | push: arm             -%}
 {%-   endif                                          -%}
-{%-   if id                                          -%}
-{%-     assign array = array | push: id              -%}
+{%-   if eq                                          -%}
+{%-     assign array = array | push: eq              -%}
 {%-   endif                                          -%}
 
 {%-   if grammar                                     -%}
@@ -21,12 +22,12 @@
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   include core/node.liquid                       -%}
+{%-   include core/node.liqueq                       -%}
 
-{%-	  assign property = id | size | default: 0       -%}
+{%-	  assign property = eq | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
-{%-   assign width = parts | size | default: 0       -%}
+{%-   assign weqth = parts | size | default: 0       -%}
 
 {%-   assign layer_size = array[layer] | size        -%}
 {%-   assign array_size = array | size | default: 0  -%}
@@ -34,12 +35,12 @@
 {%-   if _stages contains id                         -%}
 
 {%-     assign node_type = "main"                    -%}
-{%-     include core/_node.liquid                    -%}
+{%-     include core/_node.liqueq                    -%}
 
 {%-   elsif keys contains id                         -%}
 
-{%-     assign node_type = "brach"                    -%}
-{%-     include core/_node.liquid                    -%}
+{%-     assign node_type = "brach"                   -%}
+{%-     include core/_node.liqueq                    -%}
 
 {%-   endif                                          -%}
 
