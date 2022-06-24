@@ -21,8 +21,6 @@
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   include core/node.liquid                       -%}
-
 {%-	  assign property = eq | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
@@ -30,6 +28,8 @@
 
 {%-   assign layer_size = array[layer] | size        -%}
 {%-   assign array_size = array | size | default: 0  -%}
+
+{%-   include core/node.liquid                       -%}
 
 {%-   if _stages contains id                         -%}
 
