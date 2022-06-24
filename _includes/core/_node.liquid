@@ -25,6 +25,11 @@
 {%-      assign title = titles[layer]           -%}
 {%-      assign baseurl = title | prepend: "/"  -%}
 
+{%-      assign class = ''                      -%}
+{%-      if site.baseurl == baseurl             -%}
+{%-        assign class = ' class="current"'    -%}
+{%-      endif                                  -%}
+
 {%-      assign node = list
            | append: class
            | append: '><a href="'
