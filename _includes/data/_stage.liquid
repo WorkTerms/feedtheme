@@ -1,4 +1,4 @@
-{%- assign _layer = _layer 
+{%- assign keys = keys 
 	| push: 1 
 	| push: 30 
 	| push: 30  
@@ -51,14 +51,14 @@ Scheme 13:9
 
 {% endcomment -%}
 
-{%- for val in _layer                                        -%}
+{%- for key in keys                                          -%}
 
 {%-   if forloop.first                                       -%}
-{%-     assign _brake = val                                  -%}
+{%-     assign _brake = key                                  -%}
 {%-   elsif forloop.last                                     -%}
-{%-     assign _brake = _brake | minus: val                  -%}
+{%-     assign _brake = _brake | minus: key                  -%}
 {%-   else-%}
-{%-     assign _brake = _brake | times: val                  -%}
+{%-     assign _brake = _brake | times: key                  -%}
 {%-   endif                                                  -%}
 
 {%- endfor                                                   -%}
@@ -121,7 +121,7 @@ Root Generation:
  
 {% endcomment -%}
 
-{%- for val in _layer                                        -%}
+{%- for key in keys                                          -%}
 
 {%-   capture stage                                          -%}
 {%-     case forloop.index                                   -%}
