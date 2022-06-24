@@ -10,6 +10,12 @@
 	| push: 5                    
 -%}
 
+{%- assign _limit = _layer[0] 
+    | times: _layer[1] 
+    | times: _layer[2] 
+    | minus: _layer[3] 
+-%}
+
 {%- assign _stages = _stages
 	| push: 102 
 	| push: 168 

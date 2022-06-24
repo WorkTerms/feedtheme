@@ -1,5 +1,4 @@
 {%- assign tag = "[]"                     -%}
-{%- assign lead = 895                     -%}
 
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
@@ -21,12 +20,12 @@
 {%-     include core/bond.liquid          -%}
 {%-   endif                               -%}
 
-{%-   if num > 1000 and order < lead      -%}
+{%-   if num > 1000 and order < _limit    -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
-{%- if num < 1000 or order >= lead        -%}
+{%- if num < 1000 or order >= _limit      -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
