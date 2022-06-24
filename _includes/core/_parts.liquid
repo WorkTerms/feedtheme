@@ -37,9 +37,9 @@
 {%-     assign node_type = "main"                    -%}
 {%-     include core/_node.liquid                    -%}
 
-{%-   elsif keys contains id                         -%}
+{%-   elsif _branch contains id                   -%}
 
-{%-     assign node_type = "brach"                    -%}
+{%-     assign node_type = "brach"                   -%}
 {%-     include core/_node.liquid                    -%}
 
 {%-   endif                                          -%}
