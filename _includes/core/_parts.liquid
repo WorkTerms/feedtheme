@@ -9,8 +9,8 @@
 {%-   if arm                                         -%}
 {%-     assign array = array | push: arm             -%}
 {%-   endif                                          -%}
-{%-   if id                                          -%}
-{%-     assign array = array | push: id              -%}
+{%-   if eq                                          -%}
+{%-     assign array = array | push: eq              -%}
 {%-   endif                                          -%}
 
 {%-   if grammar                                     -%}
@@ -23,7 +23,7 @@
 
 {%-   include core/node.liquid                       -%}
 
-{%-	  assign property = id | size | default: 0       -%}
+{%-	  assign property = eq | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
 {%-   assign width = parts | size | default: 0       -%}
