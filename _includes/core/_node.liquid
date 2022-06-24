@@ -1,6 +1,6 @@
-{%-      assign group = group | plus: 1         -%}
-{%-      assign group_title = 'group'           -%}
-{%-      assign _node = list
+{%-   assign group = group | plus: 1            -%}
+{%-   assign group_title = 'group'              -%}
+{%-   assign _node = list   
            | append: '><a href="/'
            | append: group_title
            | append: '-'
@@ -19,6 +19,7 @@
            | append: group
            | append: '</a>'                     -%}
 
+{%-   assign ul = '<ul dislay="none">'          -%}
 {%-   if node_type == "main"                    -%}
 
 {%-      assign layer = layer | plus: 1         -%}
@@ -52,7 +53,7 @@
 {%         include tabs.liquid size=10 %}{{ node }}
 {%         include tabs.liquid size=11 %}<ul>
 {%         include tabs.liquid size=12 %}{{ _node}}
-{%         include tabs.liquid size=13 %}<ul>
+{%         include tabs.liquid size=13 %}{{ ul }}
 {%-      endcapture                             -%}
 
 {%-   else -%}
@@ -62,7 +63,7 @@
 {%         include tabs.liquid size=13 %}</ul>
 {%         include tabs.liquid size=12 %}</li>
 {%         include tabs.liquid size=12 %}{{ _node }}
-{%         include tabs.liquid size=13 %}<ul>
+{%         include tabs.liquid size=13 %}{{ ul }}
 {%-      endcapture                             -%}
 
 {%-   endif -%}
