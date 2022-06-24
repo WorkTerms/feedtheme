@@ -20,12 +20,12 @@
 {%-     include core/bond.liquid          -%}
 {%-   endif                               -%}
 
-{%-   if num > 1000 and order < _limit    -%}
+{%-   if num > 1000 and order < _brake    -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
-{%- if num < 1000 or order >= _limit      -%}
+{%- if num < 1000 or order >= _brake      -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
