@@ -247,11 +247,7 @@ img {
 .sf-menu > li > ul > li > ul {
   top: 0px;
   left: 110%;
-}
-/* Third level sub-menu styles
-========================================================*/
-.sf-menu > li > ul > li > ul > li > ul {
-    display: none;
+  display: none;
 }
 @media only screen and (max-width: 767px) {
   nav {
