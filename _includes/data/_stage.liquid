@@ -5,12 +5,6 @@
 	| push: 5                    
 -%}
 
-{%- assign _brake = _layer[0] 
-    | times: _layer[1] 
-    | times: _layer[2] 
-    | minus: _layer[3] 
--%}
-
 {%- assign _stages = _stages
 	| push: 102 
 	| push: 168 
@@ -110,23 +104,31 @@ Root Generation:
  
 {% endcomment -%}
 
-{%- for key in _layer %}
+{%- for val in _layer                                        -%}
 
-{%-  capture stage                        -%}
-{%-    case forloop.index                 -%}
-{%-      when 1 -%}[29;69;114;168](618)
-{%-      when 2 -%}[7;13;29;109](102): Spin 7 of 168=π(1000)=π(π(89²))
-{%-      when 3 -%}[13;43;66;139](329): Spin 13 of 329=π(10000)-(10th)²=1229-900
-{%-      when 4 -%}[19;68;89;169](289): Spin 19 of 289=229+2(10th)=π((29+60)²)=π(89²)=1000
-{%-    endcase                            -%}
-{%-  endcapture                           -%}
+{%-   if forloop.first                                       -%}
+{%-     assign _brake = val                                  -%}
+{%-   elsif forloop.last                                     -%}
+{%-     assign _brake = _brake | minus: val                  -%}
+{%-   else-%}
+{%-     assign _brake = _brake | times: val                  -%}
+{%-   endif                                                  -%}
 
-{%-  assign stages = stages | push: stage -%}
-{%- endfor -%}
+{%-   capture stage                                          -%}
+{%-     case forloop.index                                   -%}
+{%-       when 1 -%}[29;69;114;168](618)
+{%-       when 2 -%}[7;13;29;109](102): Spin 7 of 168=π(1000)=π(π(89²))
+{%-       when 3 -%}[13;43;66;139](329): Spin 13 of 329=π(10000)-(10th)²=1229-900
+{%-       when 4 -%}[19;68;89;169](289): Spin 19 of 289=229+2(10th)=π((29+60)²)=π(89²)=1000
+{%-     endcase                                              -%}
+{%-   endcapture                                             -%}
+{%-   assign stages = stages | push: stage                   -%}
+
+{%- endfor                                                   -%}
 
 {%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
 
-{%- comment %}
+{%- comment -%}
 
 True Prime Vektors ζ(s):
 ========================
