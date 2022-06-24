@@ -1,4 +1,3 @@
-{%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
 
 {%-   if parts                                       -%}
@@ -10,8 +9,8 @@
 {%-   if arm                                         -%}
 {%-     assign array = array | push: arm             -%}
 {%-   endif                                          -%}
-{%-   if eq                                          -%}
-{%-     assign array = array | push: eq              -%}
+{%-   if id                                          -%}
+{%-     assign array = array | push: id              -%}
 {%-   endif                                          -%}
 
 {%-   if grammar                                     -%}
@@ -24,10 +23,10 @@
 
 {%-   include core/node.liquid                       -%}
 
-{%-	  assign property = eq | size | default: 0       -%}
+{%-	  assign property = id | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
-{%-   assign weqth = parts | size | default: 0       -%}
+{%-   assign width = parts | size | default: 0       -%}
 
 {%-   assign layer_size = array[layer] | size        -%}
 {%-   assign array_size = array | size | default: 0  -%}
@@ -39,7 +38,7 @@
 
 {%-   elsif keys contains id                         -%}
 
-{%-     assign node_type = "brach"                   -%}
+{%-     assign node_type = "brach"                    -%}
 {%-     include core/_node.liquid                    -%}
 
 {%-   endif                                          -%}
