@@ -19,17 +19,15 @@
            | append: group
            | append: '</a>'                     -%}
 
-{%-   if node_type == "main"                    -%}
-
-{%-      assign layer = layer | plus: 1         -%}
-{%-      assign stage = stages[layer]           -%}
-{%-      assign title = titles[layer]           -%}
-{%-      assign baseurl = title | prepend: "/"  -%}
-
 {%-      assign class = ''                      -%}
 {%-      if site.baseurl == baseurl             -%}
 {%-        assign class = ' class="current"'    -%}
-{%-      endif                                  -%}
+
+{%-   if node_type == "main"                    -%}
+
+{%-      assign stage = stages[layer]           -%}
+{%-      assign title = titles[layer]           -%}
+{%-      assign baseurl = title | prepend: "/"  -%}
 
 {%-      assign node = list
            | append: class
@@ -66,3 +64,4 @@
 {%-      endcapture                             -%}
 
 {%-   endif -%}
+{%-      endif                                  -%}
