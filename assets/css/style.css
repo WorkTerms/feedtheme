@@ -247,7 +247,6 @@ img {
 .sf-menu > li > ul > li > ul {
   top: 0px;
   left: 110%;
-  display: none;
 }
 @media only screen and (max-width: 767px) {
   nav {
