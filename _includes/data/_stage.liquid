@@ -1,3 +1,21 @@
+{%- assign _keys = _keys 
+	| push: 4 
+	| push: 8                    
+-%}
+
+{%- assign _layer = _layer 
+	| push: 1 
+	| push: 30 
+	| push: 30  
+	| push: 5                    
+-%}
+
+{%- assign _stages = _stages
+	| push: 102 
+	| push: 168 
+	| push: 283                 
+-%}
+
 {%- assign keys = keys 
 	| push: 2                 
 	| push: 62                 
@@ -10,24 +28,6 @@
 -%}                    
 
 {%- comment %}
-
-{%- assign keys = keys 
-	| push: 4                  
-	| push: 8                 
-	| push: 13
-	| push: 17
-	| push: 20
-	| push: 40
-	| push: 60
-	| push: 72
-	| push: 90
-	| push: 102
-	| push: 126
-	| push: 139
-	| push: 150
-	| push: 168                  
-	| push: 180
--%}                    
 
 Scheme 13:9
 ===========
