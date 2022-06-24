@@ -49,6 +49,23 @@ Scheme 13:9
             --
            {43}
 
+{% endcomment -%}
+
+{%- for val in _layer                                        -%}
+
+{%-   if forloop.first                                       -%}
+{%-     assign _brake = val                                  -%}
+{%-   elsif forloop.last                                     -%}
+{%-     assign _brake = _brake | minus: val                  -%}
+{%-   else-%}
+{%-     assign _brake = _brake | times: val                  -%}
+{%-   endif                                                  -%}
+
+{%- endfor                                                   -%}
+
+{%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
+
+{%- comment -%}
 Direction:
 
 | push: 4
@@ -106,14 +123,6 @@ Root Generation:
 
 {%- for val in _layer                                        -%}
 
-{%-   if forloop.first                                       -%}
-{%-     assign _brake = val                                  -%}
-{%-   elsif forloop.last                                     -%}
-{%-     assign _brake = _brake | minus: val                  -%}
-{%-   else-%}
-{%-     assign _brake = _brake | times: val                  -%}
-{%-   endif                                                  -%}
-
 {%-   capture stage                                          -%}
 {%-     case forloop.index                                   -%}
 {%-       when 1 -%}[29;69;114;168](618)
@@ -125,8 +134,6 @@ Root Generation:
 {%-   assign stages = stages | push: stage                   -%}
 
 {%- endfor                                                   -%}
-
-{%- assign titles = 'home,lexer,parser,grammar' | split: ',' -%}
 
 {%- comment -%}
 
