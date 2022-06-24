@@ -248,6 +248,11 @@ img {
   top: 0px;
   left: 110%;
 }
+/* Third level sub-menu styles
+========================================================*/
+.sf-menu > li > ul > li > ul > li > ul {
+    display: none;
+}
 @media only screen and (max-width: 767px) {
   nav {
     padding-bottom: 0;
