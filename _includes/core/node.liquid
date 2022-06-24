@@ -26,10 +26,7 @@
 
 {%-  assign list = '<li data-id="'
        | append: stage
-       | append: '"'                         -%}
-
-{%-  assign node = list
-       | append: '><a href="'
+       | append: '"><a href="'
        | append: baseurl
        | append: '" id='
        | append: id
