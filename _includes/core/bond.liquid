@@ -1,7 +1,7 @@
 {%- unless bond                              -%}
 {%-   assign bond = '' | split: ','          -%}
 {%- endunless                                -%}
-{%- assign bond = bond | push: weqth         -%}
+{%- assign bond = bond | push: width         -%}
 {%- assign weight = bond | size              -%}
 
 {%- if bond contains weight                  -%}
