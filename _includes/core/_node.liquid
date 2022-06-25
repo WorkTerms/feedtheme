@@ -7,7 +7,7 @@
 {%-       assign class = ' class="current"'      -%}
 {%-     endif                                    -%}
 
-{%-      assign node = '<li'
+{%-      assign node = '<li data-type="main"'
            | append: class
            | append: '><a href="'
            | append: baseurl
@@ -21,7 +21,8 @@
 
 {%-      assign group = group | plus: 1          -%}
 {%-      assign group_title = 'group'            -%}
-{%-      assign _node = '<li><a href="/'
+{%-      assign _node = '<li data-type="group"'
+           | append: '><a href="'
            | append: group_title
            | append: '-'
            | append: group
