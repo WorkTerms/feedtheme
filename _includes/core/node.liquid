@@ -21,6 +21,7 @@
        | append: ')'                         -%}
 
 {%-   for prime in primes                    -%}
+{%-     assign array_prime = forloop.index   -%}
 {%-     if id < prime                        -%}
 {%-       break                              -%}
 {%-     endif                                -%}
@@ -41,9 +42,9 @@
        | append: ','
        | append: array_size
        | append: ','
-       | append: prime
-       | append: ','
        | append: array_expanse
+       | append: ','
+       | append: array_prime
        | append: ','
        | append: array_sequence
        | append: ')'
