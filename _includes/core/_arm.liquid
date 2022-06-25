@@ -1,11 +1,10 @@
 {%- capture nodes                           -%}
-{{    nodes                                  }}
 {%    include tabs.liquid size=5 %}<ul class="sf-menu">
 {%    include tabs.liquid size=6 %}<li{% if site.baseurl == "" %} class="current"{% endif %}><a href="/" id="home" title="{{ stages | first }}*: Spin 168=π(1000) as Lexer and 618=1000/Φ as Parser">home</a>
 {%    include tabs.liquid size=7 %}<ul>
 {%    include tabs.liquid size=8 %}<li><a href="/group-1" id="group-1" title="group-1">group-1</a>
 {%    include tabs.liquid size=9 %}<ul>
-{%    include tabs.liquid size=10 %}{{- nodes }}
+{%    include tabs.liquid size=10 %}{{ nodes }}
 {%    include tabs.liquid size=9 %}</ul>
 {%    include tabs.liquid size=8 %}</li>
 {%    include tabs.liquid size=7 %}</ul>
