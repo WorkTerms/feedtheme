@@ -20,12 +20,15 @@
        | append: property
        | append: ')'                         -%}
 
+{%-  assign array_sequence = width 
+       | minus: weight                       -%}
+	   
 {%-  assign details = '('
        | append: layer
        | append: ','
        | append: array_size
        | append: ','
-       | append: {{ width | minus: weight }}
+       | append: array_sequence
        | append: ')'
        | append: tag                         -%}
 
