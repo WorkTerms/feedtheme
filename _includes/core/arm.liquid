@@ -2,6 +2,7 @@
 {%- assign limit = 100 | times: 100   -%}
 
 {%- unless nodes                      -%}
+{%-   capture nodes -%}{%- endcapture -%}
 {%-   include data/primes.liquid      -%}
 {%- endunless                         -%}
 
