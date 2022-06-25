@@ -14,7 +14,7 @@
 												<li><a href="/group-1" id="group-1" title="group-1">group-1</a>
 													{%- if site.baseurl == "" %}<ul>{% endif -%}
 														{{- nodes }}
-													</ul>
+													{%- if site.baseurl == "/grammar" %}</ul>{% endif -%}
 												</li>
 											</ul>
 										</li>
