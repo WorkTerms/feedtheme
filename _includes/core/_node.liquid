@@ -1,7 +1,6 @@
 {%-      assign group = group | plus: 1         -%}
 {%-      assign group_title = 'group'           -%}
-{%-      assign _node = list
-           | append: '><a href="/'
+{%-      assign _node = '<li><a href="/'
            | append: group_title
            | append: '-'
            | append: group
@@ -21,7 +20,7 @@
 
 {%-   if node_type == "main"                    -%}
 
-{%-      assign node = list
+{%-      assign node = '<li'
            | append: class
            | append: '><a href="'
            | append: baseurl
