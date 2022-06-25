@@ -44,7 +44,7 @@
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                             -%}
 
-{%-   else -%}
+{%-   elsif site.baseurl == baseurl             -%}
 
 {%-      capture nodes                          -%}
 {{         nodes                                 }}
@@ -53,5 +53,11 @@
 {%         include tabs.liquid size=12 %}{{ _node }}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                             -%}
+
+{%-   else -%}
+
+{%-      capture nodes                          -%}
+{{         nodes                            }}</li>
+{{%-     endcapture                             -%}
 
 {%-   endif -%}
