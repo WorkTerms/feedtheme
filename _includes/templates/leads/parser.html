@@ -16,19 +16,20 @@
 						<div class="row">
 							<div class="grid_12">
 								<div class="isotope row">
-									{%- assign my_num = 0 -%}{%- assign my_group = 7 -%}
+									{%- assign my_num = 0 -%}
 									{%- include templates/headings.liquid html=content h_min=2 h_max=2 anchorClass="text_2 color_2" -%}
 									{%- for heading in headings | shift -%}
 									{%-   if forloop.first %}{% continue %}{% endif -%}
 									{%-   assign my_num = my_num | plus: 1 %}
+									{%-   assign my_group = my_num | plus: 7 %}
 									<div class="element-item grid_4 c{{ my_num }}">
 										<div class="box_7">
 											<div class="img-wrap">
-												<a href="/group-(( my_group | plus: my_num }}"><img src="/images/index-2_img0{{ my_num }}.jpg" alt="Project Introduction"/></a>
+												<a href="/group-(( my_group }}"><img src="/images/index-2_img0{{ my_num }}.jpg" alt="Project Introduction"/></a>
 											</div>
 											<div class="caption">
 												{{ heading }}
-												<a class="btn_2" href="/group-(( my_group | plus: my_num }}">read more</a>
+												<a class="btn_2" href="/group-(( my_group }}">read more</a>
 											</div>
 										</div>
 									</div>
