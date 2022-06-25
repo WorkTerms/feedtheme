@@ -24,6 +24,8 @@
        | append: layer
        | append: ','
        | append: array_size
+       | append: ','
+       | append: {{ width | minus: weight }}
        | append: ')'
        | append: tag                         -%}
 
