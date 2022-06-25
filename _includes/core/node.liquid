@@ -21,7 +21,9 @@
        | append: ')'                         -%}
 
 {%-  assign array_sequence = width 
-       | minus: weight                       -%}
+       | minus: weight                       
+       | plus: expanse                       
+-%}
 	   
 {%-  assign details = '('
        | append: layer
