@@ -20,6 +20,12 @@
        | append: property
        | append: ')'                         -%}
 
+{%-   for prime in primes                    -%}
+{%-     if id < prime                        -%}
+{%-       break                              -%}
+{%-     endif                                -%}
+{%-   endfor                                 -%}
+
 {%-  assign array_expanse = weight
        | plus: expanse                       
        | plus: property                     
@@ -34,6 +40,8 @@
        | append: layer
        | append: ','
        | append: array_size
+       | append: ','
+       | append: prime
        | append: ','
        | append: array_expanse
        | append: ','
