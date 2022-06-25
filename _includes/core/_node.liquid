@@ -7,6 +7,18 @@
 {%-       assign class = ' class="current"'      -%}
 {%-     endif                                    -%}
 
+{%-      assign node = '<li'
+           | append: class
+           | append: '><a href="'
+           | append: baseurl
+           | append: '" id="'
+           | append: title
+           | append: '" title="'
+           | append: stage
+           | append: '">'
+           | append: title
+           | append: '</a>'                      -%}
+
 {%-      assign group = group | plus: 1          -%}
 {%-      assign group_title = 'group'            -%}
 {%-      assign _node = '<li><a href="/'
@@ -28,18 +40,6 @@
            | append: '</a>'                      -%}
 
 {%-   if node_type == "main"                     -%}
-
-{%-      assign node = '<li'
-           | append: class
-           | append: '><a href="'
-           | append: baseurl
-           | append: '" id="'
-           | append: title
-           | append: '" title="'
-           | append: stage
-           | append: '">'
-           | append: title
-           | append: '</a>'                      -%}
 
 {%-      capture nodes                           -%}
 {{         nodes                                  }}
