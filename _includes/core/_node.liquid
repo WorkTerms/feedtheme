@@ -1,8 +1,7 @@
 {%-      assign group = group | plus: 1         -%}
 {%-      assign group_title = 'group'           -%}
-{%-      assign _node = '<li data-id="'
-           | append: stage
-           | append: '"><a href="/'
+{%-      assign _node = list
+           | append: '><a href="/'
            | append: group_title
            | append: '-'
            | append: group
@@ -22,10 +21,9 @@
 
 {%-   if node_type == "main"                    -%}
 
-{%-      assign node = '<li data-id="'
-           | append: stage
+{%-      assign node = list
            | append: class
-           | append: '"><a href="/'
+           | append: '><a href="'
            | append: baseurl
            | append: '" id="'
            | append: title
