@@ -40,11 +40,20 @@
 {%         include tabs.liquid size=10 %}</li>
 {%         include tabs.liquid size=10 %}{{ node }}
 {%         include tabs.liquid size=11 %}<ul>
+
+{%-     if site.baseurl == baseurl                   -%}
+
 {%         include tabs.liquid size=12 %}{{ _node}}
 {%         include tabs.liquid size=13 %}<ul>
+{%-   else -%}
+{%         include tabs.liquid size=12 %}{{ _node}}/li>
+
+{%-     endif                                        -%}
+
 {%-      endcapture                             -%}
 
 {%-   else -%}
+{%-     if site.baseurl == baseurl                   -%}
 
 {%-      capture nodes                          -%}
 {{         nodes                                 }}
@@ -53,5 +62,10 @@
 {%         include tabs.liquid size=12 %}{{ _node }}
 {%         include tabs.liquid size=13 %}<ul>
 {%-      endcapture                             -%}
+
+{%-   else -%}
+{%         include tabs.liquid size=12 %}{{ _node}}/li>
+
+{%-     endif                                        -%}
 
 {%-   endif -%}
