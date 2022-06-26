@@ -1,5 +1,6 @@
 {%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
+{%-   assign array = array | push: primes            -%}
 
 {%-   if parts                                       -%}
 {%-     assign array = array | push: parts           -%}
