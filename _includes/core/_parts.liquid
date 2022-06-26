@@ -14,11 +14,14 @@
 {%-     assign array = array | push: eq              -%}
 {%-   endif                                          -%}
 
+{%-   if grammar                                     -%}
+{%-   endif                                          -%}
+
 {%-   for item in grammar                            -%}
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   assign tag = array reversed | jsonify        -%}
+{%-   assign tag = array | jsonify                   -%}
 {%-   assign width = parts | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
