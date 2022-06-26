@@ -18,7 +18,7 @@
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   assign tag = array | jsonify                   -%}
+{%-   assign tag = array | reversed | jsonify        -%}
 {%-   assign width = parts | size | default: 0       -%}
 {%-   assign weight = bond | size | default: 0       -%}
 {%-	  assign expanse = arm | size | default: 0       -%}
