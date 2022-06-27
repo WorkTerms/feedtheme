@@ -1,27 +1,27 @@
 {%- assign index = include.index | default: 0   -%}
 
-{%- unless grammar[index]                       -%}
+{%- unless exp[index]                           -%}
 
 {%-   assign var = '' | split: ','              -%}
 {%-   assign var = var | push: property         -%}
-{%-	  assign grammar = grammar | push: var      -%}
+{%-	  assign exp = exp | push: var      -%}
 
 {%- else  -%}
 
-{%-   assign var = grammar[index]               -%}
+{%-   assign var = exp[index]                   -%}
 {%-   assign var = var | push: property         -%}
 
 {%-   assign dummy = '' | split: ','            -%}
-{%-   for item in grammar                       -%}
+{%-   for item in exp                           -%}
 {%-     assign dummy = dummy | push: item       -%}
 {%-   endfor                                    -%}
 
-{%-   assign grammar = '' | split: ','          -%}
+{%-   assign exp = '' | split: ','              -%}
 {%-   for item in dummy                         -%}
 {%-	    if forloop.index0 == index              -%}
-{%-	      assign grammar = grammar | push: var  -%}
+{%-	      assign exp = exp | push: var  -%}
 {%-     else                                    -%}
-{%-       assign grammar = grammar | push: item -%}
+{%-       assign exp = exp | push: item -%}
 {%-     endif                                   -%}
 {%-   endfor                                    -%}
 
@@ -31,6 +31,6 @@
 {%-	if var contains property                    -%}
 
 {%-   assign index = index | plus: 1            -%}
-{%-   include core/_bond.liquid index=index      -%}
+{%-   include core/_bond.liquid index=index     -%}
 
 {%- endif                                       -%}

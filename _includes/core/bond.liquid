@@ -20,8 +20,8 @@
 {%-    	assign property = eq | size          -%}
 
 {%-   	if eq contains property              -%}
-{%-       unless grammar                     -%}
-{%-         assign grammar = '' | split: ',' -%}
+{%-       unless exp                         -%}
+{%-         assign exp = '' | split: ','     -%}
 {%-       endunless                          -%}
 
 {%-      include core/_bond.liquid           -%}
