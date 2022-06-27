@@ -18,13 +18,14 @@
 
 {%-	    assign eq = eq | push: expanse               -%}
 {%-    	assign property = eq | size                  -%}
+{%-    	assign prop = property                       -%}
 
-{%-   	if eq contains property                      -%}
+{%-   	if eq contains prop                          -%}
 {%-       unless exp                                 -%}
 {%-         assign exp = '' | split: ','             -%}
 {%-       endunless                                  -%}
 
-{%-       include core/_bond.liquid prop=property    -%}
+{%-       include core/_bond.liquid                  -%}
 
 {%-	    endif                                        -%}
 

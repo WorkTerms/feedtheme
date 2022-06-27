@@ -1,9 +1,5 @@
 {%- assign index = include.index | default: 0   -%}
 
-{%- unless prop                                 -%}
-{%-   assign prop = include.prop                -%}
-{%- endunless                                   -%}
-
 {%- unless exp[index]                           -%}
 
 {%-   assign var = '' | split: ','              -%}
