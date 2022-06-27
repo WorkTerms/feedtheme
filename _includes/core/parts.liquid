@@ -6,18 +6,18 @@
 
 {%- if primes contains order              -%}
 
-{%-   unless parts                        -%}
-{%-     assign parts = '' | split: ','    -%}
+{%-   unless array                        -%}
+{%-     assign array = '' | split: ','    -%}
 {%-   endunless                           -%}
 
 {%-   include core/bond.liquid           -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
-{%-     include core/_parts.liquid        -%}
+{%-     include core/_array.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
 {%- if num < 1000 or probe >= _brake      -%}
-{%-   include core/_parts.liquid          -%}
+{%-   include core/_array.liquid          -%}
 {%- endif                                 -%}

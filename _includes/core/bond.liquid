@@ -1,27 +1,27 @@
 {%- assign index = include.index | default: 0  -%}
 
-{%- unless parts[index]                        -%}
+{%- unless array[index]                        -%}
 
 {%-   assign var = '' | split: ','             -%}
 {%-   assign var = var | push: order           -%}
-{%-	  assign parts = parts | push: var         -%}
+{%-	  assign array = array | push: var         -%}
 
 {%- else                                       -%}
 
-{%-   assign var = parts[index]                -%}
+{%-   assign var = array[index]                -%}
 {%-   assign var = var | push: order           -%}
 
 {%-   assign dummy = '' | split: ','           -%}
-{%-   for item in parts                        -%}
+{%-   for item in array                        -%}
 {%-     assign dummy = dummy | push: item      -%}
 {%-   endfor                                   -%}
 
-{%-   assign parts = '' | split: ','           -%}
+{%-   assign array = '' | split: ','           -%}
 {%-   for item in dummy                        -%}
 {%-	    if forloop.index0 == index             -%}
-{%-	      assign parts = parts | push: var     -%}
+{%-	      assign array = array | push: var     -%}
 {%-     else                                   -%}
-{%-       assign parts = parts | push: item    -%}
+{%-       assign array = array | push: item    -%}
 {%-     endif                                  -%}
 {%-   endfor                                   -%}
 
