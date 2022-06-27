@@ -19,8 +19,9 @@
 	   | default: 0               
 -%}
 
-{%-  assign weight = array[1] | size   -%}
-{%-  assign size = parts | size | plus: 1         -%}
+{%-  assign weight = array[1] | size         -%}
+{%-  assign expanse = array[2] | size        -%}
+{%-  assign size = parts | size | plus: 1    -%}
 {%-  assign property = parts[layer] | size   -%}
 
 {%-  assign stage = '['
