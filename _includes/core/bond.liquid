@@ -29,8 +29,16 @@
 
 {%-	assign order = var | size                  -%}
 {%- unless var contains order                  -%}
+
+{%-   assign bonds = '' | split: ','           -%}
+{%-   for item in array reversed               -%}
+{%-     assign bonds = bonds | push: item      -%}
+{%-   endfor                                   -%}
 {%-   include core/_bond.liquid                -%}
+
 {%- else                                       -%}
+
 {%-   assign index = index | plus: 1           -%}
 {%-   include core/bond.liquid index=index     -%}
+
 {%- endunless                                  -%}
