@@ -10,7 +10,7 @@
 {%-     assign parts = '' | split: ','    -%}
 {%-   endunless                           -%}
 
-{%-   include core/_bond.liquid           -%}
+{%-   include core/bond.liquid           -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
 {%-     include core/_parts.liquid        -%}

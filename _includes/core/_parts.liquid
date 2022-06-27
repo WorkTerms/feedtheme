@@ -1,7 +1,7 @@
 {%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
 
-{%-   for item in parts reversed                       -%}
+{%-   for item in parts reversed                     -%}
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 

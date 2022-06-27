@@ -1,34 +1,36 @@
-{%- unless bond                                      -%}
-{%-   assign bond = '' | split: ','                  -%}
-{%- endunless                                        -%}
-{%- assign bond = bond | push: width                 -%}
-{%- assign weight = bond | size                      -%}
+{%- assign index = include.index | default: 0   -%}
 
-{%- if bond contains weight                          -%}
-{%-   unless arm                                     -%}
-{%-     assign arm = '' | split: ','                 -%}
-{%-   endunless                                      -%}
-{%-   assign arm = arm | push: weight                -%}
-{%-	  assign expanse = arm | size                    -%}
+{%- unless parts[index]                         -%}
 
-{%-	  if arm contains expanse                        -%}
-{%-     unless eq                                    -%}
-{%-       assign eq = '' | split: ','                -%}
-{%-     endunless                                    -%}
+{%-   assign var = '' | split: ','              -%}
+{%-   assign var = var | push: order            -%}
+{%-	  assign parts = parts | push: var          -%}
 
-{%-	    assign eq = eq | push: expanse               -%}
-{%-    	assign property = eq | size                  -%}
-{%-    	assign prop = property                       -%}
+{%- else  -%}
 
-{%-   	if eq contains prop                          -%}
-{%-       unless exp                                 -%}
-{%-         assign exp = '' | split: ','             -%}
-{%-       endunless                                  -%}
+{%-   assign var = parts[index]                 -%}
+{%-   assign var = var | push: order            -%}
 
-{%-       include core/_bond.liquid                  -%}
+{%-   assign dummy = '' | split: ','            -%}
+{%-   for item in parts                         -%}
+{%-     assign dummy = dummy | push: item       -%}
+{%-   endfor                                    -%}
 
-{%-	    endif                                        -%}
+{%-   assign parts = '' | split: ','            -%}
+{%-   for item in dummy                         -%}
+{%-	    if forloop.index0 == index              -%}
+{%-	      assign parts = parts | push: var  -%}
+{%-     else                                    -%}
+{%-       assign parts = parts | push: item -%}
+{%-     endif                                   -%}
+{%-   endfor                                    -%}
 
-{%-	  endif                                          -%}
+{%- endunless                                   -%}
 
-{%-	endif                                            -%}
+{%-	assign order = var | size                   -%}
+{%-	if var contains order                       -%}
+
+{%-   assign index = index | plus: 1            -%}
+{%-   include core/bond.liquid index=index      -%}
+
+{%- endif                                       -%}
