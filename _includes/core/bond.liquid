@@ -1,36 +1,36 @@
-{%- assign index = include.index | default: 0   -%}
+{%- assign index = include.index | default: 0  -%}
 
-{%- unless parts[index]                         -%}
+{%- unless parts[index]                        -%}
 
-{%-   assign var = '' | split: ','              -%}
-{%-   assign var = var | push: order            -%}
-{%-	  assign parts = parts | push: var          -%}
+{%-   assign var = '' | split: ','             -%}
+{%-   assign var = var | push: order           -%}
+{%-	  assign parts = parts | push: var         -%}
 
-{%- else  -%}
+{%- else                                       -%}
 
-{%-   assign var = parts[index]                 -%}
-{%-   assign var = var | push: order            -%}
+{%-   assign var = parts[index]                -%}
+{%-   assign var = var | push: order           -%}
 
-{%-   assign dummy = '' | split: ','            -%}
-{%-   for item in parts                         -%}
-{%-     assign dummy = dummy | push: item       -%}
-{%-   endfor                                    -%}
+{%-   assign dummy = '' | split: ','           -%}
+{%-   for item in parts                        -%}
+{%-     assign dummy = dummy | push: item      -%}
+{%-   endfor                                   -%}
 
-{%-   assign parts = '' | split: ','            -%}
-{%-   for item in dummy                         -%}
-{%-	    if forloop.index0 == index              -%}
-{%-	      assign parts = parts | push: var  -%}
-{%-     else                                    -%}
-{%-       assign parts = parts | push: item -%}
-{%-     endif                                   -%}
-{%-   endfor                                    -%}
+{%-   assign parts = '' | split: ','           -%}
+{%-   for item in dummy                        -%}
+{%-	    if forloop.index0 == index             -%}
+{%-	      assign parts = parts | push: var     -%}
+{%-     else                                   -%}
+{%-       assign parts = parts | push: item    -%}
+{%-     endif                                  -%}
+{%-   endfor                                   -%}
 
-{%- endunless                                   -%}
+{%- endunless                                  -%}
 
-{%-	assign order = var | size                   -%}
-{%- unless var contains order                   -%}
-{%-   include core/_bond.liquid                 -%}
-{%- else  -%}
-{%-   assign index = index | plus: 1            -%}
-{%-   include core/bond.liquid index=index      -%}
-{%- endunless                                   -%}
+{%-	assign order = var | size                  -%}
+{%- unless var contains order                  -%}
+{%-   include core/_bond.liquid                -%}
+{%- else                                       -%}
+{%-   assign index = index | plus: 1           -%}
+{%-   include core/bond.liquid index=index     -%}
+{%- endunless                                  -%}
