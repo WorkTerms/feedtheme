@@ -1,10 +1,4 @@
 {%-   assign id = id | plus: 1                       -%}
-{%-   assign parts = '' | split: ','                 -%}
-
-{%-   for item in array reversed                     -%}
-{%-     assign parts = parts | push: item            -%}
-{%-   endfor                                         -%}
-
 {%-   include core/node.liquid                       -%}
 
 {%-   if _stage contains id                          -%}

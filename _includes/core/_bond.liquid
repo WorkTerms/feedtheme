@@ -1,1 +1,7 @@
+{%-   assign parts = '' | split: ','                 -%}
+
+{%-   for item in array reversed                     -%}
+{%-     assign parts = parts | push: item            -%}
+{%-   endfor                                         -%}
+
 {%-   assign tag = parts | jsonify                   -%}
