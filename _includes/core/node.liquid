@@ -4,7 +4,7 @@
 {%-  assign title_order = '('
        | append: id
        | append: ') '
-       | append: order                       -%}
+       | append: probe                       -%}
 
 {%-   for prime in primes                    -%}
 {%-     assign loop = forloop.index   -%}
@@ -16,7 +16,7 @@
 {%-  assign stage = '['
        | append: num
        | append: ';'
-       | append: order
+       | append: probe
        | append: ';'
        | append: width
        | append: ']('

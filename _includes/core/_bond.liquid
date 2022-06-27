@@ -1,34 +1,34 @@
 {%- assign index = include.index | default: 0   -%}
 
-{%- unless exp[index]                           -%}
+{%- unless parts[index]                           -%}
 
 {%-   assign var = '' | split: ','              -%}
-{%-   assign var = var | push: probe            -%}
-{%-	  assign exp = exp | push: var              -%}
+{%-   assign var = var | push: order            -%}
+{%-	  assign parts = parts | push: var              -%}
 
 {%- else  -%}
 
-{%-   assign var = exp[index]                   -%}
-{%-   assign var = var | push: probe            -%}
+{%-   assign var = parts[index]                   -%}
+{%-   assign var = var | push: order            -%}
 
 {%-   assign dummy = '' | split: ','            -%}
-{%-   for item in exp                           -%}
+{%-   for item in parts                           -%}
 {%-     assign dummy = dummy | push: item       -%}
 {%-   endfor                                    -%}
 
-{%-   assign exp = '' | split: ','              -%}
+{%-   assign parts = '' | split: ','              -%}
 {%-   for item in dummy                         -%}
 {%-	    if forloop.index0 == index              -%}
-{%-	      assign exp = exp | push: var  -%}
+{%-	      assign parts = parts | push: var  -%}
 {%-     else                                    -%}
-{%-       assign exp = exp | push: item -%}
+{%-       assign parts = parts | push: item -%}
 {%-     endif                                   -%}
 {%-   endfor                                    -%}
 
 {%- endunless                                   -%}
 
-{%-	assign probe = var | size                   -%}
-{%-	if var contains probe                       -%}
+{%-	assign order = var | size                   -%}
+{%-	if var contains order                       -%}
 
 {%-   assign index = index | plus: 1            -%}
 {%-   include core/_bond.liquid index=index     -%}

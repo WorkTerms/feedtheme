@@ -1,7 +1,8 @@
 {%- assign tag = "[]"                     -%}
 
 {%- assign primes = primes | push: num    -%}
-{%- assign order = primes | size          -%}
+{%- assign probe = primes | size          -%}
+{%- assign order = probe                  -%}
 
 {%- if primes contains order              -%}
 
@@ -9,27 +10,14 @@
 {%-     assign parts = '' | split: ','    -%}
 {%-   endunless                           -%}
 
-{%-   assign parts = parts | push: order  -%}
-{%-   assign width = parts | size         -%}
-{%-   assign probe = width                -%}
+{%-   include core/_bond.liquid           -%}
 
-{%-   if _keys contains width             -%}
-{%-     assign tag = "[]*"                -%}
-{%-   endif                               -%}
-
-{%-   if parts contains probe             -%}
-{%-       unless exp                      -%}
-{%-         assign exp = '' | split: ','  -%}
-{%-       endunless                       -%}
-{%-     include core/_bond.liquid         -%}
-{%-   endif                               -%}
-
-{%-   if num > 1000 and order < _brake    -%}
+{%-   if num > 1000 and probe < _brake    -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
-{%- if num < 1000 or order >= _brake      -%}
+{%- if num < 1000 or probe >= _brake      -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}

@@ -1,15 +1,10 @@
 {%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
 
-{%-   for item in exp reversed                       -%}
+{%-   for item in parts reversed                       -%}
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   if parts                                       -%}
-{%-     assign array = array | push: parts           -%}
-{%-   endif                                          -%}
-
-{%-   assign width = parts | size | default: 0       -%}
 {%-   assign array = array | push: primes            -%}
 {%-   assign array_size = array | size               -%}
 {%-   assign tag = array | jsonify                   -%}
