@@ -5,7 +5,6 @@
 {%-     assign parts = parts | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   assign tag = parts | jsonify                   -%}
 {%-   include core/node.liquid                       -%}
 
 {%-   if _stage contains id                          -%}
