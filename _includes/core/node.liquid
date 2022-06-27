@@ -28,21 +28,18 @@
        | append: loop
        | append: ')'                         -%}
 
-{%-     if id <= 329                       -%}
-{%-       assign parser = id   -%}
-{%-     else                                -%}
-{%-       assign parser = 329   -%}
-{%-     endif                                -%}
-
 {%-  assign lexer = weight
        | plus: expanse                       
        | plus: property                     
 -%}
 	   
-{%-  assign array_sequence = width 
-       | minus: weight                       
-       | plus: expanse                       
--%}
+{%-     if id <= 329                         -%}
+{%-       assign parser = id                 -%}
+{%-       assign grammar = width             -%}
+{%-     else                                 -%}
+{%-       assign parser = 329                -%}
+{%-       assign grammar = id | minus 329    -%}
+{%-     endif                                -%}
 	   
 {%-  assign details = '('
        | append: layer
@@ -51,7 +48,7 @@
        | append: ','
        | append: parser
        | append: ','
-       | append: width
+       | append: grammar
        | append: ')'
        | append: tag                         -%}
 
