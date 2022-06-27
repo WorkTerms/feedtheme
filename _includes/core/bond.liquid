@@ -28,9 +28,9 @@
 {%- endunless                                   -%}
 
 {%-	assign order = var | size                   -%}
-{%-	if var contains order                       -%}
-
+{%- unless var contains order                   -%}
+{%-   include core/_bond.liquid                 -%}
+{%- else  -%}
 {%-   assign index = index | plus: 1            -%}
 {%-   include core/bond.liquid index=index      -%}
-
-{%- endif                                       -%}
+{%- endunless                                   -%}
