@@ -13,11 +13,11 @@
 {%-   include core/bond.liquid           -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
-{%-     include core/_array.liquid        -%}
+{%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
 {%- if num < 1000 or probe >= _brake      -%}
-{%-   include core/_array.liquid          -%}
+{%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
