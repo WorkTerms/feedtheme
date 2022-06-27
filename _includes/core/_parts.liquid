@@ -1,23 +1,27 @@
 {%-   assign id = id | plus: 1                       -%}
 {%-   assign array = '' | split: ','                 -%}
-{%-   assign array = array | push: primes            -%}
-
-{%-   if parts                                       -%}
-{%-     assign array = array | push: parts           -%}
-{%-   endif                                          -%}
-{%-   if bond                                        -%}
-{%-     assign array = array | push: bond            -%}
-{%-   endif                                          -%}
-{%-   if arm                                         -%}
-{%-     assign array = array | push: arm             -%}
-{%-   endif                                          -%}
-{%-   if eq                                          -%}
-{%-     assign array = array | push: eq              -%}
-{%-   endif                                          -%}
 
 {%-   for item in exp                                -%}
 {%-     assign array = array | push: item            -%}
 {%-   endfor                                         -%}
+
+{%-   if eq                                          -%}
+{%-     assign array = array | push: eq              -%}
+{%-   endif                                          -%}
+
+{%-   if arm                                         -%}
+{%-     assign array = array | push: arm             -%}
+{%-   endif                                          -%}
+
+{%-   if bond                                        -%}
+{%-     assign array = array | push: bond            -%}
+{%-   endif                                          -%}
+
+{%-   if parts                                       -%}
+{%-     assign array = array | push: parts           -%}
+{%-   endif                                          -%}
+
+{%-   assign array = array | push: primes            -%}
 
 {%-   assign tag = array | jsonify                   -%}
 {%-   assign width = parts | size | default: 0       -%}
