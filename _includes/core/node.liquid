@@ -13,6 +13,15 @@
 {%-     endif                                -%}
 {%-   endfor                                 -%}
 
+{%-  assign width = parts 
+       | last 
+	   | size 
+	   | default: 0               
+-%}
+
+{%-  assign parts_size = parts | size        -%}
+{%-  assign property = parts[layer] | size   -%}
+
 {%-  assign stage = '['
        | append: num
        | append: ';'
@@ -21,7 +30,7 @@
        | append: width
        | append: ']('
        | append: property
-       | append: array_size
+       | append: parts_size
        | append: ';'
        | append: weight
        | append: ';'

@@ -5,8 +5,6 @@
 {%-     assign parts = parts | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   assign width = parts | last | size | default: 0               -%}
-{%-   assign parts_size = parts | size               -%}
 {%-   assign tag = parts | jsonify                   -%}
 {%-   include core/node.liquid                       -%}
 
