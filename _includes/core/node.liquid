@@ -13,11 +13,12 @@
        | append: ';'
        | append: width
        | append: ']('
+       | append: property
+       | append: array_size
+       | append: ';'
        | append: weight
        | append: ';'
        | append: expanse
-       | append: ';'
-       | append: property
        | append: ')'                         -%}
 
 {%-   for prime in primes                    -%}
@@ -39,8 +40,6 @@
 	   
 {%-  assign details = '('
        | append: layer
-       | append: ','
-       | append: array_size
        | append: ','
        | append: array_expanse
        | append: ','
