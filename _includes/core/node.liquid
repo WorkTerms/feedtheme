@@ -20,7 +20,7 @@
 -%}
 
 {%-  assign weight = array[1] | size   -%}
-{%-  assign parts_size = parts | size        -%}
+{%-  assign size = parts | size | plus: 1         -%}
 {%-  assign property = parts[layer] | size   -%}
 
 {%-  assign stage = '['
@@ -31,7 +31,7 @@
        | append: width
        | append: ']('
        | append: property
-       | append: parts_size
+       | append: size
        | append: ';'
        | append: weight
        | append: ';'
