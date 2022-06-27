@@ -1,7 +1,7 @@
-{%-   assign parts = '' | split: ','                 -%}
+{%-   assign bonds = '' | split: ','                 -%}
 
 {%-   for item in array reversed                     -%}
-{%-     assign parts = parts | push: item            -%}
+{%-     assign bonds = bonds | push: item            -%}
 {%-   endfor                                         -%}
 
-{%-   assign tag = parts | jsonify                   -%}
+{%-   assign tag = bonds | jsonify                   -%}
