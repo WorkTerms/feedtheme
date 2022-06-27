@@ -18,6 +18,9 @@
 {%-   endif                               -%}
 
 {%-   if parts contains probe             -%}
+{%-       unless exp                                 -%}
+{%-         assign exp = '' | split: ','             -%}
+{%-       endunless                                  -%}
 {%-     include core/_bond.liquid         -%}
 {%-   endif                               -%}
 
