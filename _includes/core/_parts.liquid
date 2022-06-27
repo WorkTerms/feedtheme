@@ -9,15 +9,10 @@
 {%-     assign array = array | push: parts           -%}
 {%-   endif                                          -%}
 
+{%-   assign width = parts | size | default: 0       -%}
 {%-   assign array = array | push: primes            -%}
 {%-   assign array_size = array | size               -%}
 {%-   assign tag = array | jsonify                   -%}
-
-{%-   assign width = parts | size | default: 0       -%}
-{%-   assign weight = bond | size | default: 0       -%}
-{%-	  assign expanse = arm | size | default: 0       -%}
-{%-	  assign property = eq | size | default: 0       -%}
-
 {%-   include core/node.liquid                       -%}
 
 {%-   if _stage contains id                          -%}
