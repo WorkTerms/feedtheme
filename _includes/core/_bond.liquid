@@ -3,13 +3,13 @@
 {%- unless exp[index]                           -%}
 
 {%-   assign var = '' | split: ','              -%}
-{%-   assign var = var | push: prop             -%}
+{%-   assign var = var | push: probe            -%}
 {%-	  assign exp = exp | push: var              -%}
 
 {%- else  -%}
 
 {%-   assign var = exp[index]                   -%}
-{%-   assign var = var | push: prop             -%}
+{%-   assign var = var | push: probe            -%}
 
 {%-   assign dummy = '' | split: ','            -%}
 {%-   for item in exp                           -%}
@@ -27,8 +27,8 @@
 
 {%- endunless                                   -%}
 
-{%-	assign prop = var | size                    -%}
-{%-	if var contains prop                        -%}
+{%-	assign probe = var | size                   -%}
+{%-	if var contains probe                       -%}
 
 {%-   assign index = index | plus: 1            -%}
 {%-   include core/_bond.liquid index=index     -%}

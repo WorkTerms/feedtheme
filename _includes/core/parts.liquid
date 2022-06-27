@@ -11,13 +11,14 @@
 
 {%-   assign parts = parts | push: order  -%}
 {%-   assign width = parts | size         -%}
+{%-   assign probe = width                -%}
 
 {%-   if _keys contains width             -%}
 {%-     assign tag = "[]*"                -%}
 {%-   endif                               -%}
 
-{%-   if parts contains width             -%}
-{%-     include core/bond.liquid          -%}
+{%-   if parts contains probe             -%}
+{%-     include core/_bond.liquid         -%}
 {%-   endif                               -%}
 
 {%-   if num > 1000 and order < _brake    -%}
