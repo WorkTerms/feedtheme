@@ -1,33 +1,33 @@
-{%- unless bond                              -%}
-{%-   assign bond = '' | split: ','          -%}
-{%- endunless                                -%}
-{%- assign bond = bond | push: width         -%}
-{%- assign weight = bond | size              -%}
+{%- unless bond                                      -%}
+{%-   assign bond = '' | split: ','                  -%}
+{%- endunless                                        -%}
+{%- assign bond = bond | push: width                 -%}
+{%- assign weight = bond | size                      -%}
 
-{%- if bond contains weight                  -%}
-{%-   unless arm                             -%}
-{%-     assign arm = '' | split: ','         -%}
-{%-   endunless                              -%}
-{%-   assign arm = arm | push: weight        -%}
-{%-	  assign expanse = arm | size            -%}
+{%- if bond contains weight                          -%}
+{%-   unless arm                                     -%}
+{%-     assign arm = '' | split: ','                 -%}
+{%-   endunless                                      -%}
+{%-   assign arm = arm | push: weight                -%}
+{%-	  assign expanse = arm | size                    -%}
 
-{%-	  if arm contains expanse                -%}
-{%-     unless eq                            -%}
-{%-       assign eq = '' | split: ','        -%}
-{%-     endunless                            -%}
+{%-	  if arm contains expanse                        -%}
+{%-     unless eq                                    -%}
+{%-       assign eq = '' | split: ','                -%}
+{%-     endunless                                    -%}
 
-{%-	    assign eq = eq | push: expanse       -%}
-{%-    	assign property = eq | size          -%}
+{%-	    assign eq = eq | push: expanse               -%}
+{%-    	assign property = eq | size                  -%}
 
-{%-   	if eq contains property              -%}
-{%-       unless exp                         -%}
-{%-         assign exp = '' | split: ','     -%}
-{%-       endunless                          -%}
+{%-   	if eq contains property                      -%}
+{%-       unless exp                                 -%}
+{%-         assign exp = '' | split: ','             -%}
+{%-       endunless                                  -%}
 
-{%-      include core/_bond.liquid           -%}
+{%-       include core/_bond.liquid prop=property    -%}
 
-{%-	    endif                                -%}
+{%-	    endif                                        -%}
 
-{%-	  endif                                  -%}
+{%-	  endif                                          -%}
 
-{%-	endif                                    -%}
+{%-	endif                                            -%}

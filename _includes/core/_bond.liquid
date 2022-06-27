@@ -1,15 +1,19 @@
 {%- assign index = include.index | default: 0   -%}
 
+{%- unless prop                                 -%}
+{%-   assign prop = include.prop                -%}
+{%- endunless                                   -%}
+
 {%- unless exp[index]                           -%}
 
 {%-   assign var = '' | split: ','              -%}
-{%-   assign var = var | push: property         -%}
-{%-	  assign exp = exp | push: var      -%}
+{%-   assign var = var | push: prop             -%}
+{%-	  assign exp = exp | push: var              -%}
 
 {%- else  -%}
 
 {%-   assign var = exp[index]                   -%}
-{%-   assign var = var | push: property         -%}
+{%-   assign var = var | push: prop             -%}
 
 {%-   assign dummy = '' | split: ','            -%}
 {%-   for item in exp                           -%}
@@ -27,8 +31,8 @@
 
 {%- endunless                                   -%}
 
-{%-	assign property = var | size                -%}
-{%-	if var contains property                    -%}
+{%-	assign prop = var | size                    -%}
+{%-	if var contains prop                        -%}
 
 {%-   assign index = index | plus: 1            -%}
 {%-   include core/_bond.liquid index=index     -%}
