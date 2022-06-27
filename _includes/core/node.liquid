@@ -6,6 +6,13 @@
        | append: ') '
        | append: order                       -%}
 
+{%-   for prime in primes                    -%}
+{%-     assign loop = forloop.index   -%}
+{%-     if id <= prime                       -%}
+{%-       break                              -%}
+{%-     endif                                -%}
+{%-   endfor                                 -%}
+
 {%-  assign stage = '['
        | append: num
        | append: ';'
@@ -18,7 +25,7 @@
        | append: ';'
        | append: weight
        | append: ';'
-       | append: expanse
+       | append: loop
        | append: ')'                         -%}
 
 {%-     if id <= 329                       -%}
