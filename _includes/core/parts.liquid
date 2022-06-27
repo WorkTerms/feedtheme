@@ -6,7 +6,10 @@
 
 {%- if primes contains order              -%}
 
-{%-   assign parts = '' | split: ','    -%}
+{%-   unless parts                        -%}
+{%-     assign parts = '' | split: ','    -%}
+{%-   endunless                           -%}
+
 {%-   include core/bond.liquid           -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
