@@ -33,13 +33,13 @@
        | plus: property                     
 -%}
 	   
-{%-     if id <= 329                         -%}
-{%-       assign parser = id                 -%}
-{%-       assign grammar = 0                 -%}
-{%-     else                                 -%}
-{%-       assign parser = 329                -%}
-{%-       assign grammar = id | minus: 329   -%}
-{%-     endif                                -%}
+{%-  if id <= 329                            -%}
+{%-    assign parser = id                    -%}
+{%-    assign grammar = 0                    -%}
+{%-  else                                    -%}
+{%-    assign parser = 329                   -%}
+{%-    assign grammar = id | minus: 329      -%}
+{%-  endif                                   -%}
 	   
 {%-  assign details = '('
        | append: layer
