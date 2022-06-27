@@ -21,14 +21,13 @@
        | append: expanse
        | append: ')'                         -%}
 
-{%-   for prime in primes                    -%}
-{%-     assign array_prime = forloop.index   -%}
-{%-     if id <= prime                       -%}
-{%-       break                              -%}
+{%-     if id <= 329                       -%}
+{%-       assign parser = id   -%}
+{%-     else                                -%}
+{%-       assign parser = 329   -%}
 {%-     endif                                -%}
-{%-   endfor                                 -%}
 
-{%-  assign array_expanse = weight
+{%-  assign lexer = weight
        | plus: expanse                       
        | plus: property                     
 -%}
@@ -41,9 +40,9 @@
 {%-  assign details = '('
        | append: layer
        | append: ','
-       | append: array_expanse
+       | append: lexer
        | append: ','
-       | append: array_prime
+       | append: parser
        | append: ','
        | append: width
        | append: ')'
