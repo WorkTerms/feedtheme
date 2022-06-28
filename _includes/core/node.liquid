@@ -13,7 +13,7 @@
 {%-     endif                                -%}
 {%-   endfor                                 -%}
 
-{%-  assign width = bonds 
+{%-  assign width = bond 
        | last 
 	   | size 
 	   | default: 0               
@@ -21,8 +21,8 @@
 
 {%-  assign weight = array[1] | size         -%}
 {%-  assign expanse = array[2] | size        -%}
-{%-  assign size = bonds | size | plus: 1    -%}
-{%-  assign property = bonds[layer] | size   -%}
+{%-  assign size = bond | size | plus: 1     -%}
+{%-  assign property = bond[layer] | size    -%}
 
 {%-  assign stage = '['
        | append: num
