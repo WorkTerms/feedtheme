@@ -30,9 +30,9 @@
 {%-	assign order = var | size                  -%}
 {%- unless var contains order                  -%}
 
-{%-   assign bond  = '' | split: ','           -%}
+{%-   assign _bond  = '' | split: ','          -%}
 {%-   for item in array reversed               -%}
-{%-     assign bond = bond | push: item       -%}
+{%-     assign _bond = _bond | push: item      -%}
 {%-   endfor                                   -%}
 {%-   include core/_bond.liquid                -%}
 
