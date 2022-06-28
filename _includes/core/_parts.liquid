@@ -1,15 +1,54 @@
-{%-   assign id = id | plus: 1                       -%}
-{%-   include core/node.liquid                       -%}
+{%- assign id = id | plus: 1               -%}
 
-{%-   if _stage contains id                          -%}
+{%- assign width = bond 
+       | last 
+	   | size 
+	   | default: 0               
+-%}
 
-{%-     assign node_type = "main"                    -%}
-{%-     assign layer = layer | plus: 1               -%}
-{%-     include core/_node.liquid                    -%}
+{%- assign lexer = weight
+       | plus: expanse                       
+       | plus: property                     
+-%}
+	   
+{%- if id <= 102                           -%}
+{%-   assign aria = id                     -%}
+{%-   assign parser = id                   -%}
+{%-   assign grammar = 0                   -%}
+{%- elsif id <= 329                        -%}
+{%-   assign aria = 102                    -%}
+{%-   assign parser = id                   -%}
+{%-   assign grammar = 0                   -%}
+{%- else                                   -%}
+{%-   assign aria = 102                    -%}
+{%-   assign parser = 329                  -%}
+{%-   assign grammar = id | minus: 329     -%}
+{%- endif                                  -%}
+	   
+{%- for prime in primes                    -%}
+{%-   assign loop = forloop.index          -%}
+{%-   if id <= prime                       -%}
+{%-     break                              -%}
+{%-   endif                                -%}
+{%- endfor                                 -%}
 
-{%-   elsif _branch contains id                      -%}
+{%- assign tag = _bond | jsonify           -%}
+{%- assign weight = array[1] | size        -%}
+{%- assign expanse = array[2] | size       -%}
+{%- assign size = bond | size | plus: 1    -%}
+{%- assign property = bond[layer] | size   -%}
 
-{%-     assign node_type = "branch"                  -%}
-{%-     include core/_node.liquid                    -%}
+{%- include core/node.liquid               -%}
 
-{%-   endif                                          -%}
+{%- if _stage contains id                  -%}
+
+{%-   assign node_type = "main"            -%}
+{%-   assign layer = layer | plus: 1       -%}
+{%-   include core/_node.liquid            -%}
+
+{%- elsif _branch contains id              -%}
+
+{%-   assign node_type = "branch"          -%}
+{%-   include core/_node.liquid            -%}
+
+{%- endif                                  -%}

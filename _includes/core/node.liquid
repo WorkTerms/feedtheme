@@ -1,28 +1,10 @@
-{%-  assign title = titles[layer]            -%}
-{%-  assign baseurl = title | prepend: "/"   -%}
+{%-  assign title = titles[layer]           -%}
+{%-  assign baseurl = title | prepend: "/"  -%}
 
 {%-  assign title_order = '('
        | append: id
        | append: ') '
-       | append: probe                       -%}
-
-{%-   for prime in primes                    -%}
-{%-     assign loop = forloop.index   -%}
-{%-     if id <= prime                       -%}
-{%-       break                              -%}
-{%-     endif                                -%}
-{%-   endfor                                 -%}
-
-{%-  assign width = bond 
-       | last 
-	   | size 
-	   | default: 0               
--%}
-
-{%-  assign weight = array[1] | size         -%}
-{%-  assign expanse = array[2] | size        -%}
-{%-  assign size = bond | size | plus: 1     -%}
-{%-  assign property = bond[layer] | size    -%}
+       | append: probe                      -%}
 
 {%-  assign stage = '['
        | append: num
@@ -37,28 +19,7 @@
        | append: weight
        | append: ';'
        | append: loop
-       | append: ')'                         -%}
-
-{%-  assign lexer = weight
-       | plus: expanse                       
-       | plus: property                     
--%}
-	   
-{%-  if id <= 102                            -%}
-{%-    assign aria = id                      -%}
-{%-    assign parser = id                    -%}
-{%-    assign grammar = 0                    -%}
-{%-  elsif id <= 329                         -%}
-{%-    assign aria = 102                     -%}
-{%-    assign parser = id                    -%}
-{%-    assign grammar = 0                    -%}
-{%-  else                                    -%}
-{%-    assign aria = 102                     -%}
-{%-    assign parser = 329                   -%}
-{%-    assign grammar = id | minus: 329      -%}
-{%-  endif                                   -%}
-	   
-{%-  assign tag = _bond | jsonify            -%}
+       | append: ')'                        -%}
 
 {%-  assign details = '('
        | append: aria
@@ -69,11 +30,11 @@
        | append: ','
        | append: grammar
        | append: ')'
-       | append: tag                         -%}
+       | append: tag                        -%}
 
 {%-  assign list = '<li data-id="'
        | append: stage
-       | append: '"'                         -%}
+       | append: '"'                        -%}
 
 {%-  assign node = list
        | append: '><a href="'
@@ -84,10 +45,10 @@
        | append: details
        | append: '">'
        | append: title_order
-       | append: '</a></li>'                 -%}
+       | append: '</a></li>'                -%}
 
-{%-  capture nodes                           -%}
-{{     nodes                                  }}
-{%     include tabs.liquid size=14 %}{{ node  }}
-{%-  endcapture                              -%}
+{%-  capture nodes                          -%}
+{{     nodes                                 }}
+{%     include tabs.liquid size=14 %}{{ node }}
+{%-  endcapture                             -%}
 
