@@ -1,4 +1,9 @@
 {%- assign id = id | plus: 1               -%}
+{%- assign tag = _bond | jsonify           -%}
+{%- assign weight = array[1] | size        -%}
+{%- assign expanse = array[2] | size       -%}
+{%- assign size = bond | size | plus: 1    -%}
+{%- assign property = bond[layer] | size   -%}
 
 {%- assign width = bond 
        | last 
@@ -31,12 +36,6 @@
 {%-     break                              -%}
 {%-   endif                                -%}
 {%- endfor                                 -%}
-
-{%- assign tag = _bond | jsonify           -%}
-{%- assign weight = array[1] | size        -%}
-{%- assign expanse = array[2] | size       -%}
-{%- assign size = bond | size | plus: 1    -%}
-{%- assign property = bond[layer] | size   -%}
 
 {%- include core/node.liquid               -%}
 
