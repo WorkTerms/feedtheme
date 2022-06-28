@@ -28,7 +28,12 @@
 {%- endunless                                  -%}
 
 {%-	assign order = var | size                  -%}
-{%- unless var contains order                  -%}
+{%- if var contains order                      -%}
+
+{%-   assign index = index | plus: 1           -%}
+{%-   include primes/bond.liquid index=index   -%}
+
+{%- else                                       -%}
 
 {%-   assign _bond  = '' | split: ','          -%}
 {%-   for item in array reversed               -%}
@@ -36,9 +41,4 @@
 {%-   endfor                                   -%}
 {%-   include primes/_bond.liquid              -%}
 
-{%- else                                       -%}
-
-{%-   assign index = index | plus: 1           -%}
-{%-   include primes/bond.liquid index=index   -%}
-
-{%- endunless                                  -%}
+{%- endif                                      -%}
