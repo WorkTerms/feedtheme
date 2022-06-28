@@ -2,34 +2,10 @@
 {%- assign tag = _bond | jsonify           -%}
 {%- assign weight = array[1] | size        -%}
 {%- assign expanse = array[2] | size       -%}
+{%- assign width = bond | last | size      -%}
 {%- assign size = bond | size | plus: 1    -%}
 {%- assign property = bond[layer] | size   -%}
 
-{%- assign width = bond 
-       | last 
-	   | size 
-	   | default: 0               
--%}
-
-{%- assign lexer = weight
-       | plus: expanse                       
-       | plus: property                     
--%}
-	   
-{%- if id <= 102                           -%}
-{%-   assign aria = id                     -%}
-{%-   assign parser = id                   -%}
-{%-   assign grammar = 0                   -%}
-{%- elsif id <= 329                        -%}
-{%-   assign aria = 102                    -%}
-{%-   assign parser = id                   -%}
-{%-   assign grammar = 0                   -%}
-{%- else                                   -%}
-{%-   assign aria = 102                    -%}
-{%-   assign parser = 329                  -%}
-{%-   assign grammar = id | minus: 329     -%}
-{%- endif                                  -%}
-	   
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
 {%-   if id <= prime                       -%}
@@ -37,6 +13,20 @@
 {%-   endif                                -%}
 {%- endfor                                 -%}
 
+{%- if id <= 102                           -%}
+{%-   assign lexer = id                     -%}
+{%-   assign parser = id                   -%}
+{%-   assign grammar = 0                   -%}
+{%- elsif id <= 329                        -%}
+{%-   assign lexer = 102                    -%}
+{%-   assign parser = id                   -%}
+{%-   assign grammar = 0                   -%}
+{%- else                                   -%}
+{%-   assign lexer = 102                    -%}
+{%-   assign parser = 329                  -%}
+{%-   assign grammar = id | minus: 329     -%}
+{%- endif                                  -%}
+	   
 {%- include core/node.liquid               -%}
 
 {%- if _stage contains id                  -%}
