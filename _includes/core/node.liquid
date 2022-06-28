@@ -1,11 +1,6 @@
 {%-  assign title = titles[layer]           -%}
 {%-  assign baseurl = title | prepend: "/"  -%}
 
-{%-  assign title_order = '('
-       | append: id
-       | append: ') '
-       | append: probe                      -%}
-
 {%-  assign stage = '['
        | append: num
        | append: ';'
@@ -42,7 +37,7 @@
        | append: ' aria-details="'
        | append: details
        | append: '">'
-       | append: title_order
+       | append: id
        | append: '</a></li>'                -%}
 
 {%-  capture nodes                          -%}
