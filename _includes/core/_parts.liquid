@@ -28,16 +28,3 @@
 {%- endif                                  -%}
 	   
 {%- include core/node.liquid               -%}
-
-{%- if _stage contains id                  -%}
-
-{%-   assign node_type = "main"            -%}
-{%-   assign layer = layer | plus: 1       -%}
-{%-   include core/_node.liquid            -%}
-
-{%- elsif _branch contains id              -%}
-
-{%-   assign node_type = "branch"          -%}
-{%-   include core/_node.liquid            -%}
-
-{%- endif                                  -%}
