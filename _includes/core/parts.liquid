@@ -10,7 +10,8 @@
 {%-     assign array = '' | split: ','    -%}
 {%-   endunless                           -%}
 
-{%-   include core/bond.liquid           -%}
+{%-   include core/bond.liquid            -%}
+{%-   assign tag = grammar | jsonify      -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
 {%-     include core/_parts.liquid        -%}
