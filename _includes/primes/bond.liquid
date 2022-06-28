@@ -34,11 +34,11 @@
 {%-   for item in array reversed               -%}
 {%-     assign _bond = _bond | push: item      -%}
 {%-   endfor                                   -%}
-{%-   include primes/_bond.liquid                -%}
+{%-   include primes/_bond.liquid              -%}
 
 {%- else                                       -%}
 
 {%-   assign index = index | plus: 1           -%}
-{%-   include primes/bond.liquid index=index     -%}
+{%-   include primes/bond.liquid index=index   -%}
 
 {%- endunless                                  -%}
