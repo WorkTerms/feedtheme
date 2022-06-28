@@ -58,6 +58,8 @@
 {%-    assign grammar = id | minus: 329      -%}
 {%-  endif                                   -%}
 	   
+{%-  assign tag = _grammar | jsonify         -%}
+
 {%-  assign details = '('
        | append: aria
        | append: ','
