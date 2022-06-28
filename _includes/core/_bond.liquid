@@ -10,6 +10,7 @@
 ====================+====+===
 
 {%- endcomment -%}
+{%- include primes/bonds/lexer.liquid -%}
 {%- comment -%}
 
  True Prime Pairs Δ |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | Sum 
@@ -22,6 +23,7 @@
 ====================+====+====+====+====+====+====+====+====+====+=====
 
 {%- endcomment -%}
+{%- include primes/bonds/parser.liquid -%}
 {%- comment -%}
 
 Prime|Order|Array             |Lexer        |Parser                   |Grammar                         |Bond
@@ -36,4 +38,4 @@ Prime|Order|Array             |Lexer        |Parser                   |Grammar  
 =====+=====+==================+=============+=========================+================================+====
 
 {%- endcomment -%}
-{%- assign tag = bond | jsonify -%}
+{%- include primes/bonds/grammar.liquid -%}
