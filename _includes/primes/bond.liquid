@@ -35,10 +35,6 @@
 
 {%- else                                       -%}
 
-{%-   assign _bond  = '' | split: ','          -%}
-{%-   for item in array reversed               -%}
-{%-     assign _bond = _bond | push: item      -%}
-{%-   endfor                                   -%}
 {%-   include primes/_bond.liquid              -%}
 
 {%- endif                                      -%}
