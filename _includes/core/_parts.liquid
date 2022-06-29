@@ -22,8 +22,7 @@
 {%- for item in array reversed             -%}
 {%-   assign size = item | size            -%}
 {%-   if forloop.first                     -%}
-{%-     assign stage = stage
-           | append: '('
+{%-     assign stage = '('
            | append: size                  -%}
 {%-   else                                 -%}
 {%-     assign stage = stage
