@@ -6,6 +6,10 @@
 
 {%- if primes contains order              -%}
 
+{%-   unless array                        -%}
+{%-     assign array = '' | split: ','    -%}
+{%-   endunless                           -%}
+
 {%-   include primes/bond.liquid          -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
