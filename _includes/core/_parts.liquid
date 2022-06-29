@@ -13,7 +13,8 @@
 {%- endif                                  -%}
 
 {%- assign bond  = lexer                   -%}
-{%- assign tag = _bond | jsonify           -%}
+{%- include primes/grammar.liquid          -%}
+{%- assign grammar = _grammar  | jsonify   -%}
 {%- assign details = '('
        | append: bond
        | append: ','
@@ -23,7 +24,7 @@
        | append: ','
        | append: syntax
        | append: ')'
-       | append: tag                 -%}
+       | append: grammar                 -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
