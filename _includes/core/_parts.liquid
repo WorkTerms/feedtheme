@@ -19,13 +19,7 @@
 {%-   endif                                -%}
 {%- endfor                                 -%}
 
-{%- assign stage = '[' 
-       | append: num       
-       | append: ';'
-       | append: order                
-       | append: ']'                       -%}
-
-{%- for item in array                      -%}
+{%- for item in array reversed             -%}
 {%-   assign size = item | size            -%}
 {%-   if forloop.first                     -%}
 {%-     assign stage = stage
@@ -38,7 +32,11 @@
 {%-   endif                                -%}
 {%- endfor                                 -%}
 
-{%- assign stage = stage 
-	   | append: ')'                       -%}
+{%- assign stage = stage  
+       | append: ')['       
+       | append: order       
+       | append: ';'
+       | append: num                
+       | append: ']'                       -%}
 
 {%- include core/node.liquid               -%}
