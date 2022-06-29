@@ -16,16 +16,20 @@
        | append: id
        | append: '</a></li>'                -%}
 
-{%- capture nodes                          -%}
-{{    nodes                                 }}
-{%    include tabs.liquid size=14 %}{{ node }}
-{%- endcapture                             -%}
+{%-  capture nodes                          -%}
+{{     nodes                                 }}
+{%     include tabs.liquid size=14 %}{{ node }}
+{%-  endcapture                             -%}
 
 {%- if _stage contains id                  -%}
+
 {%-   assign node_type = "main"            -%}
 {%-   assign layer = layer | plus: 1       -%}
-{%- elsif _branch contains id              -%}
-{%-   assign node_type = "branch"          -%}
-{%- endif                                  -%}
+{%-   include core/_node.liquid            -%}
 
-{%- include core/_node.liquid            -%}
+{%- elsif _branch contains id              -%}
+
+{%-   assign node_type = "branch"          -%}
+{%-   include core/_node.liquid            -%}
+
+{%- endif                                  -%}
