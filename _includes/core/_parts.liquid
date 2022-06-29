@@ -1,6 +1,7 @@
 {%- assign bond  = lexer                   -%}
 {%- include primes/grammar.liquid          -%}
 {%- assign grammar = _grammar  | jsonify   -%}
+
 {%- assign details = '('
        | append: bond
        | append: ','
@@ -20,16 +21,17 @@
 {%- endfor                                 -%}
 
 {%- assign stage = '[' 
-            | append: num       
-			| append: ';'
-            | append: order                -%}
+       | append: num       
+       | append: ';'
+       | append: order                -%}
 
 {%- for item in array                      -%}
 {%-   assign size = item | size            -%}
 {%-   assign stage = stage
-			| append: ';'
-			| append: size                 -%}
+       | append: ';'
+       | append: size                 -%}
 {%- endfor                                 -%}
+
 {%- assign stage = stage 
        | append: ']('
        | append: loop                             
