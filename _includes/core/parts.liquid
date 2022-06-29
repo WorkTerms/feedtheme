@@ -41,6 +41,13 @@
           | minus: 40
           | minus: 1		              -%}
 		  
+{%-     assign bond = lexer
+          | minus: 60
+          | minus: 6		              -%}
+		  
+{%-     assign lexer = lexer
+          | minus: bond		              -%}
+		  
 {%-   endif                               -%}
 
 {%-   include core/_parts.liquid          -%}
