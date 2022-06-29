@@ -8,6 +8,7 @@
 
 {%-   unless array                        -%}
 {%-     assign array = '' | split: ','    -%}
+{%-     assign array = array | push: order -%}
 {%-   endunless                           -%}
 
 {%-   include primes/bond.liquid          -%}

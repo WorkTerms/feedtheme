@@ -4,9 +4,8 @@
 
 {%-   assign var = '' | split: ','             -%}
 {%-   assign var = var | push: order           -%}
-{%-   if index == 0                            -%}
-{%-	    assign array = array | push: var       -%}
-{%-   endif                                    -%}
+{%-	  assign array = array | push: var         -%}
+
 {%- else                                       -%}
 
 {%-   assign var = array[index]                -%}
