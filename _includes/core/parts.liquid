@@ -27,14 +27,19 @@
 {%- if num < 1000 or order >= _brake      -%}
 
 {%-   assign id = id | plus: 1            -%}
+{%-   assign syntax = id | minus: 329     -%}
 {%-   assign parser = id                  -%}
 {%-   assign lexer = id                   -%}
 
 {%-   if order >= _brake                  -%}
 {%-     assign parser = 329               -%}
+
+{%-     assign lexer = id
+          | minus: syntax
+          | minus: 160		              -%}
+		  
 {%-   endif                               -%}
 
-{%-   assign syntax = id | minus: 329     -%}
 {%-   include core/_parts.liquid          -%}
 
 {%- endif                                 -%}
