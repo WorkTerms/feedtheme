@@ -1,15 +1,15 @@
 {%- if id <= 102                           -%}
 {%-   assign lexer = id                    -%}
 {%-   assign parser = id                   -%}
-{%-   assign grammar = 0                   -%}
+{%-   assign syntax = 0                    -%}
 {%- elsif id <= 329                        -%}
 {%-   assign lexer = 102                   -%}
 {%-   assign parser = id                   -%}
-{%-   assign grammar = 0                   -%}
+{%-   assign syntax = 0                    -%}
 {%- else                                   -%}
 {%-   assign lexer = 102                   -%}
 {%-   assign parser = 329                  -%}
-{%-   assign grammar = id | minus: 329     -%}
+{%-   assign syntax = id | minus: 329      -%}
 {%- endif                                  -%}
 
 {%- assign bond  = lexer                   -%}
@@ -21,9 +21,9 @@
        | append: ','
        | append: parser
        | append: ','
-       | append: grammar
+       | append: syntax
        | append: ')'
-       | append: tag                       -%}
+       | append: grammar                 -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
