@@ -13,8 +13,11 @@
 {%-   assign grammar = id | minus: 329     -%}
 {%- endif                                  -%}
 
+{%- assign bond  = lexer                   -%}
 {%- assign tag = _bond | jsonify           -%}
 {%- assign details = '('
+       | append: bond
+       | append: ','
        | append: lexer
        | append: ','
        | append: parser
