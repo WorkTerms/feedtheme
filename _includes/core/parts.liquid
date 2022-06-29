@@ -13,16 +13,26 @@
 {%-   include primes/bond.liquid          -%}
 
 {%-   if num > 1000 and order < _brake    -%}
-{%-     assign id = id | plus: 1          -%}
-{%-     assign syntax = id | minus: 329   -%}
 
+{%-     assign id = id | plus: 1          -%}
+{%-     assign parser = id                -%}
+
+{%-     assign syntax = id | minus: 329   -%}
 {%-     include core/_parts.liquid        -%}
+
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
 {%- if num < 1000 or order >= _brake      -%}
 {%-   assign id = id | plus: 1            -%}
+{%-   assign parser = id                  -%}
+{%-   assign lexer = id                   -%}
+
+{%-   if order >= _brake                  -%}
+{%-     assign parser = 329               -%}
+{%-   endif                               -%}
+
 {%-   assign syntax = id | minus: 329     -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
