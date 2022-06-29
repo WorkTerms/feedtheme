@@ -10,7 +10,7 @@
        | append: ','
        | append: syntax
        | append: ')'
-       | append: grammar                 -%}
+       | append: grammar                   -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
@@ -22,18 +22,23 @@
 {%- assign stage = '[' 
        | append: num       
        | append: ';'
-       | append: order                -%}
+       | append: order                
+       | append: ']'                       -%}
 
 {%- for item in array                      -%}
 {%-   assign size = item | size            -%}
-{%-   assign stage = stage
-       | append: ';'
-       | append: size                 -%}
+{%-   if forloop.first                     -%}
+{%-     assign stage = stage
+           | append: '('
+           | append: size                  -%}
+{%-   else                                 -%}
+{%-     assign stage = stage
+           | append: ';'
+           | append: size                  -%}
+{%-   endif                                -%}
 {%- endfor                                 -%}
 
 {%- assign stage = stage 
-       | append: ']('
-       | append: loop                             
 	   | append: ')'                       -%}
 
 {%- include core/node.liquid               -%}
