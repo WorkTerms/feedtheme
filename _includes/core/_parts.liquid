@@ -5,6 +5,21 @@
 {%- assign width = bond | last | size      -%}
 {%- assign size = bond | size | plus: 1    -%}
 {%- assign property = bond[layer] | size   -%}
+	   
+{%-  assign stage = '['
+       | append: num
+       | append: ';'
+       | append: probe
+       | append: ';'
+       | append: width
+       | append: ']('
+       | append: property
+       | append: size
+       | append: ';'
+       | append: weight
+       | append: ';'
+       | append: loop
+       | append: ')'                        -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
@@ -26,5 +41,14 @@
 {%-   assign parser = 329                  -%}
 {%-   assign grammar = id | minus: 329     -%}
 {%- endif                                  -%}
-	   
+
+{%- assign details = '('
+       | append: lexer
+       | append: ','
+       | append: parser
+       | append: ','
+       | append: grammar
+       | append: ')'
+       | append: tag                        -%}
+
 {%- include core/node.liquid               -%}
