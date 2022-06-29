@@ -38,7 +38,8 @@
 			| append: size                 -%}
 {%- endfor                                 -%}
 {%- assign stage = stage 
-       | append: ')'
-       | append: loop                      -%}
+       | append: ']('
+       | append: loop                             
+	   | append: ')'                       -%}
 
 {%- include core/node.liquid               -%}
