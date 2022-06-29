@@ -33,5 +33,6 @@ Prime|Primes                      |Order|Array[0]     |Size|Array[1]
 {%-   for item in array reversed           -%}
 {%-     assign _bond = _bond | push: item  -%}
 {%-   endfor                               -%}
+{%-   assign _bond = _bond | push: primes  -%}
 
 {%- include primes/bonds/_lexer.liquid     -%}
