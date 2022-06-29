@@ -19,7 +19,7 @@
        | append: weight
        | append: ';'
        | append: loop
-       | append: ')'                        -%}
+       | append: ')'                       -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
@@ -29,15 +29,15 @@
 {%- endfor                                 -%}
 
 {%- if id <= 102                           -%}
-{%-   assign lexer = id                     -%}
+{%-   assign lexer = id                    -%}
 {%-   assign parser = id                   -%}
 {%-   assign grammar = 0                   -%}
 {%- elsif id <= 329                        -%}
-{%-   assign lexer = 102                    -%}
+{%-   assign lexer = 102                   -%}
 {%-   assign parser = id                   -%}
 {%-   assign grammar = 0                   -%}
 {%- else                                   -%}
-{%-   assign lexer = 102                    -%}
+{%-   assign lexer = 102                   -%}
 {%-   assign parser = 329                  -%}
 {%-   assign grammar = id | minus: 329     -%}
 {%- endif                                  -%}
@@ -49,6 +49,6 @@
        | append: ','
        | append: grammar
        | append: ')'
-       | append: tag                        -%}
+       | append: tag                       -%}
 
 {%- include core/node.liquid               -%}
