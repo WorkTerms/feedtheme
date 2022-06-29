@@ -1,14 +1,13 @@
 {%- if id <= 102                           -%}
+{%-   assign parser = id                   -%}
 {%-   assign lexer = id                    -%}
-{%-   assign parser = id                   -%}
 {%- elsif id <= 329                        -%}
-{%-   assign lexer = 102                   -%}
 {%-   assign parser = id                   -%}
-{%- else                                   -%}
 {%-   assign lexer = 102                   -%}
+{%- else                                   -%}
 {%-   assign parser = 329                  -%}
+{%-   assign lexer = 102                   -%}
 {%- endif                                  -%}
-{%-   assign syntax = id | minus: 329      -%}
 
 {%- assign bond  = lexer                   -%}
 {%- include primes/grammar.liquid          -%}
