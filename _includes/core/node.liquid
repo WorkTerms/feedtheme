@@ -12,8 +12,10 @@
        | append: id
        | append: ' aria-details="'
        | append: details
-       | append: '">'
+       | append: '">('
        | append: loop
+       | append: ')'
+       | append: id
        | append: '</a></li>'                -%}
 
 {%-  capture nodes                          -%}
