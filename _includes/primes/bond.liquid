@@ -1,8 +1,8 @@
 {%- assign index = include.index | default: 0  -%}
 
-{%-   unless array                             -%}
-{%-     assign array = '' | split: ','         -%}
-{%-   endunless                                -%}
+{%- unless array                               -%}
+{%-   assign array = '' | split: ','           -%}
+{%- endunless                                  -%}
 
 {%- unless array[index]                        -%}
 
