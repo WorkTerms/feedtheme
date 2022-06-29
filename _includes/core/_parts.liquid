@@ -36,7 +36,7 @@
 {%- assign stage = '[' 
             | append: num       
 			| append: ';'
-            | append: order                -%}
+            | append: probe                -%}
 
 {%- for item in array                      -%}
 {%-   assign size = item | size            -%}
