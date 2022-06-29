@@ -12,9 +12,8 @@
 {%-   assign syntax = id | minus: 329      -%}
 {%- endif                                  -%}
 
-{%- assign bond = lexer                    -%}
-{%- include primes/grammar.liquid          -%}
-{%- assign grammar = _grammar | jsonify    -%}
+{%- assign bond  = lexer                   -%}
+{%- assign tag = _bond | jsonify           -%}
 {%- assign details = '('
        | append: bond
        | append: ','
@@ -24,7 +23,7 @@
        | append: ','
        | append: syntax
        | append: ')'
-       | append: grammar                 -%}
+       | append: tag                 -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
