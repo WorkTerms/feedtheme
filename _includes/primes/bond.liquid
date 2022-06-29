@@ -6,7 +6,7 @@
 {%-   assign var = var | push: order           -%}
 {%-	  assign array = array | push: var         -%}
 
-{%- elsif num > 2                                       -%}
+{%- else                                       -%}
 
 {%-   assign var = array[index]                -%}
 {%-   assign var = var | push: order           -%}
