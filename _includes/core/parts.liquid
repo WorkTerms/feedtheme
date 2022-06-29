@@ -2,22 +2,15 @@
 
 {%- assign primes = primes | push: num    -%}
 {%- assign probe = primes | size          -%}
-{
-{%- if primes contains probe              -%}
+{%- assign order = probe                  -%}
 
-{%-   unless parts                        -%}
-{%-     assign parts = '' | split: ','    -%}
+{%- if primes contains order              -%}
+
+{%-   unless array                        -%}
+{%-     assign array = '' | split: ','    -%}
 {%-   endunless                           -%}
 
-{%-   assign parts = parts | push: probe  -%}
-{%-   assign order = parts | size         -%}
-
-{%-   if parts contains order             -%}
-{%-     unless array                        -%}
-{%-       assign array = '' | split: ','    -%}
-{%-     endunless                           -%}
-{%-     include core/bond.liquid          -%}
-{%-   endif                               -%}
+{%-   include primes/bond.liquid          -%}
 
 {%-   if num > 1000 and probe < _brake    -%}
 {%-     assign id = id | plus: 1          -%}

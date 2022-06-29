@@ -33,7 +33,9 @@
 {%-   endif                                -%}
 {%- endfor                                 -%}
 
-{%- assign stage = '[' | append: num       -%}
+{%- assign stage = '[' 
+            | append: num       
+            | append: order                -%}
 {%- for item in array                      -%}
 {%-   assign size = item | size            -%}
 {%-   assign stage = stage
