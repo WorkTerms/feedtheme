@@ -1,10 +1,10 @@
 {%- assign tag = "[]"                     -%}
 
 {%- assign primes = primes | push: num    -%}
-{%- assign probe = primes | size          -%}
-{%- assign order = probe                  -%}
+{%- assign order = primes | size          -%}
+{%- assign probe = order                  -%}
 
-{%- if primes contains order              -%}
+{%- if primes contains probe              -%}
 
 {%-   unless array                        -%}
 {%-     assign array = '' | split: ','    -%}
@@ -12,14 +12,14 @@
 
 {%-   include primes/bond.liquid          -%}
 
-{%-   if num > 1000 and probe < _brake    -%}
+{%-   if num > 1000 and order < _brake    -%}
 {%-     assign id = id | plus: 1          -%}
 {%-     include core/_parts.liquid        -%}
 {%-   endif                               -%}
 
 {%- endif                                 -%}
 
-{%- if num < 1000 or probe >= _brake      -%}
+{%- if num < 1000 or order >= _brake      -%}
 {%-   assign id = id | plus: 1            -%}
 {%-   include core/_parts.liquid          -%}
 {%- endif                                 -%}
