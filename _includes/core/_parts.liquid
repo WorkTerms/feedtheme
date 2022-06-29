@@ -1,33 +1,4 @@
 {%- assign id = id | plus: 1               -%}
-{%- assign tag = _bond | jsonify           -%}
-{%- assign weight = array[1] | size        -%}
-{%- assign expanse = array[2] | size       -%}
-{%- assign width = bond | last | size      -%}
-{%- assign size = bond | size | plus: 1    -%}
-{%- assign property = bond[layer] | size   -%}
-	   
-{%-  assign stage = '['
-       | append: num
-       | append: ';'
-       | append: probe
-       | append: ';'
-       | append: width
-       | append: ']('
-       | append: property
-       | append: size
-       | append: ';'
-       | append: weight
-       | append: ';'
-       | append: loop
-       | append: ')'                       -%}
-
-{%- for prime in primes                    -%}
-{%-   assign loop = forloop.index          -%}
-{%-   if id <= prime                       -%}
-{%-     break                              -%}
-{%-   endif                                -%}
-{%- endfor                                 -%}
-
 {%- if id <= 102                           -%}
 {%-   assign lexer = id                    -%}
 {%-   assign parser = id                   -%}
@@ -42,6 +13,7 @@
 {%-   assign grammar = id | minus: 329     -%}
 {%- endif                                  -%}
 
+{%- assign tag = _bond | jsonify           -%}
 {%- assign details = '('
        | append: lexer
        | append: ','
@@ -50,5 +22,23 @@
        | append: grammar
        | append: ')'
        | append: tag                       -%}
+
+{%- for prime in primes                    -%}
+{%-   assign loop = forloop.index          -%}
+{%-   if id <= prime                       -%}
+{%-     break                              -%}
+{%-   endif                                -%}
+{%- endfor                                 -%}
+
+{%- assign stage = '[' | append: num       -%}
+{%- for item in array                      -%}
+{%-   assign size = item | size            -%}
+{%-   assign stage = stage
+			| append: ';'
+			| append: size                 -%}
+{%- endfor                                 -%}
+{%- assign stage = stage 
+       | append: ')'
+       | append: loop                      -%}
 
 {%- include core/node.liquid               -%}
