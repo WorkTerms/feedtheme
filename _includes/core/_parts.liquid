@@ -12,8 +12,9 @@
 {%-   assign syntax = id | minus: 329      -%}
 {%- endif                                  -%}
 
-{%- assign bond  = lexer                   -%}
-{%- assign tag = _bond | jsonify           -%}
+{%- assign bond = lexer                    -%}
+{%- include primes/grammar.liquid          -%}
+{%- assign grammar = _grammar | jsonify    -%}
 {%- assign details = '('
        | append: bond
        | append: ','

@@ -1,0 +1,5 @@
+{%- unless _parser                      -%}
+{%-   assign _grammar = _bond           -%}
+{%- else                                -%}
+{%-   assign _grammar = _parser         -%}
+{%- endunless                           -%}
