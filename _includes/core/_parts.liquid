@@ -1,4 +1,4 @@
-{%- assign details = '('
+{%- assign data_id = '('
        | append: bond
        | append: ';'
        | append: lexer
@@ -20,12 +20,12 @@
 {%-   assign lead = item | size | minus: 1    -%}
 {%-   assign prime = primes[lead]             -%}
 {%-   if forloop.first                        -%}
-{%-     assign stage = '['                    -%}
+{%-     assign aria = '['                     -%}
 {%-   else                                    -%}
-{%-     assign stage = stage | append: ','    -%}
+{%-     assign aria = aria | append: ','      -%}
 {%-   endif                                   -%}
-{%-   assign stage = stage | append: prime    -%}
+{%-   assign aria = aria | append: prime      -%}
 {%- endfor                                    -%}
-{%- assign stage = stage | append: ']'        -%}
+{%- assign aria_details = aria | append: ']'  -%}
 
 {%- include core/node.liquid                  -%}
