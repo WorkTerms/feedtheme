@@ -26,10 +26,6 @@
 {%-   endif                                   -%}
 {%-   assign stage = stage | append: prime    -%}
 {%- endfor                                    -%}
-
-{%- assign stage = stage  
-       | append: ']'       
-       | append: num                
-       | append: ''                           -%}
+{%- assign stage = stage | append: ']'        -%}
 
 {%- include core/node.liquid                  -%}
