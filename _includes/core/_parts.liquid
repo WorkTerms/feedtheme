@@ -17,8 +17,8 @@
 {%- endfor                                    -%}
 
 {%- for item in array reversed                -%}
-{%-   assign node = item | size               -%}
-{%-   assign prime = primes[node]             -%}
+{%-   assign reak = item | size               -%}
+{%-   assign prime = primes[reak]             -%}
 {%-   if forloop.first                        -%}
 {%-     assign stage = '('                    -%}
 {%-   else                                    -%}
