@@ -6,7 +6,6 @@
 
 {%- unless array[index]                        -%}
 
-{%-   assign var = '' | split: ','             -%}
 {%-   assign var = var | push: probe           -%}
 {%-	  assign array = array | push: var         -%}
 
@@ -40,9 +39,11 @@
 {%- else                                       -%}
 
 {%-   assign _bond  = '' | split: ','          -%}
-{%-   for item in array reversed               -%}
-{%-     assign _bond = _bond | push: item      -%}
-{%-   endfor                                   -%}
+{%-   if array                                 -%}
+{%-     for item in array reversed             -%}
+{%-       assign _bond = _bond | push: item    -%}
+{%-     endfor                                 -%}
+{%-   endif                                      -%}
 {%-   include primes/_bond.liquid              -%}
 
 {%- endif                                      -%}

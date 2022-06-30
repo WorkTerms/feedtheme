@@ -2,6 +2,7 @@
 
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
+{%- assign var = '' | split: ','          -%}
 {%- assign probe = order                  -%}
 
 {%- if primes contains order             -%}
