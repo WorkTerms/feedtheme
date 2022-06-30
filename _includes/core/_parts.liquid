@@ -17,13 +17,14 @@
 {%- endfor                                 -%}
 
 {%- for item in array reversed             -%}
-{%-   assign size = item | size            -%}
+{%-   assign node = item | size            -%}
+{%-   assign prime = primes[node]          -%}
 {%-   if forloop.first                     -%}
 {%-     assign stage = '('                 -%}
 {%-   else                                 -%}
 {%-     assign stage = stage | append: ';' -%}
 {%-   endif                                -%}
-{%-   assign stage = stage | append: size  -%}
+{%-   assign stage = stage | append: prime -%}
 {%- endfor                                 -%}
 
 {%- assign stage = stage  
