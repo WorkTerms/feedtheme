@@ -7,31 +7,31 @@
        | append: ','
        | append: syntax
        | append: ')'
-       | append: grammar                   -%}
+       | append: grammar                      -%}
 
-{%- for prime in primes                    -%}
-{%-   assign loop = forloop.index          -%}
-{%-   if id <= prime                       -%}
-{%-     break                              -%}
-{%-   endif                                -%}
-{%- endfor                                 -%}
+{%- for prime in primes                       -%}
+{%-   assign loop = forloop.index             -%}
+{%-   if id <= prime                          -%}
+{%-     break                                 -%}
+{%-   endif                                   -%}
+{%- endfor                                    -%}
 
-{%- for item in array reversed             -%}
-{%-   assign node = item | size            -%}
-{%-   assign prime = primes[node]          -%}
-{%-   if forloop.first                     -%}
-{%-     assign stage = '('                 -%}
-{%-   else                                 -%}
-{%-     assign stage = stage | append: ';' -%}
-{%-   endif                                -%}
-{%-   assign stage = stage | append: prime -%}
-{%- endfor                                 -%}
+{%- for item in array reversed                -%}
+{%-   assign node = item | size               -%}
+{%-   assign prime = primes[node]             -%}
+{%-   if forloop.first                        -%}
+{%-     assign stage = '('                    -%}
+{%-   else                                    -%}
+{%-     assign stage = stage | append: ';'    -%}
+{%-   endif                                   -%}
+{%-   assign stage = stage | append: prime    -%}
+{%- endfor                                    -%}
 
 {%- assign stage = stage  
        | append: ')['       
        | append: order       
        | append: ';'
        | append: num                
-       | append: ']'                       -%}
+       | append: ']'                          -%}
 
-{%- include core/node.liquid               -%}
+{%- include core/node.liquid                  -%}
