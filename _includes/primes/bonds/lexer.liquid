@@ -28,4 +28,9 @@ Prime|Primes                      |Order|Array[0]     |Size|Array[1]
 -----+----------------------------+------------------------+--------------------------------+----
 
 {%- endcomment                             -%}
+{%- if num < 1000 or order >= _brake      -%}
+
 {%- include primes/bonds/_lexer.liquid     -%}
+
+{%- endif                                 -%}
+
