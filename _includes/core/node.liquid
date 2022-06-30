@@ -1,15 +1,12 @@
 {%-  assign title = titles[layer]           -%}
 {%-  assign baseurl = title | prepend: "/"  -%}
 
-{%-  assign list = '<li data-id="'
-       | append: stage
-       | append: '"'                        -%}
-
-{%-  assign node = list
-       | append: '><a href="'
-       | append: baseurl
-       | append: '" id='
+{%-  assign node = <li id="'
        | append: id
+       | append: '"><a href="'
+       | append: baseurl
+       | append: '" data-id='
+       | append: stage
        | append: ' aria-details="'
        | append: details
        | append: '">('
