@@ -38,9 +38,5 @@
 {%-   include primes/bond.liquid index=index   -%}
 
 {%- else                                       -%}
-
-{%-   if num > 1000 and order < _brake    -%}
-{%-     include primes/_bond.liquid              -%}
-{%-   endif                               -%}
-
+{%-   include primes/_bond.liquid              -%}
 {%- endif                                      -%}
