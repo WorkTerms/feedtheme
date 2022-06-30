@@ -1,3 +1,4 @@
+{%- if primes contains order             -%}
 {%- assign index = include.index | default: 0  -%}
 
 {%- unless array                               -%}
@@ -29,6 +30,7 @@
 {%-   endfor                                   -%}
 
 {%- endunless                                  -%}
+{%- endif                                 -%}
 
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
