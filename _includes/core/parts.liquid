@@ -1,6 +1,6 @@
 {%- assign tag = "[]"                     -%}
-{%- assign bond = null                    -%}
 {%- assign grammar = ''                   -%}
+{%- assign _bond = '' | split: ','        -%}
 
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
