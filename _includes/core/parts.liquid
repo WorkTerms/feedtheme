@@ -2,10 +2,12 @@
 
 {%- assign primes = primes | push: num    -%}
 {%- assign order = primes | size          -%}
-{%- assign var = '' | split: ','          -%}
 {%- assign probe = order                  -%}
 
+{%- if primes contains probe              -%}
+
 {%-   include primes/bond.liquid          -%}
+
 {%- endif                                 -%}
 
 {%- if num < 1000 or order >= _brake      -%}
