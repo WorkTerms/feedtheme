@@ -10,7 +10,6 @@
 {%- endif                                 -%}
 
 {%- if num < 1000 or order >= _brake      -%}
-{%-   include primes/_bond.liquid              -%}
 
 {%-   assign id = id | plus: 1            -%}
 {%-   assign syntax = id | minus: 329     -%}
