@@ -6,8 +6,7 @@
        | append: parser
        | append: ','
        | append: syntax
-       | append: ')'
-       | append: grammar                   -%}
+       | append: ')'                       -%}
 
 {%- for prime in primes                    -%}
 {%-   assign loop = forloop.index          -%}
@@ -31,6 +30,7 @@
        | append: order       
        | append: ';'
        | append: num                
-       | append: ']'                       -%}
+       | append: ']'    
+       | append: grammar                   -%}
 
 {%- include core/node.liquid               -%}
