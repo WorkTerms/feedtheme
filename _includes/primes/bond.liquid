@@ -34,9 +34,11 @@
 
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
+{%- if primes contains order             -%}
 
 {%-   assign index = index | plus: 1           -%}
 {%-   include primes/bond.liquid index=index   -%}
+{%- endif                                 -%}
 
 {%- else                                       -%}
 
