@@ -10,4 +10,6 @@
 {%-   include primes/bond.liquid          -%}
 {%- endif                                 -%}
 
-{%- include primes/_bond.liquid           -%}
+{%- if num < 1000 or order >= _brake      -%}
+{%-   include primes/_bond.liquid         -%}
+{%- endif                                 -%}
