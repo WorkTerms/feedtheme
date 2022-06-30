@@ -34,7 +34,7 @@
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
 
-{%-   assign grammar = '*'                     -%}
+{%-   assign tag = '*'                         -%}
 {%-   assign index = index | plus: 1           -%}
 {%-   include primes/bond.liquid index=index   -%}
 
