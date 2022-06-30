@@ -33,8 +33,16 @@
 
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
+
 {%-   assign index = index | plus: 1           -%}
 {%-   include primes/bond.liquid index=index   -%}
+
 {%- else                                       -%}
+
+{%-   assign _bond  = '' | split: ','          -%}
+{%-   for item in array reversed               -%}
+{%-     assign _bond = _bond | push: item      -%}
+{%-   endfor                                   -%}
 {%-   include primes/_bond.liquid              -%}
+
 {%- endif                                      -%}

@@ -28,10 +28,4 @@ Prime|Primes                      |Order|Array[0]     |Size|Array[1]
 -----+----------------------------+------------------------+--------------------------------+----
 
 {%- endcomment                             -%}
-
-{%-   assign _bond  = '' | split: ','      -%}
-{%-   for item in array reversed           -%}
-{%-     assign _bond = _bond | push: item  -%}
-{%-   endfor                               -%}
-
 {%- include primes/bonds/_lexer.liquid     -%}
