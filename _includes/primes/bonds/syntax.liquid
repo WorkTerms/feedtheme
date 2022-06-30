@@ -1,1 +1,3 @@
-{%- include primes/bonds/_syntax.liquid -%}
+{%- if num < 1000 or order >= _brake       -%}
+{%-   include primes/bonds/_syntax.liquid  -%}
+{%- endif                                  -%}

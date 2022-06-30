@@ -6,8 +6,7 @@
        | append: parser
        | append: ';'
        | append: syntax
-       | append: ')'
-       | append: grammar                      -%}
+       | append: ')'                          -%}
 
 {%- for prime in primes                       -%}
 {%-   assign loop = forloop.index             -%}

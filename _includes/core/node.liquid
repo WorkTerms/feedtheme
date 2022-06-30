@@ -1,5 +1,5 @@
-{%-  assign title = titles[layer]           -%}
-{%-  assign baseurl = title | prepend: "/"  -%}
+{%- assign title = titles[layer]           -%}
+{%- assign baseurl = title | prepend: "/"  -%}
 
 {%-  assign node = '<li id='
        | append: id
@@ -14,11 +14,13 @@
        | append: ')'
        | append: id
        | append: tag                
-       | append: '</a></li>'                -%}
+       | append: '</a>'                     -%}
 
 {%-  capture nodes                          -%}
 {{     nodes                                 }}
 {%     include tabs.liquid size=14 %}{{ node }}
+{%-    include primes/grammar.liquid tag=tag -%}
+{%     include tabs.liquid size=14 %}</li>
 {%-  endcapture                             -%}
 
 {%- if _stage contains id                   -%}

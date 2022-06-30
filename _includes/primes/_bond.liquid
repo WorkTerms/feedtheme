@@ -9,9 +9,7 @@
  π(30) 13 → 12 (Δ1) |  5 | 10
 --------------------+----+---
 
-{%- endcomment -%}
-{%- include primes/bonds/lexer.liquid -%}
-{%- comment -%}
+{%- endcomment -%}{%- include primes/bonds/lexer.liquid -%}{%- comment -%}
 
  True Prime Pairs Δ |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | Sum 
 ====================+====+====+====+====+====+====+====+====+====+=====
@@ -22,9 +20,7 @@
  π(30) 13 → 12 (Δ1) | 23 | 29 |  - |  - |  - |  - |  - |  - |  - |10th
 --------------------+----+----+----+----+----+----+----+----+----+-----
 
-{%- endcomment -%}
-{%- include primes/bonds/parser.liquid -%}
-{%- comment -%}
+{%- endcomment -%}{%- include primes/bonds/parser.liquid -%}{%- comment -%}
 
 Prime|Order|Grammar           |Lexer        |Parser*                  |Syntax                          |Bond
 =====+=====+==================+=============+=========================+================================+====
@@ -35,9 +31,7 @@ Prime|Order|Grammar           |Lexer        |Parser*                  |Syntax   
     5|    3|[1,2,3]           |[2,3,5]      |[[[2],[3],[5]]]          |[[[[2]]],[[[3]]],[[[5]]]]       | 618 
 -----+-----+------------------+-------------+-------------------------+--------------------------------+----
 
-{%- endcomment -%}
-{%- include primes/bonds/syntax.liquid -%}
-{%- comment -%}
+{%- endcomment -%}{%- include primes/bonds/syntax.liquid -%}{%- comment -%}
 
 Prime|Order|Grammar           |Lexer        |Parser*                  |Syntax                          |Bond
 =====+=====+==================+=============+=========================+================================+====
@@ -49,4 +43,4 @@ Prime|Order|Grammar           |Lexer        |Parser*                  |Syntax   
 -----+-----+------------------+-------------+-------------------------+--------------------------------+----
 
 {%- endcomment -%}
-{%- include primes/grammar.liquid         -%}
+
