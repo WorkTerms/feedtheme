@@ -14,12 +14,13 @@
           | append: ','                       -%}
 {%- endfor                                    -%}
 
-{%- assign size = size | plus: 1              -%}
+{%- assign flowto = probes | jsonify          -%}
 {%- assign data_id = data_id 
       | append: prime
       | append: ']('
       | append: size
-      | append: ')'                           -%}
+      | append: ')'                           
+      | append: flowto	                      -%}
 		  
 {%- assign aria_flowto = '('
       | append: bond

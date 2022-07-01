@@ -1,7 +1,8 @@
 {%- assign title = titles[layer]           -%}
 {%- assign baseurl = title | prepend: "/"  -%}
 
-{%-  assign node = '<li id='
+{%- assign probes = '' | split: ','       -%}
+{%- assign node = '<li id='
        | append: id
        | append: '><a href="'
        | append: baseurl
