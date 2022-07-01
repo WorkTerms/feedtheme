@@ -8,18 +8,18 @@
       | append: syntax
       | append: ')'                           -%}
 
-{%- for prime in primes                       -%}
+{%- for item in primes                        -%}
 {%-   assign loop = forloop.index             -%}
-{%-   if id <= prime                          -%}
+{%-   if id <= item                           -%}
 {%-     break                                 -%}
 {%-   endif                                   -%}
 {%- endfor                                    -%}
 
 {%- for item in array reversed                -%}
-{%-   assign lead = item 
+{%-   assign size = item 
         | size 
 		| minus: 1                            -%}
-{%-   assign prime = primes[lead]             -%}
+{%-   assign lead = primes[size]              -%}
 {%-   if forloop.first                        -%}
 {%-     assign aria = '['                     -%}
 {%-   else                                    -%}
@@ -27,7 +27,7 @@
           | append: ','                       -%}
 {%-   endif                                   -%}
 {%-     assign aria = aria 
-          | append: prime                     -%}
+          | append: lead                      -%}
 {%- endfor                                    -%}
 
 {%- assign aria_details = aria 
