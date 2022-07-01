@@ -17,17 +17,18 @@
 
 {%- assign flowto = '['                       -%}
 {%- for item in array reversed                -%}
-{%-   assign size = item 
-        | size 
-		| minus: 1                            -%}
+{%-   assign size = item | size | minus: 1    -%}
 {%-   assign lead = primes[size]              -%}
 {%-   assign flowto = flowto 
           | append: lead
           | append: ','                       -%}
 {%- endfor                                    -%}
 
+{%- assign size = size | plus: 1              -%}
 {%- assign aria_flowto = flowto 
       | append: prime
-      | append: ']'                           -%}
-
+      | append: ']('
+      | append: size
+      | append: ')'                           -%}
+		  
 {%- include core/node.liquid                  -%}
