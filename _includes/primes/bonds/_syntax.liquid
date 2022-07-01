@@ -1,39 +1,20 @@
-{%-   assign id = id | plus: 1            -%}
-{%-   assign syntax = id | minus: 329     -%}
-{%-   assign parser = id                  -%}
-{%-     assign lexer = id
+{%- assign id = id | plus: 1            -%}
+{%- assign parser = 329                 -%}
+{%- assign syntax = id | minus: 329     -%}
+
+{%- assign lexer = id
           | minus: syntax
           | minus: 60
           | minus: 60
           | minus: 40
-          | minus: 1		              -%}
+          | minus: 1		            -%}
 		  
-{%-     assign bond = lexer
+{%- assign bond = lexer
           | minus: 60
-          | minus: 6		              -%}
+          | minus: 6		            -%}
 		  
-{%-     assign lexer = lexer
-          | minus: bond		              -%}
-		  
+{%- assign lexer = lexer
+          | minus: bond		            -%}
 
-{%-   if order >= _brake                  -%}
-{%-     assign parser = 329               -%}
-
-{%-     assign lexer = id
-          | minus: syntax
-          | minus: 60
-          | minus: 60
-          | minus: 40
-          | minus: 1		              -%}
-		  
-{%-     assign bond = lexer
-          | minus: 60
-          | minus: 6		              -%}
-		  
-{%-     assign lexer = lexer
-          | minus: bond		              -%}
-		  
-{%-   endif                               -%}
-
-{%-   assign _syntax = _parser            -%}
-{%-   include core/_parts.liquid          -%}
+{%- assign _syntax = _parser            -%}
+{%- include core/_parts.liquid          -%}
