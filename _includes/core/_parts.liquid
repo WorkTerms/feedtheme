@@ -5,22 +5,20 @@
 {%-   endif                                   -%}
 {%- endfor                                    -%}
 
-{%- assign data_id = '['                      -%}
+{%- assign data_id = '['                       -%}
 {%- for item in array reversed                -%}
-{%-   assign size = item | size               -%}
+{%-   assign size = item | size | minus: 1    -%}
 {%-   assign lead = primes[size]              -%}
 {%-   assign data_id = data_id 
           | append: lead
           | append: ','                       -%}
 {%- endfor                                    -%}
 
-{%- assign flowto = probes | jsonify          -%}
 {%- assign data_id = data_id 
       | append: prime
       | append: ']('
       | append: size
-      | append: ')'                           
-      | append: flowto	                      -%}
+      | append: ')'                           -%}
 		  
 {%- assign aria_flowto = '('
       | append: bond

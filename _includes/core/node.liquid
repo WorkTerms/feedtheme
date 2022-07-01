@@ -1,7 +1,7 @@
 {%- assign title = titles[layer]           -%}
 {%- assign baseurl = title | prepend: "/"  -%}
+{%- assign _probes = probes | jsonify      -%}
 
-{%- assign probes = '' | split: ','       -%}
 {%- assign node = '<li id='
        | append: id
        | append: '><a href="'
@@ -13,7 +13,7 @@
        | append: '">('
        | append: loop
        | append: ')'
-       | append: _flowto
+       | append: _probes
        | append: '</a>'                     -%}
 
 {%-  capture nodes                          -%}
