@@ -4,7 +4,7 @@
 {%- assign aria_details = ''              -%}
 {%- assign _bond = '' | split: ','        -%}
 
-{%- assign primes = primes | push: num    -%}
+{%- assign primes = primes | push: prime  -%}
 {%- assign order = primes | size          -%}
 {%- assign probe = order                  -%}
 
@@ -12,6 +12,6 @@
 {%-   include primes/bond.liquid          -%}
 {%- endif                                 -%}
 
-{%- if num < 1000 or order >= _brake      -%}
+{%- if prime < 1000 or order >= _brake    -%}
 {%-   include primes/_bond.liquid         -%}
 {%- endif                                 -%}

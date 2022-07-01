@@ -4,6 +4,7 @@
 {%- assign max = include.max | default: j   -%}
 
 {%- for num in (3 .. max)                   -%}
+
 {%-   assign mod = num | modulo: 2          -%}
 {%-   if mod == 0                           -%}
 {%-     continue                            -%}
@@ -30,5 +31,6 @@
 {%-     continue                            -%}
 {%-   endif                                 -%}
 
-{%-  include core/parts.liquid              -%}
+{%-   assign prime = num                    -%}
+{%-   include core/parts.liquid             -%}
 {%- endfor                                  -%}
