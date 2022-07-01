@@ -1,12 +1,12 @@
 {%- assign data_id = '('
-       | append: bond
-       | append: ';'
-       | append: lexer
-       | append: ';'
-       | append: parser
-       | append: ';'
-       | append: syntax
-       | append: ')'                          -%}
+      | append: bond
+      | append: ';'
+      | append: lexer
+      | append: ';'
+      | append: parser
+      | append: ';'
+      | append: syntax
+      | append: ')'                           -%}
 
 {%- for prime in primes                       -%}
 {%-   assign loop = forloop.index             -%}
@@ -16,15 +16,23 @@
 {%- endfor                                    -%}
 
 {%- for item in array reversed                -%}
-{%-   assign lead = item | size | minus: 1    -%}
+{%-   assign lead = item 
+        | size 
+		| minus: 1                            -%}
 {%-   assign prime = primes[lead]             -%}
 {%-   if forloop.first                        -%}
 {%-     assign aria = '['                     -%}
 {%-   else                                    -%}
-{%-     assign aria = aria | append: ','      -%}
+{%-     assign aria = aria 
+          | append: ','                       -%}
 {%-   endif                                   -%}
-{%-   assign aria = aria | append: prime      -%}
+{%-     assign aria = aria 
+          | append: prime                     -%}
 {%- endfor                                    -%}
-{%- assign aria_details = aria | append: ']'  -%}
+
+{%- assign aria_details = aria 
+      | append: ','
+      | append: num
+      | append: ']'  -%}
 
 {%- include core/node.liquid                  -%}
