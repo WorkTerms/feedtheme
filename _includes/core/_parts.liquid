@@ -27,7 +27,10 @@
 {%- endfor                                    -%}
 
 {%- assign aria_flowto = flowto 
+      | append: '](' 
       | append: prime
-      | append: ']'                           -%}
+      | append: ','
+      | append: size
+      | append: ')'                           -%}
 
 {%- include core/node.liquid                  -%}
