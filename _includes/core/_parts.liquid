@@ -15,23 +15,18 @@
 {%-   endif                                   -%}
 {%- endfor                                    -%}
 
+{%- assign flowto = '['                       -%}
 {%- for item in array reversed                -%}
 {%-   assign size = item 
         | size 
 		| minus: 1                            -%}
 {%-   assign lead = primes[size]              -%}
-{%-   if forloop.first                        -%}
-{%-     assign aria = '['                     -%}
-{%-   else                                    -%}
-{%-     assign aria = aria 
+{%-   assign flowto = flowto 
+          | append: lead
           | append: ','                       -%}
-{%-   endif                                   -%}
-{%-     assign aria = aria 
-          | append: lead                      -%}
 {%- endfor                                    -%}
 
-{%- assign aria_details = aria 
-      | append: ','
+{%- assign aria_flowto = flowto 
       | append: prime
       | append: ']'  -%}
 
