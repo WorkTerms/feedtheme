@@ -9,7 +9,9 @@
 
 {%- assign node = '<li data-type="main"'
 		| append: class
-        | append: '><a href="'
+		| append: ' aria-level="'
+		| append: layer
+        | append: '"><a href="'
         | append: baseurl
         | append: '" id="'
         | append: title
@@ -22,7 +24,9 @@
 {%- assign group = group | plus: 1            -%}
 {%- assign group_title = 'group'              -%}
 {%- assign _node = '<li data-type="group"'
-		| append: '><a href="'
+		| append: ' aria-level="'
+		| append: layer
+		| append: '"><a href="'
 		| append: group_title
 		| append: '-'
 		| append: group
