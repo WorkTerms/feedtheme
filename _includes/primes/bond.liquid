@@ -34,10 +34,7 @@
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
 
-{%-   if probe < 5                             -%}
-{%-     assign tag = '*'                       -%}
-{%-   endif                                    -%}
-
+{%-   assign tag = tag | append: '*'           -%}
 {%-   assign index = index | plus: 1           -%}
 {%-   include primes/bond.liquid index=index   -%}
 
