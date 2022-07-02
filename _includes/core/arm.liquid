@@ -9,4 +9,4 @@
 {%- assign nodes = nodes     
       | replace: "(0,)[]", "(0,0)[]"  -%}
 
-{{- nodes }}
+{%- include templates/nodes.liquid    -%}
