@@ -9,4 +9,4 @@
 {%- assign nodes = nodes     
       | replace: "(0,)[]", "(0,0)[]"  -%}
 
-{%- include core/_arm.liquid          -%}
+{{- nodes }}
