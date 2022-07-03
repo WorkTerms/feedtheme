@@ -35,7 +35,7 @@
 {%- if var contains probe                      -%}
 
 {%-   unless probes                            -%}
-{%-	    assign pairs = pairs | plus: 1           -%}
+{%-	    assign seq = seq | plus: 1             -%}
 {%-   endunless                                -%}
 
 {%-   assign index = index | plus: 1           -%}
