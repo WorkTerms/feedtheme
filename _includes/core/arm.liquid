@@ -1,4 +1,6 @@
-{%- assign seq = 0                    -%}
+{%- assign depth = 0                  -%}
+{%- assign seq = depth | plus: 4      -%}
+
 {%- assign primes = '' | split: ','   -%}
 {%- assign limit = 100 | times: 100   -%}
 
