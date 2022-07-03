@@ -32,9 +32,10 @@
 {%- endunless                                  -%}
 
 {%-	assign probe = var | size                  -%}
+{%-	assign size = probes | size                -%}
 {%- if var contains probe                      -%}
 
-{%-   unless probes                            -%}
+{%-   unless size                              -%}
 {%-	    assign seq = seq | plus: 1             -%}
 {%-   endunless                                -%}
 
