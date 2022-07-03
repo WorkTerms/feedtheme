@@ -35,9 +35,9 @@
 {%-	assign size = probes | size                -%}
 {%- if var contains probe                      -%}
 
-{%-   unless size                              -%}
+{%-   if size == 0                             -%}
 {%-	    assign seq = seq | plus: 1             -%}
-{%-   endunless                                -%}
+{%-   endif                                    -%}
 
 {%-   assign index = index | plus: 1           -%}
 {%-   assign probes = probes | push: probe     -%}
