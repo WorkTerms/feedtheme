@@ -34,8 +34,8 @@
 {%-	assign probe = var | size                  -%}
 {%- if var contains probe                      -%}
 
-{%-   assign probes = probes | push: probe     -%}
 {%-   assign index = index | plus: 1           -%}
+{%-   assign probes = probes | push: probe     -%}
 {%-   include primes/bond.liquid index=index   -%}
 
 {%- else                                       -%}
