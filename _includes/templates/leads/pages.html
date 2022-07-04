@@ -1,3 +1,11 @@
+{%- assign theme_exist = false -%}
+{%- for static_file in site.static_files -%}
+	{%- if static_file.path == '_includes/templates/leads{{ base }}.html'-%}
+		{%- assign theme_exist = true -%}
+	    {%- include templates/leads{{ base }}.html -%}
+	{%- endif -%}
+{%- endfor -%}			
+{%- unless theme_exist -%}
 		<section id="content"><div class="ic">eQuantum Project | Site Building, Monitoring System, Business Networking, Project Mapping</div>
 			<div class="container">
 				<div class="row wrap_11">
@@ -27,3 +35,4 @@
 				</div>
 			</div>
 		</section>
+{%- endunless -%}
