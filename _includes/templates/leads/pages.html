@@ -1,6 +1,6 @@
 {%- assign theme_exist = false -%}
 {%- for static_file in site.static_files -%}
-	{%- if static_file.path == '_includes/templates/leads{{ base }}.html'-%}
+	{%- if static_file.path == '_includes/templates/leads{{ base }}.html' -%}
 		{%- assign theme_exist = true -%}
 	    {%- include templates/leads{{ base }}.html -%}
 	{%- endif -%}
