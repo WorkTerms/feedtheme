@@ -1,5 +1,5 @@
-{% assign themePath = '_includes/templates/leads' %}
-{% if {{ base | append: ".html"  | prepend: themePath }} != nil %}
+{%- assign themePath = '_includes/templates/leads' -%}
+{%- if {{ base | append: ".html"  | prepend: themePath }} != null -%}
 	{%- include templates/leads{{ base }}.html -%}
 {%- else -%}			
 	{%- include templates/leads/pages.html -%}
