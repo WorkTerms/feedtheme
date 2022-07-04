@@ -22,18 +22,5 @@
 		<div class="page">
 			{%- include templates/arm.liquid -%}
 			{%- include templates/breadcrumbs.liquid -%}
-{%- assign theme_exist = false -%}
-{%- assign theme_path = '_includes/templates/leads{{ base }}.html' -%}
-
-{%- for static_file in site.static_files -%}
-	{%- if static_file.path == theme_path -%}
-		{%- assign theme_exist = true -%}
-	{%- endif -%}
-{%- endfor -%}
-			
-{%- if theme_exist -%}
-	{%- include templates/leads{{ base }}.html -%}
-{%- else -%}			
-	{%- include templates/leads/pages.html -%}
-{%- endif -%}
+			{%- include templates/leads/pages.html -%}
 		</div>
