@@ -1,9 +1,12 @@
 {%- assign theme_exist = false -%}
+{%- assign theme_path = '_includes/templates/leads{{ base }}.html' -%}
+
 {%- for static_file in site.static_files -%}
-	{%- if static_file.path == '_includes/templates/leads{{ base }}.html' -%}
+	{%- if static_file.path == theme_path -%}
 		{%- assign theme_exist = true -%}
 	{%- endif -%}
-{%- endfor -%}			
+{%- endfor -%}
+			
 {%- if theme_exist -%}
 	{%- include templates/leads{{ base }}.html -%}
 {%- else -%}			
