@@ -69,8 +69,6 @@ Scheme 13:9
 
 {%- endfor                                                   -%}
 
-{%- assign titles = 'maps,lexer,parser,syntax' | split: ',' -%}
-
 {%- comment -%}
 Direction:
 
@@ -110,7 +108,7 @@ Root Generation:
 {%- for key in keys                                          -%}
 
 {%-   capture stage                                          -%}
-{%-     case forloop.index0                                   -%}
+{%-     case forloop.index0                                  -%}
 {%-       when 0 -%}[29;69;114;168](618)
 {%-       when 1 -%}[7;13;29;109](102): Spin 7 of 168=π(1000)=π(π(89²))
 {%-       when 2 -%}[13;43;66;139](329): Spin 13 of 329=π(10000)-(10th)²=1229-900
