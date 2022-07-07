@@ -9,7 +9,7 @@
 								</div>
 								<nav class="nav put-right">
 									<ul class="sf-menu">
-										<li><a href="/">Home</a>
+										<li data-type="main"{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 											<ul>
 												<li><a href="/maps">[1]19</a>
 													<ul>
@@ -35,7 +35,7 @@
 												</li>
 										   </ul>
 										</li>
-										<li><a href="/lexer">Lexer</a>
+										<li data-type="main"{% if site.baseurl == "/lexer"" %} class="current"{% endif %}><a href="/lexer">Lexer</a>
 											<ul>
 												<li><a href="/map">[4]11</a>
 													<ul>
@@ -74,7 +74,7 @@
 												</li>
 											</ul>
 										</li>
-										<li><a href="/parser">Parser</a>
+										<li data-type="main"{% if site.baseurl == "/parser" %} class="current"{% endif %}><a href="/parser">Parser</a>
 											<ul>
 												<li><a href="/maps/script">[8]10,11,12,13</a>
 													<ul>
@@ -133,7 +133,7 @@
 												</li>
 											</ul>
 										</li>
-										<li><a href="/syntax" id=10143>Syntax</a>
+										<li data-type="main"{% if site.baseurl == "/syntax" %} class="current"{% endif %}><a href="/syntax" id=10143>Syntax</a>
 											<ul>
 												<li><a href="/attribute">[14]40,41</a>
 													<ul>
@@ -191,7 +191,7 @@
 												</li>
 											</ul>
 										</li>
-										<li><a href="/grammar" id={{ size }} title="{{ array | jsonify }}">Grammar</a></li>
+										<li data-type="main"{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id={{ size }} title="{{ array | jsonify }}">Grammar</a></li>
 									</ul>
 								</nav>
 							</div>

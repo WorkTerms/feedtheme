@@ -2,13 +2,7 @@
 {%- assign title = titles[layer]              -%}
 {%- assign baseurl = title | prepend: "/"     -%}
 
-{%- assign class = ''                         -%}
-{%- if site.baseurl == baseurl                -%}
-{%-   assign class = ' class="current"'       -%}
-{%- endif                                     -%}
-
 {%- assign node = '<li data-type="main"'
-		| append: class
 		| append: ' aria-level="'
 		| append: layer
         | append: '"><a href="'
