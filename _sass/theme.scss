@@ -2,7 +2,6 @@
 @import "lib/material-design-lite/variables";
 @import "lib/material-design-lite/mixins";
 @import "lib/@primer/css/support";
-@import "bootstrap";
 @import "variables";
 @import "root";
 
@@ -22,6 +21,7 @@
 // theme
 @import "layout";
 @import "rest";
+@import "grid";
 @import "core/container";
 @import "core/sidebar";
 @import "core/addons";
