@@ -25,7 +25,7 @@
 		<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg">
 
 	{%- comment %} dns-prefetch {% endcomment %}
-  		<link rel="stylesheet" type="text/css" href="/maps/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
+  		<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 		{% if extra_scss.size > 0 %}
 		<style>{{ extra_scss | scssify | strip_newlines }}</style>
