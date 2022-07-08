@@ -14,6 +14,9 @@
 										<input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ __.search_docs | default: 'Search docs...' }}">
 									</form>
 								</div>
+								<div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
+									{% include data/tree/toctree.liquid %}
+								</div>
 							</div>
 						</div>
 						<div id="content" class="col-xs-12 col-sm-9 col-sm-push-3">
