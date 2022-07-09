@@ -959,8 +959,9 @@ a[data-type='lightbox']:hover img {
 }
 
 .sidebar-wrap {
-  top: 0;
-
+  top: 82px;
+  position: fixed;
+  
   @extend .menu-sm;
 
   .sidebar > :last-child {
