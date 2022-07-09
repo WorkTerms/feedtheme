@@ -959,9 +959,7 @@ a[data-type='lightbox']:hover img {
 }
 
 .sidebar-wrap {
-  top: 82px;
-  left: 100px;
-  position: fixed;
+  top: 0;
 
   @extend .menu-sm;
 
