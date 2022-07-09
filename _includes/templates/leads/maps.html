@@ -1,18 +1,20 @@
 			<section id="l-main">
 				<div class="container">
 					<div class="row">
-						<div id="content" class="content-wrap col-xs-12 col-sm-9 col-sm-push-3">
-							<hr>
-							{% if page.needs_anwser %}
-								{% include needs_answer.html %}
-							{% endif %}
-							<div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
-								<div class="markdown-body" itemprop="articleBody">
-									{{ content }}
+						{% include templates/sidebar.html %}
+						<div class="content-wrap">
+							<div id="content" class="col-xs-12 col-sm-9 col-sm-push-3">
+								<hr>
+								{% if page.needs_anwser %}
+									{% include needs_answer.html %}
+								{% endif %}
+								<div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
+									<div class="markdown-body" itemprop="articleBody">
+										{{ content }}
+									</div>
 								</div>
 							</div>
 						</div>
-						{% include templates/sidebar.html %}
 					</div>
 				</div>
 			</section>
