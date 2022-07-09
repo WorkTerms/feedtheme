@@ -958,11 +958,10 @@ a[data-type='lightbox']:hover img {
   }
 }
 
-.sidebar-wraps {
+.sidebar-wrap {
   top: 82px;
   position: fixed;
-  
-  /*@extend .menu-sm;*/
+  @extend .menu-sm;
 
   .sidebar > :last-child {
     margin-bottom: 5em;
