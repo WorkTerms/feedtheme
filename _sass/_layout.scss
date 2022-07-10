@@ -973,20 +973,13 @@ a[data-type='lightbox']:hover img {
 }
 
 .content-wrap {
-  &.shift {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: $theme-menu-width-sm;
-    min-width: 100%;
-  }
-}
-
-.content-wraps {
     top: 0;
     bottom: 0;
     position: relative;
   &.shift {
+    position: fixed;
+    top: 0;
+    bottom: 0;
     left: $theme-menu-width-sm;
     min-width: 100%;
   }
