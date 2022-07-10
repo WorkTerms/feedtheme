@@ -948,7 +948,6 @@ a[data-type='lightbox']:hover img {
 /*Core variables and mixins*/
 .menu-sm {
   position: fixed;
-  bottom: 0;
   left: -$theme-menu-width-sm;
   width: $theme-menu-width-sm;
   max-height: 100%;
@@ -960,9 +959,7 @@ a[data-type='lightbox']:hover img {
 
 .sidebar-wraps {
   top: 0;
-  position: fixed;
-  
-  /*@extend .menu-sm;*/
+  @extend .menu-sm;
 
   .sidebar > :last-child {
     margin-bottom: 5em;
