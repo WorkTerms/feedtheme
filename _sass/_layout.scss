@@ -1010,12 +1010,12 @@ a[data-type='lightbox']:hover img {
   }
 
   .content-wrap {
-    margin-left: $theme-menu-width;
 
     &.shift {
       position: relative;
       left: 0;
       min-width: 0;
+      margin-left: $theme-menu-width;
     }
   }
 }
