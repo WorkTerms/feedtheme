@@ -948,13 +948,9 @@ a[data-type='lightbox']:hover img {
 /*Core variables and mixins*/
 .menu-sm {
   position: fixed;
-  left: -$theme-menu-width-sm;
+  left: 0;
   width: $theme-menu-width-sm;
   max-height: 100%;
-
-  &.shift {
-    left: 0;
-  }
 }
 
 .sidebar-wraps {
