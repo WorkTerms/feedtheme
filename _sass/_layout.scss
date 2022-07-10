@@ -958,7 +958,7 @@ a[data-type='lightbox']:hover img {
   }
 }
 
-.sidebar-wraps {
+.sidebar-wrap {
   top: 0;
   
   /*@extend .menu-sm;*/
@@ -987,7 +987,6 @@ a[data-type='lightbox']:hover img {
 
 @include breakpoint(md) {
   .menu-md {
-    left: 0;
     width: $theme-menu-width;
   }
 
