@@ -4,13 +4,15 @@
 
 {%- assign node = '<li id='
        | append: id
-       | append: '><a href="'
+       | append: ' class="toc level-3"'
+       | append: ' data-level="3"><a href="'
        | append: baseurl
        | append: '" data-id="'
        | append: data_id
        | append: '" aria-flowto="'
        | append: aria_flowto
-       | append: '">'
+       | append: '" class="'
+       | append: 'd-flex flex-items-baseline">'
        | append: seq
        | append: '('
        | append: loop

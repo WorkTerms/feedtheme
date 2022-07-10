@@ -3,7 +3,8 @@
 {%- assign baseurl = title | prepend: "/"     -%}
 
 {%- assign node = '<li data-type="main"'
-		| append: ' aria-level="'
+        | append: ' class="toc level-1"'
+		| append: ' data-level="1" aria-level="'
 		| append: layer
         | append: '"><a href="'
         | append: baseurl
@@ -11,14 +12,16 @@
         | append: title
         | append: '" title="'
         | append: stage
-        | append: '">'
+        | append: '" class="'
+        | append: 'd-flex flex-items-baseline">'
         | append: title
         | append: '</a>'                      -%}
 
 {%- assign group = group | plus: 1            -%}
 {%- assign group_title = 'group'              -%}
 {%- assign _node = '<li data-type="group"'
-		| append: ' aria-level="'
+        | append: ' class="toc level-2"'
+		| append: ' data-level="2" aria-level="'
 		| append: layer
 		| append: '"><a href="/grammar/'
 		| append: group
@@ -30,7 +33,8 @@
 		| append: group_title
 		| append: '-'
 		| append: group
-		| append: '">'
+        | append: '" class="'
+        | append: 'd-flex flex-items-baseline">'
 		| append: group_title
 		| append: '-'
 		| append: group
