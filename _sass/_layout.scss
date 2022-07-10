@@ -982,6 +982,16 @@ a[data-type='lightbox']:hover img {
   }
 }
 
+.content-wraps {
+    top: 0;
+    bottom: 0;
+    left: $theme-menu-width-sm;
+    position: relative;
+  &.shift {
+    min-width: 100%;
+  }
+}
+
 @include breakpoint(md) {
   .menu-md {
     left: 0;
