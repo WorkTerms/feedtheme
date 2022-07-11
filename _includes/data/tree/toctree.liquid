@@ -1,8 +1,8 @@
 {%- assign counter = 0 -%}
-{%- include leads/rest/workdir.liquid %}
+{%- include leads/rest/workdir.liquid -%}
 
-{% comment %} list the root files {% endcomment %}
-<ul>
+{%- comment %} list the root files {% endcomment -%}
+{%- include tabs.liquid size=9 %}<ul>
     {%- for item in workdir_files -%}
 		{%- assign counter = counter | plus: 1 -%}
 		{%- include leads/rest/item_dir.liquid -%}
@@ -10,7 +10,7 @@
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
-        <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        {%- include tabs.liquid size=10 %}<li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a id="{{ counter }}" class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort -%}
                     {{ item.sort }}. {{ item.title | default: item.name }}
@@ -18,9 +18,9 @@
                     {{ item.title | default: item.name }}
                 {%- endif -%}
             </a>
-        </li>
+        {%- include tabs.liquid size=10 %}</li>
     {%- endfor %}
-</ul>
+{%- include tabs.liquid size=9 %}</ul>
 
 {% comment %} list the root dirs {% endcomment %}
 {%- for workdir in workdir_dirs %}{% include data/tree/_toctree.liquid %}{% endfor -%}
