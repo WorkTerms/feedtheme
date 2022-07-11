@@ -10,7 +10,7 @@
 									</form>
 								</div>
 								<div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
-									{% include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+									{%- include data/tree/toctree.liquid %}
+									{%- include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
 									{%- include templates/nodes/tabs.html -%}{{- nodes }}
-									{% include data/tree/toctree.liquid %}
 								</div>
