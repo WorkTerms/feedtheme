@@ -2,17 +2,17 @@
 {%- include leads/rest/workdir.liquid -%}
 
 {%- comment %} list the root files {% endcomment %}
-{% include tabs.liquid size=9 %}<ul>
-	{%- if workdir == "/" -%}
-		{%- include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
-	{%- endif %}
+{%- if workdir == "/" -%}
+	{%- include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+{% else %}
+	{%- include tabs.liquid size=9 %}<ul>
 	{%- for item in workdir_files -%}
 		{%- assign counter = counter | plus: 1 -%}
 		{%- include leads/rest/item_dir.liquid -%}
         {%- assign level = item_dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
-        {%- endcapture %}
+        {% endcapture %}
         {%- include tabs.liquid size=10 %}<li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a id="{{ counter }}" class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort -%}
@@ -22,8 +22,9 @@
                 {%- endif %}
             </a>
         {%- include tabs.liquid size=10 %}</li>
-    {%- endfor %}
-{% include tabs.liquid size=9 %}</ul>
+    {% endfor %}
+{%- include tabs.liquid size=9 %}</ul>
+{%- endif %}
 
 {% comment %} list the root dirs {% endcomment %}
 {%- for workdir in workdir_dirs %}{% include data/tree/_toctree.liquid %}{% endfor -%}
