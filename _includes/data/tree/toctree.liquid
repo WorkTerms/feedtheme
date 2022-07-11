@@ -3,7 +3,7 @@
 
 {%- comment %} list the root files {% endcomment -%}
 {% if page.path contains "README.md" %}
-	{% include tabs.liquid size=8 %}<a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/maps">Table of Contents</a>
+	{% include tabs.liquid size=8 %}<a class="caption d-block text-uppercase no-wrap px-2 py-0" href="{{ item.url | relative_url }}">Table of Contents</a>
 	{% include tabs.liquid size=8 %}{% include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
 {% else %}
 	{%- include tabs.liquid size=9 %}<ul>
