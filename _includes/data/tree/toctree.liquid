@@ -2,7 +2,7 @@
 {%- include leads/rest/workdir.liquid -%}
 
 {%- comment %} list the root files {% endcomment -%}
-{%- include tabs.liquid size=9 %}<ul>
+{% include tabs.liquid size=9 %}<ul>
     {%- for item in workdir_files -%}
 		{%- assign counter = counter | plus: 1 -%}
 		{%- include leads/rest/item_dir.liquid -%}
@@ -20,7 +20,7 @@
             </a>
         {%- include tabs.liquid size=10 %}</li>
     {%- endfor %}
-{%- include tabs.liquid size=9 %}</ul>
+{% include tabs.liquid size=9 %}</ul>
 
 {% comment %} list the root dirs {% endcomment %}
 {%- for workdir in workdir_dirs %}{% include data/tree/_toctree.liquid %}{% endfor -%}
