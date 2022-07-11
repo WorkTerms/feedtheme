@@ -2,8 +2,8 @@
 {%- include leads/rest/workdir.liquid -%}
 
 {%- comment %} list the root files {% endcomment %}
-{%- if workdir == "/" -%}
-	{%- include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+{%- if workdir == "/" %}
+	{% include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
 {% else %}
 	{%- include tabs.liquid size=9 %}<ul>
 	{%- for item in workdir_files -%}
