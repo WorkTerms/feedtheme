@@ -1,10 +1,10 @@
 {%- assign counter = 0 -%}
 {%- include leads/rest/workdir.liquid -%}
 
-{%- comment %} list the root files {% endcomment %}
+{%- comment %} list the root files {% endcomment -%}
 {% if workdir == "/" %}
-	{%- include tabs.liquid size=9 %}<a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/maps">Table of Contents</a>
-	{%- include tabs.liquid size=9 %}{% include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+	{% include tabs.liquid size=9 %}<a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/maps">Table of Contents</a>
+	{% include tabs.liquid size=9 %}{% include templates/toc.liquid html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
 {% else %}
 	{%- include tabs.liquid size=9 %}<ul>
 	{%- for item in workdir_files -%}
