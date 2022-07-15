@@ -294,6 +294,9 @@ img {
                     CONTENT styles
 =========================================================*/
 #content {
+  top: 0;
+  right: 0;
+  float: right;
   overflow: hidden;
 }
 /*============  Headers  =============*/
@@ -974,12 +977,6 @@ a[data-type='lightbox']:hover img {
   @extend .menu-sm;
 }
 
-.content {
-    top: 0;
-    right: 0;
-    float: right;
-}
-
 .content-wrap {
     top: 0;
     bottom: 0;
@@ -1017,7 +1014,7 @@ a[data-type='lightbox']:hover img {
   }
 
   .content-wrap {
-    /*margin-left: 40px;*/
+    margin-left: 40px;
 
     &.shift {
       position: relative;
