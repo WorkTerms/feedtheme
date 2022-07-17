@@ -1,5 +1,5 @@
 {%- assign base_title = base | replace: "/", "" -%}
-{%- if base == "" -%}
+{%- if base == "" and page.path == "/" -%}
 	{%- include templates/leads.html -%}
 {%- elsif titles contains base_title -%}
 	{%- include templates/leads{{ base }}.html -%}
