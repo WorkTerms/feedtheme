@@ -14,7 +14,11 @@
 								{% endif %}
 								<div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
 									<div class="markdown-body" itemprop="articleBody">
-										{{ content }}
+										{%- for item in site.html_pages -%}
+											{%- if item.path == "assets/concept/map.md" -%}
+												{{ item.content }}
+											{%- endif -%}
+										{%- endfor -%}
 									</div>
 								</div>
 							</div>
