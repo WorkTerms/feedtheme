@@ -52,11 +52,11 @@ cp -r node_modules/font-awesome/fonts/* style/css/fonts && rm -f style/css/fonts
 
 # jquery
 rm -f style/js/jquery.min.js
-cp node_modules/jquery/dist/jquery.min.js assets/js
+cp node_modules/jquery/dist/jquery.min.js style/js
 
 # mermaid
 rm -f style/js/mermaid.min.js
-cp node_modules/mermaid/dist/mermaid.min.js assets/js && sed -i '$d' style/js/mermaid.min.js
+cp node_modules/mermaid/dist/mermaid.min.js style/js && sed -i '$d' style/js/mermaid.min.js
 
 # format
 npm run format
