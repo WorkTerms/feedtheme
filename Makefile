@@ -19,8 +19,8 @@ help:
 
 checkout:
 	@git checkout _config.yml
-	@git checkout style/js/theme.min.js
-	@git checkout style/css/theme.min.css
+	@git checkout /js/theme.min.js
+	@git checkout /css/theme.min.css
 
 install:
 	@gem install jekyll bundler
