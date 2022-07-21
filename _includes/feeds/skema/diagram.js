@@ -88,7 +88,7 @@
 
             var skema = init;
             var style = {theme: 'hand', "font-size": 13};
-            var file = {{ '/sequence/js/sequence-diagram-snap-min.js' | jsonify }};
+            var file = {{ 'https://chetabahana.github.io/sequence/js/sequence-diagram-snap-min.js' | jsonify }};
 
         } else if ($(".theme").val() == 'simple') {
 
