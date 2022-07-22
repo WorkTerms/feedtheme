@@ -260,7 +260,7 @@
         if (!init) init = editor.getValue();
 
         if (!link) link = $('#tautan a').clone();
-        if (!feed) feed = 'https://chetabahana.github.io/feed.json?t=' + $.now();
+        if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): null;
@@ -327,8 +327,9 @@
             *  Documentation is currently available in bahasa only
             *  https://github.com/chetabahana/chetabahana.github.io/wiki/Jekyll-Liquid#Mekanisme
             *
-            {% endcomment %}
             if (!json) json = result.items[{{ data.loop }}].items[{{ data.root }}].items;
+            {% endcomment %}
+            if (!json) json = result.items[4].items[2].items;
             if (!size) size = json.length;
             if (!type) type = 'Sequence';
 
