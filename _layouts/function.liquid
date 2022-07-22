@@ -121,7 +121,7 @@ jQuery(function($)
         });
 
         // draw diagram
-        $.getScript('https://eq19.github.io/js/diagram.js?t=' + $.now(), function() {
+        $.getScript('/diagram.js?t=' + $.now(), function() {
             $('.theme').val('hand');
             draw.getJSON();
 
