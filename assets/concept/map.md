@@ -397,6 +397,49 @@ See that this configuration showing a kind of turbulences which leads to a gap o
 
 ![turbulences](https://user-images.githubusercontent.com/36441664/170851244-caff2b07-1ff6-4448-9762-abb6f6f6365b.png)
 
+By our project site this scheme would end up as below:
+
+```
+---
+layout: tasks/compress
+---
+
+{%- include extra/rest/defaults.liquid -%}
+{%- include leads/rest/defaults.liquid -%}          618
+                                                     |
+<!DOCTYPE html>---------------------------------------
+<html lang="{{ lang }}" dir="{{ direction }}">
+	<head>
+	{%- assign size = sections | size -%}
+	{%- if size == 0 or branch == "eQ19" -%}
+		{%- include leads/metadata.liquid -%}
+		{%- include leads/cards.liquid -%}
+		{%- include leads/opengraph.liquid -%}
+		{%- include leads/links.liquid -%}
+		{%- include leads/title.liquid -%}
+		{%- include leads/script.liquid -%}
+		{%- include leads/schema.liquid -%}          289 
+		{%- include leads/gtag.liquid -%}             |
+	</head>-------------------------------------------
+	<body>
+		{%- include leads/noscript.liquid -%}
+		{%- include templates/content.liquid -%}
+		{%- include templates/addons.liquid -%}
+		{%- include extra/body.html -%}
+		{%- include extra/rest/script.liquid -%}
+		{%- include leads/mermaid.liquid -%}
+		{%- include leads/mathjax.liquid -%}
+		{%- include leads/adsense.liquid -%}         329
+		{%- include leads/sumo.liquid -%}             |
+	{%- else -%}---------------------------------------
+		{%- for section in sections %}
+			{{- section.output }}                    168
+		{%- endfor -%}                                |
+	{%- endif -%}--------------------------------------
+	</body>
+</html>
+```
+
 This scheme is taken as a basic algorithm for the mechanism of DNA generation from RNA.
 
 [![DNA generation from RNA](https://user-images.githubusercontent.com/36441664/100724943-01cb3c80-33f6-11eb-8564-c5a9ced2b668.png)](https://translate.google.com/translate?js=n&sl=id&tl=en&u=https://github.com/chetabahana/chetabahana.github.io/wiki#operasi)
