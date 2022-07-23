@@ -13,8 +13,8 @@
 *  https://chetabahana.github.io/
 *
 {% endcomment %}
-{%- assign size = sections | size -%}
-{%- if size == 0 or branch == "eQ19" -%}
+{%- assign size = site.feeds | size -%}
+{%- if size == 0 -%}
 	{{ content }}
 {%- else -%}
 	{%- include feeds/base/base.liquid -%}
