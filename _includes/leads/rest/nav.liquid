@@ -1,3 +1,4 @@
+{%- assign sections = site.feeds | sort: 'weight' | where_exp:"item", "item.category == 'section'" -%}
 {%- assign item = page -%}{%- include leads/rest/item_dir.liquid -%}
 {%- include leads/rest/workdir.liquid workdir=item_dir -%}
 {%- include data/stage.liquid -%}
