@@ -1,1 +1,6 @@
-{%- include feeds/base/base.liquid -%}
+{%- assign size = site.feeds | size -%}
+{%- if size == 0 -%}
+    {{ content }}
+{%- else -%}
+    {%- include feeds/base/base.liquid -%}
+{%- endif -%}
