@@ -400,6 +400,7 @@ See that this configuration showing a kind of turbulences which leads to a gap o
 By our project site this scheme would end up as [default](https://github.com/eq19/parser/blob/eQ19/_layouts/default.liquid):
 
 ```
+{%- raw -%}
 ---
 layout: tasks/compress
 ---
@@ -438,6 +439,7 @@ layout: tasks/compress
 	{%- endif -%}------------------------------------
 	</body>
 </html>
+{%- endraw -%}
 ```
 
 This scheme is taken as a basic algorithm for the mechanism of DNA generation from RNA.
