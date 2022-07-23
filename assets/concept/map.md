@@ -397,7 +397,7 @@ See that this configuration showing a kind of turbulences which leads to a gap o
 
 ![turbulences](https://user-images.githubusercontent.com/36441664/170851244-caff2b07-1ff6-4448-9762-abb6f6f6365b.png)
 
-By our project site this scheme would end up as below:
+By our project site this scheme would end up as _[default](https://github.com/eq19/parser/blob/eQ19/_layouts/default.liquid)_:
 
 ```
 ---
