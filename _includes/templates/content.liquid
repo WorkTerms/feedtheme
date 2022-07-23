@@ -1,9 +1,4 @@
-{%- assign size = sections | size -%}
-{%- if size != 0 and site.baseurl != "/grammar" -%}
-	{%- for section in sections -%}
-		{{- section.output }}
-	{%- endfor -%}
-{%- else -%}
+
 		<div class="page">
 			{%- include templates/nodes/arm.html -%}
 			{%- include templates/breadcrumbs.html -%}
@@ -16,4 +11,3 @@
 				{%- include templates/leads/feed.html -%}
 			{%- endif -%}
 		</div>
-{%- endif -%}

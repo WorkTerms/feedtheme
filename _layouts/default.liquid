@@ -7,25 +7,32 @@ layout: tasks/compress
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
-    <head>
-        {%- include leads/metadata.liquid %}
-        {%- include leads/twitter_cards.liquid %}
-        {%- include leads/opengraph.liquid %}
-        {%- include leads/links.liquid -%}
-        {%- include leads/title.liquid -%}
-        {%- include leads/script.liquid -%}
-        {%- include leads/schema.liquid -%}
-        {% include leads/gtag.liquid %}
-    </head>
-    <body>
-        {% include leads/noscript.liquid %}
-        {% include templates/content.liquid %}
-        {% include templates/addons.liquid %}
-        {% include extra/body.html %}
-        {%- include extra/rest/script.liquid %}
-        {%- include leads/mermaid.liquid -%}
-        {%- include leads/mathjax.liquid -%}
-        {%- include leads/adsense.liquid -%}
-        {%- include leads/sumo.liquid -%}
-    </body>
+	<head>
+	{%- assign size = sections | size -%}
+	{%- if size != 0 and site.baseurl != "/grammar" -%}
+		{% for section in sections %}
+			{{ section.output }}
+		{% endfor %}
+	{%- else -%}
+		{%- include leads/metadata.liquid %}
+		{%- include leads/twitter_cards.liquid %}
+		{%- include leads/opengraph.liquid %}
+		{%- include leads/links.liquid -%}
+		{%- include leads/title.liquid -%}
+		{%- include leads/script.liquid -%}
+		{%- include leads/schema.liquid -%}
+		{% include leads/gtag.liquid %}
+	</head>
+	<body>
+		{% include leads/noscript.liquid %}
+		{% include templates/content.liquid %}
+		{% include templates/addons.liquid %}
+		{% include extra/body.html %}
+		{%- include extra/rest/script.liquid %}
+		{%- include leads/mermaid.liquid -%}
+		{%- include leads/mathjax.liquid -%}
+		{%- include leads/adsense.liquid -%}
+		{%- include leads/sumo.liquid -%}
+	{%- endif -%}
+	</body>
 </html>
