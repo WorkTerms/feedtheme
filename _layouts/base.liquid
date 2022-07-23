@@ -1,6 +1,9 @@
 {%- assign size = site.feeds | size -%}
 {%- if size == 0 -%}
-    {{ content }}
+	{{ content }}
 {%- else -%}
-    {%- include feeds/base/base.liquid -%}
+	{%- include feeds/base/base.liquid -%}
+	{%- assign sections = site.feeds 
+		| sort: 'weight' 
+		| where_exp:"item", "item.category == 'section'" -%}
 {%- endif -%}
