@@ -8,12 +8,9 @@ layout: tasks/compress
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
 	<head>
+	{%- assign url == site.baseurl -%}
 	{%- assign size = sections | size -%}
-	{%- if size != 0 and site.baseurl != "/grammar" -%}
-		{% for section in sections %}
-			{{ section.output }}
-		{% endfor %}
-	{%- else -%}
+	{%- if size == 0 or url == "/grammar" -%}
 		{%- include leads/metadata.liquid %}
 		{%- include leads/twitter_cards.liquid %}
 		{%- include leads/opengraph.liquid %}
@@ -33,6 +30,10 @@ layout: tasks/compress
 		{%- include leads/mathjax.liquid -%}
 		{%- include leads/adsense.liquid -%}
 		{%- include leads/sumo.liquid -%}
+	{%- else -%}
+		{%- for section in sections -%}
+			{{- section.output }}
+		{%- endfor %}
 	{%- endif -%}
 	</body>
 </html>
