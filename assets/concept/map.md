@@ -397,7 +397,7 @@ See that this configuration showing a kind of turbulences which leads to a gap o
 
 ![turbulences](https://user-images.githubusercontent.com/36441664/170851244-caff2b07-1ff6-4448-9762-abb6f6f6365b.png)
 
-By our project site this scheme would end up as _[default](https://github.com/eq19/parser/blob/eQ19/_layouts/default.liquid)_:
+By our project site this scheme would end up as [default](https://github.com/eq19/parser/blob/eQ19/_layouts/default.liquid):
 
 ```
 ---
@@ -405,9 +405,9 @@ layout: tasks/compress
 ---
 
 {%- include extra/rest/defaults.liquid -%}
-{%- include leads/rest/defaults.liquid -%}          618
-                                                     |
-<!DOCTYPE html>---------------------------------------
+{%- include leads/rest/defaults.liquid -%}			618
+													|
+<!DOCTYPE html>--------------------------------------
 <html lang="{{ lang }}" dir="{{ direction }}">
 	<head>
 	{%- assign size = sections | size -%}
@@ -418,9 +418,9 @@ layout: tasks/compress
 		{%- include leads/links.liquid -%}
 		{%- include leads/title.liquid -%}
 		{%- include leads/script.liquid -%}
-		{%- include leads/schema.liquid -%}          289 
-		{%- include leads/gtag.liquid -%}             |
-	</head>-------------------------------------------
+		{%- include leads/schema.liquid -%}			289 
+		{%- include leads/gtag.liquid -%}			|
+	</head>------------------------------------------
 	<body>
 		{%- include leads/noscript.liquid -%}
 		{%- include templates/content.liquid -%}
@@ -429,13 +429,13 @@ layout: tasks/compress
 		{%- include extra/rest/script.liquid -%}
 		{%- include leads/mermaid.liquid -%}
 		{%- include leads/mathjax.liquid -%}
-		{%- include leads/adsense.liquid -%}         329
-		{%- include leads/sumo.liquid -%}             |
-	{%- else -%}---------------------------------------
+		{%- include leads/adsense.liquid -%}		329
+		{%- include leads/sumo.liquid -%}			|
+	{%- else -%}-------------------------------------
 		{%- for section in sections %}
-			{{- section.output }}                    168
-		{%- endfor -%}                                |
-	{%- endif -%}--------------------------------------
+			{{- section.output }}					168
+		{%- endfor -%}								|
+	{%- endif -%}------------------------------------
 	</body>
 </html>
 ```
@@ -720,4 +720,4 @@ _So If You're Aware of What This Is All About:_<br>
 _Just Be Patient and Stay Tuned!_
 
 © [₠Quantum Project](https://github.com/eq19)  
-[![profile for eQ19 on Stack Exchange, a network of free, community-driven Q&amp;A sites](https://stackexchange.com/users/flair/5054985.png)](https://stackoverflow.com/users/4058484/eq19?tab=profile)   
+[![profile for eQ19 on Stack Exchange](https://stackexchange.com/users/flair/5054985.png)](https://stackoverflow.com/users/4058484/eq19?tab=profile)   
