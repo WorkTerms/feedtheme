@@ -1,4 +1,4 @@
-{%- comment -%}
+{% comment %}
 *
 *  This loop loops through a collection called `feeds` with category 'section'
 *  and sorts it by the front matter variable 'weight' and than render
@@ -12,9 +12,10 @@
 *  To provide it with an online work you may see the running code here:
 *  https://chetabahana.github.io/
 *
-{%- endcomment -%}
-{%- unless sections  -%}
+{% endcomment %}
+{%- assign size = site.feeds | size -%}
+{%- if size == 0 -%}
 	{{ content }}
 {%- else -%}
 	{%- include feeds/base/base.liquid -%}
-{%- endunless -%}
+{%- endif -%}
