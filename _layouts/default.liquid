@@ -8,9 +8,8 @@ layout: tasks/compress
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
 	<head>
-	{%- assign url == site.baseurl -%}
 	{%- assign size = sections | size -%}
-	{%- if size == 0 or url == "/grammar" -%}
+	{%- if size == 0 or branch == "eQ19" -%}
 		{%- include leads/metadata.liquid %}
 		{%- include leads/twitter_cards.liquid %}
 		{%- include leads/opengraph.liquid %}
