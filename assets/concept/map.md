@@ -406,7 +406,7 @@ layout: tasks/compress
 ---
 
 {%- include extra/rest/defaults.liquid -%}
-{%- include leads/rest/defaults.liquid -%}               618
+{%- include leads/rest/defaults.liquid -%}               618 → sitemap.xml
                                                           |
 <!DOCTYPE html>--------------------------------------------
 <html lang="{{ lang }}" dir="{{ direction }}">
@@ -419,7 +419,7 @@ layout: tasks/compress
 		{%- include leads/links.liquid -%}
 		{%- include leads/title.liquid -%}
 		{%- include leads/script.liquid -%}
-		{%- include leads/schema.liquid -%}      289 
+		{%- include leads/schema.liquid -%}      289 ← feeds.xml
 		{%- include leads/gtag.liquid -%}         |
 	</head>--------------------------------------------
 	<body>
@@ -430,11 +430,11 @@ layout: tasks/compress
 		{%- include extra/rest/script.liquid -%}
 		{%- include leads/mermaid.liquid -%}
 		{%- include leads/mathjax.liquid -%}
-		{%- include leads/adsense.liquid -%}     329
+		{%- include leads/adsense.liquid -%}     329 ← feed.xml
 		{%- include leads/sumo.liquid -%}         |
 	{%- else -%}---------------------------------------
 		{%- for section in sections %}
-			{{- section.output }}            168
+			{{- section.output }}            168 → feed.json
 		{%- endfor -%}                            |
 	{%- endif -%}--------------------------------------
 	</body>
