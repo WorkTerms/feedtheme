@@ -74,28 +74,28 @@
     {% assign skipNoIDs = include.skip_no_ids | default: include.skipNoIDs | default: false %}
     {% assign minHeader = include.h_min | default: 1 %}
     {% assign maxHeader = include.h_max | default: 6 %}
-    {% assign nodes = include.html | strip | split: '<h' %}
+    {% assign heads = include.html | strip | split: '<h' %}
 
     {% assign firstHeader = true %}
     {% assign currLevel = 0 %}
     {% assign lastLevel = 0 %}
     {% assign lastLevel = 0 %}
-	{% assign nodeID = 0 %}
+	{% assign headID = 0 %}
 
     {% capture listModifier %}{% if orderedList %}ol{% else %}ul{% endif %}{% endcapture %}
 
-    {% for node in nodes %}
-        {% if node == "" %}
+    {% for head in heads %}
+        {% if head == "" %}
             {% continue %}
         {% endif %}
 
-        {% assign currLevel = node | replace: '"', '' | slice: 0, 1 | times: 1 %}
+        {% assign currLevel = head | replace: '"', '' | slice: 0, 1 | times: 1 %}
 
         {% if currLevel < minHeader or currLevel > maxHeader %}
             {% continue %}
         {% endif %}
 
-        {% assign _workspace = node | split: '</h' %}
+        {% assign _workspace = head | split: '</h' %}
 
         {% assign _idWorkspace = _workspace[0] | split: 'id="' %}
         {% assign _idWorkspace = _idWorkspace[1] | split: '"' %}
@@ -135,8 +135,8 @@
             {% endif %}
 
             {% if include.anchor_filter %}
-				{% assign nodeID = nodeID | plus: 1 %}
-                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ nodeID }}"{% endcapture %}
+				{% assign headID = headID | plus: 1 %}
+                {% capture anchorAttributes %}{{ anchorAttributes }} {{ include.anchor_filter }}="c{{ headID }}"{% endcapture %}
             {% endif %}
 
             {% capture listItem %}<a{{ anchorAttributes }}>{{ anchorBody }}</a>{% endcapture %}
@@ -183,13 +183,13 @@
         {% endif %}
 
         {% if rootAttributes %}
-            {% assign nodes = jekyll_toc | split: '>' %}
-            {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
+            {% assign heads = jekyll_toc | split: '>' %}
+            {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ heads | shift | join: '>' }}>{% endcapture %}
         {% endif %}
 		
 		{% if include.anchor_filter %}
-			{% assign nodeEnd = '<li><a href="#show-all" class="big button" data-filter="*">Show All</a></li></ul>' %}
-			{% assign jekyll_toc = jekyll_toc | replace: '</ul>', nodeEnd %}
+			{% assign headEnd = '<li><a href="#show-all" class="big button" data-filter="*">Show All</a></li></ul>' %}
+			{% assign jekyll_toc = jekyll_toc | replace: '</ul>', headEnd %}
 		{% endif %}		
 		
     {% endif %}
