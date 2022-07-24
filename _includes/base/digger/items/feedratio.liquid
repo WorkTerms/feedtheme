@@ -1,0 +1,25 @@
+{%- comment -%}
+*
+*  collect feedratio
+*
+{%- endcomment -%}
+{%- assign my_items = "" | split: "," -%}
+{%- for item in feed -%}
+	{%- assign my_items = my_items | push:item -%}
+{%- endfor -%}
+{%- assign sorted_items = my_items | sort_natural -%}
+{%- for item in sorted_items -%}
+	{%- unless my_atributes contains item %}
+		{%- include tabs.liquid size=my_size %}{{ my_tab }}{{ item | jsonify }}: {{ feed[item] | jsonify -}},
+	{%- endunless -%}
+{%- endfor %}
+{%- include tabs.liquid size=my_size %}{{ my_tab }}"value": {{ my_value | jsonify -}},
+{%- if my_frame %}
+	{%- include tabs.liquid size=my_size %}{{ my_tab }}"frame": {{ my_frame | jsonify -}},
+{%- endif %}
+	{%- include tabs.liquid size=my_size %}{{ my_tab }}"feeds": {{ feed.tags | jsonify }},
+{%- if feed.ratio %}
+	{%- include tabs.liquid size=my_size %}{{ my_tab }}"ratio": {{ feed.ratio | jsonify -}},
+{%- endif -%}{%- if my_debug %}
+	{%- include tabs.liquid size=my_size %}{{ my_tab }}"debug": {{ my_debug | to_json- }},
+{%- endif %}
