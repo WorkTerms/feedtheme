@@ -24,17 +24,11 @@
 		| append: '/' -%}
 	{%- assign my_index = '' | split: ',' -%}
 	{%- for my_push in my_paths -%}
-		{%- assign my_num = my_push.path 
-			| split: '/' 
-			| size 
-			| minus: my_path_size -%}
-		{%- if my_num == 1 and my_push.path contains my_title -%}
-			{%- assign my_index = my_index | push: forloop.index0 -%}
-		{%- endif -%}
+			{%- include base/digger/title.liquid -%}
 	{%- endfor -%}
 	{%- capture my_capture %}
 		{%- if page.path != 'README.md' -%}
-			{%- include items.liquid -%}
+			{%- include base/digger/items.liquid -%}
 		{%- endif -%}
 		{%- for i in (1..my_size) -%}
 			{{- my_tab -}}
