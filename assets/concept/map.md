@@ -442,7 +442,7 @@ layout: tasks/compress
 {%- endraw -%}
 ```
 
-This scheme will generate [feed.json](/feed.json), [feed.xml](/feed.xml), [feeds.xml](/feeds.xml), and [sitemap.xml](/sitemap.xml). All together is taken as a basic algorithm for the mechanism of DNA generation from RNA.
+This scheme will generate [feed.json](https://chetabahana.github.io/feed.json), [feed.xml](https://chetabahana.github.io/feed.xml), [feeds.xml](https://chetabahana.github.io/feeds.xml), and [sitemap.xml](https://eq19.github.io/sitemap.xml). All together is taken as a basic algorithm for the mechanism of DNA generation from RNA.
 
 [![DNA generation from RNA](https://user-images.githubusercontent.com/36441664/100724943-01cb3c80-33f6-11eb-8564-c5a9ced2b668.png)](https://translate.google.com/translate?js=n&sl=id&tl=en&u=https://github.com/chetabahana/chetabahana.github.io/wiki#operasi)
 
