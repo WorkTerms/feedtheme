@@ -34,4 +34,11 @@
 *  JSON.pretty_generate(@data)
 *
 {% endcomment %}{% assign my_size = 2 %}{% if page.path contains 'feed.json' %}
-{% include items.liquid %}{{ my_tab }}{{ my_tab }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% include base/render.liquid %}
+{% include items.liquid %}{{ my_tab }}{{ my_tab }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% if page.path != 'README.md' and page.ext != '.md' %}{% if page.layout == 'redirect' %}{% include leads.liquid %}{% endif %}
+{{ my_tab }}]
+}
+{% else %}{% comment %}
+*
+*  render the main page 
+*
+{% endcomment %}{{ content }}{% endif %}
