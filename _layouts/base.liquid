@@ -13,9 +13,12 @@
 *  https://chetabahana.github.io/
 *
 {% endcomment %}
-{%- assign size = site.feeds | sort: 'weight' | where_exp:"item", "item.category == 'section'" | size -%}
+{%- assign size = site.feeds
+	| sort: 'weight'
+	| where_exp:"item", "item.category == 'section'"
+	| size -%}
 {%- if size == 0 or site.github.source.branch == "eQ19" -%}
 	{{ content }}
 {%- else -%}
-	{%- include feeds/base/base.liquid -%}
+	{%- include base.liquid -%}
 {%- endif -%}
