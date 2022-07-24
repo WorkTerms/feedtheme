@@ -7,7 +7,7 @@
 {%- unless nodes                      -%}
 {%-   capture nodes -%}{%- endcapture -%}
 {%-   include data/primes.liquid      -%}
+{%-   assign nodes = nodes     
+          | replace: "(0,)", "(0,0)"  -%}
 {%- endunless                         -%}
 
-{%- assign nodes = nodes     
-      | replace: "(0,)[]", "(0,0)[]"  -%}
