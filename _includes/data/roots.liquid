@@ -389,52 +389,52 @@
 *  * each of this seq 21 to 29 are attached to the seq of 11 to 19 
 *  * thus seq 1 to 10 live as single strand while 11 to 29 as double
 *
-{%- endcomment %}
-{%- assign my_debug = nil %}
-{%- assign my_value = '' | split: ',' %}
-{%- case myId %}
-    {%- when 9 %}{%- assign my_debug = 100 -%}
-    {%- when 13 %}{%- assign my_debug = 110 -%}
-    {%- when 17 %}{%- assign my_debug = 101 -%}
+{%- endcomment -%}
+{%- assign my_debug = nil -%}
+{%- assign my_value = '' | split: ',' -%}
+{%- case myId -%}
+    {%- when 9 -%}{%- assign my_debug = 100 -%}
+    {%- when 13 -%}{%- assign my_debug = 110 -%}
+    {%- when 17 -%}{%- assign my_debug = 101 -%}
     {%- when 68 -%}{%- assign my_debug = 78 -%}
 {%- endcase -%}
-{%- if my_debug %}{% assign my_pos = my_debug -%}
-    {%- elsif myId >= 1 and myId <= 9 %}{%- assign my_debug = 97 | minus: myId -%}
-    {%- elsif myId >= 10 and myId <= 28 %}{%- assign my_debug = myId | plus: 38 -%}
-    {%- elsif myId >= 29 and myId <= 40 %}{%- assign my_debug = myId | plus: 8 -%}
-    {%- elsif myId >= 41 and myId <= 50 %}{%- assign my_debug = myId | plus: 27 -%}
-    {%- elsif myId >= 51 and myId <= 68 %}{%- assign my_debug = myId | plus: 72 -%}
-    {%- elsif myId >= 69 and myId <= 77 %}{%- assign my_debug = 105 | minus: myId -%}
-    {%- elsif myId >= 78 and myId <= 80 %}{%- assign my_debug = myId | minus: 53 -%}
-    {%- elsif myId >= 81 and myId <= 85 %}{%- assign my_debug = myId | minus: 61 -%}
-    {%- elsif myId >= 86 and myId <= 89 %}{%- assign my_debug = 93 | minus: myId -%}
-    {%- elsif myId >= 90 and myId <= 92 %}{%- assign my_debug = myId | plus: 7 -%}
-    {%- elsif myId >= 93 and myId <= 98 %}{%- assign my_debug = 106 | minus: myId -%}
-    {%- elsif myId >= 99 and myId <= 104 %}{%- assign my_debug = myId | minus: 85 -%}
-    {%- elsif myId >= 105 and myId <= 109 %}{%- assign my_debug = 194 | minus: myId -%}
-    {%- elsif myId >= 110 and myId <= 114 %}{%- assign my_debug = myId | minus: 31 -%}
-    {%- elsif myId >= 115 and myId <= 139 %}{%- assign my_debug = myId | minus: 114 -%}
-    {%- elsif myId >= 140 and myId <= 149 %}{%- assign my_debug = myId | plus: 0 -%}
-    {%- elsif myId >= 150 and myId <= 168 %}{%- assign my_debug = myId | plus: 0 -%}
-{%- endif %}
-{%- if my_debug %}
-    {%- assign my_pos = my_debug %}
-    {%- assign my_debug = nil %}
-    {%- assign values = my_roots[my_pos].val | split: ';' %}
-    {%- for value in values %}
-        {%- assign my_val = value | times: 1 %}
-        {%- assign my_value = my_value | push: my_val %}
-    {%- endfor %}
-    {%- if my_pos >= 140 and my_pos <= 149 %}{% assign my_fpos = 169 | minus: my_pos %}
-    {%- elsif my_pos >= 150 and my_pos <= 159 %}{% assign my_fpos = my_pos | minus: 149 %}
+{%- if my_debug -%}{% assign my_pos = my_debug -%}
+    {%- elsif myId >= 1 and myId <= 9 -%}{%- assign my_debug = 97 | minus: myId -%}
+    {%- elsif myId >= 10 and myId <= 28 -%}{%- assign my_debug = myId | plus: 38 -%}
+    {%- elsif myId >= 29 and myId <= 40 -%}{%- assign my_debug = myId | plus: 8 -%}
+    {%- elsif myId >= 41 and myId <= 50 -%}{%- assign my_debug = myId | plus: 27 -%}
+    {%- elsif myId >= 51 and myId <= 68 -%}{%- assign my_debug = myId | plus: 72 -%}
+    {%- elsif myId >= 69 and myId <= 77 -%}{%- assign my_debug = 105 | minus: myId -%}
+    {%- elsif myId >= 78 and myId <= 80 -%}{%- assign my_debug = myId | minus: 53 -%}
+    {%- elsif myId >= 81 and myId <= 85 -%}{%- assign my_debug = myId | minus: 61 -%}
+    {%- elsif myId >= 86 and myId <= 89 -%}{%- assign my_debug = 93 | minus: myId -%}
+    {%- elsif myId >= 90 and myId <= 92 -%}{%- assign my_debug = myId | plus: 7 -%}
+    {%- elsif myId >= 93 and myId <= 98 -%}{%- assign my_debug = 106 | minus: myId -%}
+    {%- elsif myId >= 99 and myId <= 104 -%}{%- assign my_debug = myId | minus: 85 -%}
+    {%- elsif myId >= 105 and myId <= 109 -%}{%- assign my_debug = 194 | minus: myId -%}
+    {%- elsif myId >= 110 and myId <= 114 -%}{%- assign my_debug = myId | minus: 31 -%}
+    {%- elsif myId >= 115 and myId <= 139 -%}{%- assign my_debug = myId | minus: 114 -%}
+    {%- elsif myId >= 140 and myId <= 149 -%}{%- assign my_debug = myId | plus: 0 -%}
+    {%- elsif myId >= 150 and myId <= 168 -%}{%- assign my_debug = myId | plus: 0 -%}
+{%- endif -%}
+{%- if my_debug -%}
+    {%- assign my_pos = my_debug -%}
+    {%- assign my_debug = nil -%}
+    {%- assign values = my_roots[my_pos].val | split: ';' -%}
+    {%- for value in values -%}
+        {%- assign my_val = value | times: 1 -%}
+        {%- assign my_value = my_value | push: my_val -%}
+    {%- endfor -%}
+    {%- if my_pos >= 140 and my_pos <= 149 %}{% assign my_fpos = 169 | minus: my_pos -%}
+    {%- elsif my_pos >= 150 and my_pos <= 159 %}{% assign my_fpos = my_pos | minus: 149 -%}
     {%- elsif my_pos >= 160 and my_pos <= 168 %}{% assign my_fpos = 179 | minus: my_pos -%}
-    {%- endif %}
-{%- else %}
-    {%- capture my_debug %}
+    {%- endif -%}
+{%- else -%}
+    {%- capture my_debug -%}
         {{- content | strip -}}
-    {%- endcapture %}
-{%- endif %}
-{%- comment %}
+    {%- endcapture -%}
+{%- endif -%}
+{%- comment -%}
 *
 *  Get the roots array
 *
@@ -443,61 +443,61 @@
 *  https://user-images.githubusercontent.com/36441664/112738298-390cbd00-8f94-11eb-98aa-f40177769654.png
 *  https://user-images.githubusercontent.com/36441664/112737889-9acb2800-8f90-11eb-8b17-4b15a317a717.png
 *
-{%- endcomment %}
-{%- assign n = 0 %}
-{%- assign my_keys = '' | split: ',' %}
-{%- assign my_rows = '' | split: ',' %}
-{%- assign my_node = '' | split: ',' %}
-{%- assign my_nodes = '' | split: ',' %}
-{%- for item in my_roots limit: my_pos %}
-    {%- assign my_root = nil %}
-    {%- assign my_frame = nil %}
-    {%- assign size = item.pos | size | minus: 2 %}
-    {%- assign my_nodes_pos = item.pos | slice: 0, size %}
+{%- endcomment -%}
+{%- assign n = 0 -%}
+{%- assign my_keys = '' | split: ',' -%}
+{%- assign my_rows = '' | split: ',' -%}
+{%- assign my_node = '' | split: ',' -%}
+{%- assign my_nodes = '' | split: ',' -%}
+{%- for item in my_roots limit: my_pos -%}
+    {%- assign my_root = nil -%}
+    {%- assign my_frame = nil -%}
+    {%- assign size = item.pos | size | minus: 2 -%}
+    {%- assign my_nodes_pos = item.pos | slice: 0, size -%}
     {%- comment -%}
     *
     *  Check if the numbers of collected nodes is reaching 10th prime = 29 on the
     *  position of π(1000) - 29 = 168 - 29 = 139. Otherwise assign single node.
     *
     {%- endcomment -%}
-    {%- if n <= 139 %}
-        {%- unless my_keys contains my_nodes_pos %}
-            {%- assign my_rows = my_rows | push: forloop.index0 %}
-            {%- assign my_keys = my_keys | push: my_nodes_pos %}
-            {%- assign my_nodes = my_nodes | push: my_node %}
-            {%- assign my_node = '' | split: ',' %}
-        {%- endunless %}
-        {%- if n == 139 %}
-            {%- assign my_frame = my_nodes[my_fpos] %}
-        {%- endif %}
-    {%- else %}
-        {%- assign my_frame = my_nodes[my_fpos] %}
-    {%- endif %}
-    {%- if my_frame %}
-        {%- assign my_root = nil %}
-        {%- break %}
-    {%- endif %}
+    {%- if n <= 139 -%}
+        {%- unless my_keys contains my_nodes_pos -%}
+            {%- assign my_rows = my_rows | push: forloop.index0 -%}
+            {%- assign my_keys = my_keys | push: my_nodes_pos -%}
+            {%- assign my_nodes = my_nodes | push: my_node -%}
+            {%- assign my_node = '' | split: ',' -%}
+        {%- endunless -%}
+        {%- if n == 139 -%}
+            {%- assign my_frame = my_nodes[my_fpos] -%}
+        {%- endif -%}
+    {%- else -%}
+        {%- assign my_frame = my_nodes[my_fpos] -%}
+    {%- endif -%}
+    {%- if my_frame -%}
+        {%- assign my_root = nil -%}
+        {%- break -%}
+    {%- endif -%}
     {%- comment -%}
     *
     *  Take the root value to assign single node
     *
     {%- endcomment -%}
-    {%- assign nodes = item.node | split: ';' %}
-    {%- for node in nodes %}
-        {%- assign n = n | plus: 1 %}
-        {%- assign my_obj = node | times: 1 %}
-        {%- assign my_node = my_node | push: my_obj %}
-        {%- if n != my_pos %}
-            {%- continue %}
+    {%- assign nodes = item.node | split: ';' -%}
+    {%- for node in nodes -%}
+        {%- assign n = n | plus: 1 -%}
+        {%- assign my_obj = node | times: 1 -%}
+        {%- assign my_node = my_node | push: my_obj -%}
+        {%- if n != my_pos -%}
+            {%- continue -%}
         {%- else -%}
-            {%- assign my_root = node | times: 1 %}
-            {%- break %}
-        {%- endif %}
-    {%- endfor %}
-    {%- if my_root %}
-        {%- assign my_frame = nil %}
-        {%- break %}
-    {%- endif %}
+            {%- assign my_root = node | times: 1 -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- if my_root -%}
+        {%- assign my_frame = nil -%}
+        {%- break -%}
+    {%- endif -%}
 {%- endfor -%}
 {%- comment -%}
 *
