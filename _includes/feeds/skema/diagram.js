@@ -53,7 +53,8 @@
     getLinks : function() {
 
         //Extend workflows links on each skema
-        var href = $('#doc')[0].href;
+        $('#type').text(type);
+        var href = $('#type')[0].href;
         var path = href.split('/').reverse()[0];
 
         $('#tautan a').each(function(key, value) {
@@ -61,18 +62,15 @@
             if ($(".theme").val() == 'hand') {
                 $(this).css({'cursor':'pointer'});
                 this.href = link.slice(key,key+1).get(0).href;
-                $('#doc')[0].href = href.replace(path, 'Programming');
+                $('#type')[0].href = href.replace(path, 'sequence');
             } else {
                 if (this.id == 'js') {this.href = js;}
                 else if (this.id == 'json') {this.href = feed.replace('/main', '') ;}
                 else {this.href = data.guide[this.id];}
-                $('#doc')[0].href = href.replace(path, type);
+                $('#type')[0].href = href.replace(path, type.toLowerCase());
             }
 
         });
-
-        $('#type').text(type); 
-        $('#type')[0].href = '/' + type.toLowerCase();
 
         if (test) test = false;
         $(".loadingImg").show();
@@ -88,19 +86,19 @@
 
             var skema = init;
             var style = {theme: 'hand', "font-size": 13};
-            var file = {{ '/sequence/js/sequence-diagram-snap-min.js' | jsonify }};
+            var file = $('#type')[0].href + '/js/sequence-diagram-snap-min.js';
 
         } else if ($(".theme").val() == 'simple') {
 
             var style = data.style;
             var skema = data.skema;
-            var file = '/' + data.guide['file'];
+            var file = data.guide['file'];
 
         } else if ($(".theme").val() == 'tracking') {
 
             var style = data.style;
             var skema = data.skema;
-            var file = '/' + data.guide['file'];
+            var file = data.guide['file'];
 
         }
 
