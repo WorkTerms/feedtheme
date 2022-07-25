@@ -153,7 +153,7 @@
             else if (type == 'Flowchart') {elements = $('svg rect.flowchart, svg path.flowchart');}
             else if (type == 'Tree') {elements = draw.clone($('button.execute-button'), 'svg path');}
             else if (type == 'Channel') {elements = $('svg g g g').hover(function() {$(this).hide(100).show(100);});}
-            else if (type == 'Grammar') {elements = $('svg path').first().add($('svg rect')).add($('svg path').last());}
+            else if (type == 'Pattern') {elements = $('svg path').first().add($('svg rect')).add($('svg path').last());}
 
             //set each id and its handle 
             if (elements) {elements.each(function(index) {draw.node(index, this);});}

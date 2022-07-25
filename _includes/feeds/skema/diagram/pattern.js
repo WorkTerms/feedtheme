@@ -3,10 +3,10 @@
 *  This layout loops through a collection called `feeds` and collect site data 
 *
 *  You may see the running code here:
-*  https://chetabahana.github.io/grammar.json
-*  https://chetabahana.github.io/diagram/grammar.js
+*  https://chetabahana.github.io/pattern.json
+*  https://chetabahana.github.io/diagram/pattern.js
 *
-{% endcomment %}var Grammar = {
+{% endcomment %}var Pattern = {
 
     feed : function(id, size) {
 
