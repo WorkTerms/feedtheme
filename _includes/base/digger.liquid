@@ -30,9 +30,7 @@
 		{%- if page.path != 'README.md' -%}
 			{%- include base/digger/items.liquid -%}
 		{%- endif -%}
-		{%- for i in (1..my_size) -%}
-			{{- my_tab -}}
-		{%- endfor -%}}
+		{%- include tabs.liquid size=my_size %}}
 	{%- endcapture -%}
 	{%- assign my_captures = my_captures | push: my_capture -%}
 {%- endfor -%}
