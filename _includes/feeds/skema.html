@@ -11,7 +11,18 @@
 							<option value="simple">Diagram</option>
 							<option value="tracking">Mapping</option>
 						</select><!-- ref: https://gist.github.com/JJediny/a466eed62cee30ad45e2 -->
-						<p>Tipe Diagram: <a id="type" href="https://eq19.github.io/sequence" style="text-transform:capitalize;" target='_blank'>Sequence</a></p>
+						<p>Tipe Diagram: 
+							<a id="type" href="https://eq19.github.io/sequence" style="text-transform:capitalize;" target='_blank'>Sequence</a>
+						</p>
+                        <p>Link: 
+							<a id="doc" href="https://github.com/chetabahana/chetabahana.github.io/wiki/Skema#modulasi">Konsep </a> - 
+							<a href="https://github.com/chetabahana/chetabahana.github.io">Sumber</a> - 
+							<a href="https://github.com/chetabahana/chetabahana.github.io/actions">Proses</a> - 
+							<a href="https://github.com/chetabahana/chetabahana.github.io/releases">Rilis</a>.
+						</p>
+                        <div class="editor-wrapper">
+                            <div id="editor" class="editor">{{ data.property }}</div>
+                        </div>
 						<p id="tautan">Lib: 
 							<a id="xml" href="/feed.xml" target='_blank'>xml</a> / 
 							<a id="json" href="/feed.json" target='_blank'>json</a> / 
@@ -22,11 +33,11 @@
 							<a id="js" href="https://eq19.github.io/js/diagram.js?t={{'now' | date: '%s' }}" target='_blank'>js</a> / 
 							<a id="link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fchetabahana.github.io%2F" target='_blank'>link</a>
 						</p>
-                        <div class="editor-wrapper">
-                            <div id="editor" class="editor">{{ data.property }}</div>
-                        </div>
-                        <p>Link: <a id="doc" href="https://github.com/chetabahana/chetabahana.github.io/wiki/Skema#modulasi">Konsep </a> - <a href="https://github.com/chetabahana/chetabahana.github.io">Sumber</a> - <a href="https://github.com/chetabahana/chetabahana.github.io/actions">Proses</a> - <a href="https://github.com/chetabahana/chetabahana.github.io/releases">Rilis</a>.</p>
-                        <p>Silahkan <a href='https://jsfiddle.net/chetabahana/rrxnah40/'>edit</a> dan <a href='#chetabahana-diskusi' class='internal-link'>cek</a> hasil <a href="#" class="download">bagannya..</a></p>
+                        <p>Silahkan 
+							<a href='https://jsfiddle.net/chetabahana/rrxnah40/'>edit</a> dan 
+							<a href='#chetabahana-diskusi' class='internal-link'>cek</a> hasil 
+							<a href="#" class="download">bagannya..</a>
+						</p>
                     </div>
                     <div class="col-md-8 skema_right">
                         <div class="loadingImg"></div><div id="diagram" class="diagram"></div>
