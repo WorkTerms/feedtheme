@@ -110,7 +110,7 @@
                 var g = $('#diagram').get(0);
 
                 //Support Skema with all diagram types including ones from GraphiQL/Threejs/D3 
-                if (type == 'Grammar') {main.drawDiagramsFromSerializedGrammar(skema, g);}
+                if (type == 'Pattern') {main.drawDiagramsFromSerializedGrammar(skema, g);}
                 else if (type == 'Channel') {diagram = draw.makeSvg(style, skema); g.prepend(diagram);}
                 else if (type == 'Sequence') {diagram = Diagram.parse(skema); diagram.drawSVG(g, style);}
                 else if (type == 'Flowchart') {diagram = flowchart.parse(skema); diagram.drawSVG(g, style);}
