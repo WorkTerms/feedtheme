@@ -325,9 +325,9 @@
             *  Documentation is currently available in bahasa only
             *  https://github.com/chetabahana/chetabahana.github.io/wiki/Jekyll-Liquid#Mekanisme
             *
-            if (!json) json = result.items[{{ data.loop }}].items[{{ data.root }}].items;
-            {% endcomment %}
             if (!json) json = result.items[4].items[2].items;
+            {% endcomment %}
+            if (!json) json = result.items[{{ data.loop }}].items[{{ data.root }}].items;
             if (!size) size = json.length;
             if (!type) type = 'Sequence';
 
