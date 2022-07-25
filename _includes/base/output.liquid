@@ -22,6 +22,6 @@
 	{%- assign my_size = 2 -%}
 	{%- if page.path contains 'feed.json' %}
 		{%- include base/digger/items.liquid -%}
-		{%- include tabs.liquid size=my_size %}}{% unless forloop.last %},{% endunless %}
+		{%- include tabs.liquid size=my_size %}}{% unless forloop.last %},{% endunless -%}
 	{%- endif -%}
 {%- endfor -%}
