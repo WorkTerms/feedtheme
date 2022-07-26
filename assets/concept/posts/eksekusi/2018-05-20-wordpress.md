@@ -1,6 +1,6 @@
 ---
 weight: 3
-host: "wp.com"
+host: "Wordpress"
 title: "Optimasi Shop SEO"
 href: "Google-Content-API"
 link: "https://chetabahana.wordpress.com/"
