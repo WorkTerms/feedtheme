@@ -7,6 +7,8 @@
 				{%- include templates/leads.html -%}
 			{%- elsif titles contains base_title -%}
 				{%- include templates/leads{{ base }}.html -%}
+			{%- elsif page.path contains "README.md" -%}
+				{%- include templates/leads/maps.html -%}
 			{%- else -%}			
 				{%- include templates/leads/feed.html -%}
 			{%- endif -%}
