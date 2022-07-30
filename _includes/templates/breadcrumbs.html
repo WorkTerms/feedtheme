@@ -52,7 +52,7 @@
 									{%- elsif page.layout == "pages" -%}
 									<li><a href="{{ page.url | replace: page.title,'' }}">{{ page.category }}</a></li><li><a href="{{ page.url }}">{{ page.title -}}
 									{%- else -%}
-									<li><a href=""{{ site.baseurl }}/"">"{{ site.baseurl | replace: '/','' }}"
+									<li><a href="{{ site.baseurl }}/">{{ site.baseurl | replace: "/","" }}
 									{%- endif -%}</a></li>
 									<li class="active"><a id="doc" href="{% github_edit_link %}">Source Link</a></li>
 								</ol>
