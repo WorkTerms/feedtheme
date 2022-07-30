@@ -14,11 +14,15 @@
 								{% endif %}
 								<div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
 									<div class="markdown-body" itemprop="articleBody">
-										{%- for item in site.html_pages -%}
-											{%- if item.path == "assets/concept/map.md" -%}
-												{{ item.content }}
-											{%- endif -%}
-										{%- endfor -%}
+										{%- assign doc = site.baseurl | append: ".md" -%}
+										{%- assign my_page = site.html_pages 
+											| where_exp:"item", "item.path contains doc" | first -%}
+										{%- assign size = my_page | size -%}
+										{%- if size != 0 -%}
+											{{ my_page.content }}
+										{%- else -%}
+											{{ content }}
+										{%- endif -%}
 									</div>
 								</div>
 							</div>
