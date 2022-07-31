@@ -64,6 +64,7 @@ exclude:
 encoding: utf-8
 livereload: true
 limit_posts: 1000
+data_dir: docs/_data
 timezone: Asia/Jakarta
 remote_theme: eQ19/parser
 excerpt_separator: <!--end_excerpt-->
