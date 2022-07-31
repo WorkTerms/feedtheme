@@ -22,7 +22,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Github metadata Test
-{% for item in site %}
+{% for item in site | sort_natural %}
 {{ item }}
 {% endfor %}
 
