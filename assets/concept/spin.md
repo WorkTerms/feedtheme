@@ -107,18 +107,7 @@ Now let's force 12 or Δ1 to the **prime 13**. See how those primes reacted to c
   12+13+(18+18)+13+12  ← 36th-Δ1=151-1=150=100+2x(13+12)  ←  30th = 113 = 114-1
 ```
 
- ```tip
-The Chronological Order:
-- This scheme lead by 168 to 618 where 168 on π(π(10000)=200 is located on 40
-- This 40 is carried to 200 by 102 of (2,60,40) that gives span 60+60+40 or 160
-- The 66 of (1,30,30,5) carried 102 to 1000 by the span of 30x30=900 or 1229-329
-- By 168 this will be 329+30+30-160 or 229 which is the 50th primes so it span 50
-- This 229 carry 1000 to 1229 = π(10000) means it is touching the end of 329 layer
-- So the 229 converted to 1000 - 50 or 950 which is 950/10+1 or 96 on the 168 layer
-- This leads to 168 - 29 - 96 = 139 - 96 = 43 primes located on the last of 7th row
-- This 43 is 18+13+12 in bilateral on perfect square of 9 goes to 89 → π(89²) = 1000
-- See that this flows starting from π(10) and finalize by pairing of Δ12. Let's draw 12 of flow arrows in such a way where they have interconnection with 10 objects.
- ```
+See that this flows starting from π(10) and finalize by pairing of Δ12. Let's draw 12 of flow arrows in such a way where they have interconnection with 10 objects.
  
 [![generate the prime](https://user-images.githubusercontent.com/36441664/128732737-81762604-0ae0-4a90-b5a8-30921cf46efb.png)](https://github.com/eq19)
 
