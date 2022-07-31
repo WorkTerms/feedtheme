@@ -18,7 +18,11 @@
 	| where_exp:"item", "item.category == 'section'"
 	| size -%}
 {%- if size == 0 or site.github.source.branch == "eQ19" -%}
-	{{ content }}
+	{%- unless page.path contains 'feed.json' -%}
+		{{ content }}
+	{%- else -%}
+		{%- include base.liquid -%}
+	{%- endunless -%}
 {%- else -%}
 	{%- include base.liquid -%}
 {%- endif -%}
