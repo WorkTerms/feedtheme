@@ -25,11 +25,11 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% for item in site | sort -%}
 	{%- if site[item].first -%}
 		{%- if site[item].first.first -%}
-			{%- include tabs.liquid %}{{ item }}: hash
+			{%- include tabs.liquid %}- {{ item }}: hash
 		{%- else -%}
-			{%- include tabs.liquid %}{{ item }}: array
+			{%- include tabs.liquid %}- {{ item }}: array
 		{%- endif -%}
 	{%- else -%}
-		{%- include tabs.liquid %}{{ item }}: {{ site[item] }}
+		{%- include tabs.liquid %}- {{ item }}: {{ site[item] }}
 	{%- endif -%}
 {%- endfor -%}
