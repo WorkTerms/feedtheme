@@ -24,12 +24,12 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 ## Github metadata Test
 {% for item in site | sort -%}
 	{%- if site[item].first -%}
-		{%- if site[item].first.first %}
-			{{- item }}: hash
-		{%- else %}
-			{{- item }}: array
-		{%- endif %}
-	{%- else %}
-		{{- item }}
+		{%- if site[item].first.first -%}
+			{%- include tabs.liquid -%}{{ item }}: hash
+		{%- else -%}
+			%- include tabs.liquid -%}{{- item }}: array
+		{%- endif -%}
+	{%- else -%}
+		%- include tabs.liquid -%}{{- item }}
 	{%- endif -%}
 {%- endfor -%}
