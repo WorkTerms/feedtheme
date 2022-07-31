@@ -23,6 +23,13 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 
 ## Github metadata Test
 {% for item in site | sort: item %}
-{{ item }}
+	{% if site.item.first %}
+		{% if site.item.first.first %}
+			{{ item }}: hash
+		{% else %}
+			{{ item }}: array
+		{% endif %}
+	{% else %}
+		{{ item }}
+	{% endif %}
 {% endfor %}
-
