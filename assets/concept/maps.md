@@ -23,6 +23,6 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 
 ## Github metadata Test
 {% for item in site %}
-{{ item }}: {{ site[item]}}
+{{ item }}
 {% endfor %}
 
