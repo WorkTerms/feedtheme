@@ -16,20 +16,20 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% for image in page.images %}
 ### test image {{ forloop.index }}
 ![test image {{ forloop.index }}]({{ image }}){: .shadow-box }
-{%- endfor %}
+{% endfor %}
 
 ## Jekyll - how to build a [REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7)
-{%- gist f8d908596276bdbb2044f04c352cb7c7 -%}
+{% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Github metadata Test
-{%- for item in site | sort -%}
+{% for item in site | sort -%}
 	{%- if site[item].first -%}
-		{%- if site[item].first.first -%}
+		{%- if site[item].first.first %}
 			{{- item }}: hash
-		{%- else -%}
+		{%- else %}
 			{{- item }}: array
-		{%- endif -%}
-	{%- else -%}
+		{%- endif %}
+	{%- else %}
 		{{- item }}
 	{%- endif -%}
 {%- endfor -%}
