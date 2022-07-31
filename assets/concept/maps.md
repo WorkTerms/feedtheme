@@ -22,9 +22,9 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Github metadata Test
-{% for item in site %}
-	{% if site[item][0] %}
-		{% if site[item][0][0]  %}
+{% for item in site | sort %}
+	{% if site[item].first %}
+		{% if site[item].first.first %}
 			{{ item }}: hash
 		{% else %}
 			{{ item }}: array
