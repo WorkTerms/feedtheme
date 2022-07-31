@@ -22,5 +22,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Github metadata Test
-{{ site.github | jsonify }}
+{% for item in site %}
+{{ item }}: {{ site[item]}}
+{% endfor %}
 
