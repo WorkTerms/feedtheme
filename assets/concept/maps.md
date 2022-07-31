@@ -21,7 +21,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 ## Jekyll - how to build a [REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7)
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
-## Github metadata Test
+## Github Metadata
 {% for item in site | sort -%}
 	{%- if site[item].first -%}
 		{%- if site[item].first.first -%}
@@ -30,6 +30,6 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 			{%- include tabs.liquid %}{{ item }}: array
 		{%- endif -%}
 	{%- else -%}
-		{%- include tabs.liquid %}{{ item }}: site[item]
+		{%- include tabs.liquid %}{{ item }}: {{ site[item] }}
 	{%- endif -%}
 {%- endfor -%}
