@@ -46,7 +46,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 	{%- else -%}
 		{%- include tabs.liquid %}- {{ item }}: {{ github[item] }}
 	{%- endif -%}
-{%- endfor -%}
+{%- endfor %}
 
 ## Source Metadata
 {% assign source = github.source -%}
@@ -61,4 +61,3 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 		{%- include tabs.liquid %}- {{ item }}: {{ source[item] }}
 	{%- endif -%}
 {%- endfor -%}
-
