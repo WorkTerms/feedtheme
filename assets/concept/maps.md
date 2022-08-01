@@ -32,7 +32,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 	{%- else -%}
 		{%- include tabs.liquid %}- {{ item }}: {{ site[item] }}
 	{%- endif -%}
-{%- endfor -%}
+{%- endfor %}
 
 ## Github Metadata
 {% for item in site.github | sort -%}
