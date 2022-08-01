@@ -47,3 +47,18 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 		{%- include tabs.liquid %}- {{ item }}: {{ github[item] }}
 	{%- endif -%}
 {%- endfor -%}
+
+## Source Metadata
+{% assign source = github.source -%}
+{%- for item in source | sort -%}
+	{%- if source[item].first -%}
+		{%- if source[item].first.first -%}
+			{%- include tabs.liquid %}- {{ item }}: hash
+		{%- else -%}
+			{%- include tabs.liquid %}- {{ item }}: array
+		{%- endif -%}
+	{%- else -%}
+		{%- include tabs.liquid %}- {{ item }}: {{ source[item] }}
+	{%- endif -%}
+{%- endfor -%}
+
