@@ -35,14 +35,15 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {%- endfor %}
 
 ## Github Metadata
-{% for item in site.github | sort -%}
-	{%- if site[item].first -%}
-		{%- if site[item].first.first -%}
+{% assign github = site.github -%}
+{%- for item in github | sort -%}
+	{%- if github[item].first -%}
+		{%- if github[item].first.first -%}
 			{%- include tabs.liquid %}- {{ item }}: hash
 		{%- else -%}
 			{%- include tabs.liquid %}- {{ item }}: array
 		{%- endif -%}
 	{%- else -%}
-		{%- include tabs.liquid %}- {{ item }}: {{ site[item] }}
+		{%- include tabs.liquid %}- {{ item }}: {{ github[item] }}
 	{%- endif -%}
 {%- endfor -%}
