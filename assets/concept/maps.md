@@ -18,7 +18,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 ![test image {{ forloop.index }}]({{ image }}){: .shadow-box }
 {% endfor %}
 
-## Jekyll - how to build a [REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7)
+## Jekyll - How to build a [REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7)
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Site Metadata
