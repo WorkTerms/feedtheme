@@ -22,6 +22,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
 ## Site Metadata
+
 {% for item in site | sort -%}
 	{%- if site[item].first -%}
 		{%- if site[item].first.first -%}
@@ -35,6 +36,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {%- endfor %}
 
 ## Github Metadata
+
 {% assign github = site.github -%}
 {%- for item in github | sort -%}
 	{%- if github[item].first -%}
@@ -49,6 +51,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {%- endfor %}
 
 ## Source Metadata
+
 {% assign source = github.source -%}
 {%- for item in source | sort -%}
 	{%- if source[item].first -%}
@@ -61,3 +64,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 		{%- include tabs.liquid %}- {{ item }}: {{ source[item] }}
 	{%- endif -%}
 {%- endfor -%}
+
+## Recommendations AI
+
+- [Create models](https://cloud.google.com/retail/docs/create-models)
