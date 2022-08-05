@@ -63,7 +63,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 	{%- else -%}
 		{%- include tabs.liquid %}- {{ item }}: {{ source[item] }}
 	{%- endif -%}
-{%- endfor -%}
+{%- endfor %}
 
 ## Recommendations AI
 
