@@ -67,4 +67,6 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 
 ## Recommendations AI
 
-- [Create models](https://cloud.google.com/retail/docs/create-models)
+- [Google Cloud products](https://cloud.google.com/products/)
+- [Recommendations AI data ingestion](https://cloud.google.com/blog/topics/developers-practitioners/recommendations-ai-data-ingestion)
+- [Create models, Retail Search, and the new Retail console](https://cloud.google.com/retail/docs/create-models)
