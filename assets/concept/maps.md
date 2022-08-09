@@ -68,6 +68,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 ## Recommendations AI
 
 - [Google Cloud products](https://cloud.google.com/products/#ai-and-machine-learning)
+- [React Google Tag Manager Module](https://www.eq19.com/gtm/)
 - [Recommendations AI data ingestion](https://cloud.google.com/blog/topics/developers-practitioners/recommendations-ai-data-ingestion)
 - [Create models, Retail Search, and the new Retail console](https://cloud.google.com/retail/docs/create-models)
 - [How to get better retail recommendations with Recommendations AI](https://cloud.google.com/blog/topics/developers-practitioners/how-get-better-retail-recommendations-recommendations-ai)
