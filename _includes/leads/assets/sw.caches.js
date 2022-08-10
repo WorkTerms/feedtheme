@@ -1,4 +1,3 @@
-/*
 self.addEventListener("activate", function (event) {
   const current = ["{{ theme_alias }}"];
 
@@ -38,4 +37,3 @@ self.addEventListener("fetch", function (e) {
     );
   }
 });
-*/
