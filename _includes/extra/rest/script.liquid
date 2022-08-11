@@ -7,7 +7,6 @@
 		<script src="/js/camera.js"></script>
 		<script src="/js/script.js"></script>
 		<script src="/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
-
-		{% if extra_script.size > 0 %}
+		{%- if extra_script.size > 0 %}
 		<script>{{- extra_script -}}</script>
 		{%- endif -%}
