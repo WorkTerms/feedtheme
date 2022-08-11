@@ -65,6 +65,9 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 	{%- endif -%}
 {%- endfor %}
 
+## Jekyll Liquid Cheatsheet
+{% gist a466eed62cee30ad45e2 %}
+
 ## Recommendations AI
 
 - [Google Cloud products](https://cloud.google.com/products/#ai-and-machine-learning)
