@@ -7,8 +7,6 @@
 									<h1><a href="/"><img src="/images/logo.png" alt="eQuantum Project | A Unique Kind of Mapping System - Open Source"/></a></h1>
 								</div>
 								<nav class="nav put-right">
-									<div class="loadingImg"></div><div id="diagram" class="diagram"></div>
-									<div id="graphiql"></div ><div id="viewport"><canvas></canvas></div >
 									<ul class="sf-menu">
 										<li data-type="main"{% if site.baseurl == "" %} class="current"{% endif %}><a href="/">Home</a>
 											<ul>
@@ -195,6 +193,8 @@
 										<li data-type="main"{% if site.baseurl == "/grammar" %} class="current"{% endif %}><a href="/grammar" id={{ size }} title="{{ array | jsonify }}">Grammar</a></li>
 									</ul>
 								</nav>
+								<div class="loadingImg"></div><div id="diagram" class="diagram"></div>
+								<div id="graphiql"></div ><div id="viewport"><canvas></canvas></div >
 							</div>
 						</div>
 					</div>
