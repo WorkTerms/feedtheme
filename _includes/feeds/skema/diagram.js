@@ -266,7 +266,7 @@
         $.getJSON(feed).done(function(result){
 
             //Set to {{ data.loop }} and {{ data.root }} per the Scheme of 5‘ and 3‘. See more detail on source code
-            //ref https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_includes/feeds/skema/diagram.js
+            //ref https://github.com/eq19/parser/blob/eQ19/_includes/feeds/skema/diagram.js
             {% comment %}
             * 
             *  Scheme 5‘ and 3‘
