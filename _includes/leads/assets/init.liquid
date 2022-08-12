@@ -35,13 +35,14 @@ jQuery(function($)
 
 		// draw diagram
 		$.getScript($('#js')[0].href, function() {
-			$('.theme').val('simple');
+			$('.theme').val('hand');
 			draw.getJSON();
 		});
 	});
 });
 
 // set params 
+var pad = 2;
 var myIdcounter = 0;
 var top_menu_height = 0;
 
