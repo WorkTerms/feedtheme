@@ -1,9 +1,8 @@
-
 		<div class="page">
-			{%- include templates/nodes/arm.html -%}
-			{%- include templates/breadcrumbs.html -%}
 			<div class="loadingImg"></div><div id="diagram" class="diagram"></div>
 			<div id="graphiql"></div ><div id="viewport"><canvas></canvas></div >
+			{%- include templates/nodes/arm.html -%}
+			{%- include templates/breadcrumbs.html -%}
 			{%- assign base_title = base | replace: "/", "" -%}
 			{%- if base == "" -%}
 				{%- include templates/leads.html -%}
