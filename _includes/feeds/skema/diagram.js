@@ -319,7 +319,7 @@
             *  This id: 128 is under id: 154 where the first child is id: 157.
             *  Therefore both id will perform the scheme of ’2857’ on P(7): ’142857’ where the scheme of ’14’ is done
             *  through 4xid: 150 up to 153. So they are 6 (six) steps which will be translated started on id: 157 up to 162.
-            *  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/_data/_feeds/_skema/diagram.json
+            *  https://github.com/eq19/grammar/blob/eQ19/docs/assets/_data/_feeds/_skema/diagram.json
             *
             *  Note:
             *  Documentation is currently available in bahasa only
@@ -426,7 +426,7 @@
     feed : function() {
 
         //Support Unlimited Scripts on Workflows Algorithm (#36)
-        js = '/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
+        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
         if (window[type]) {window[type].feed(id, size); $('.loadingImg').hide();}
         else {$.getScript(js, function() {draw.feed();});}
 
