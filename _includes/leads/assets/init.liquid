@@ -36,7 +36,7 @@ jQuery(function($)
 		// draw diagram
 		$.getScript($('#js')[0].href, function() {
 			$('.theme').val('hand');
-			draw.getJSON();
+			draw.getJSON(2);
 		});
 	});
 });
