@@ -251,7 +251,7 @@
 
     },
 
-    getJSON : function(root=null) {
+    getJSON : function(root = null) {
 
         //Inject Workflows from getJSON
         if (ids == null) ids = new Array();
