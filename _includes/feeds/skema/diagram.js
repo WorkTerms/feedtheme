@@ -260,7 +260,7 @@
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
-        if ($(".theme").val() == 'hand' && data) pad = null;
+        if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): null;
 
         $.getJSON(feed).done(function(result){
