@@ -278,7 +278,7 @@
             *
             *  This will finaly land to id: 128
             *  https://eq19.github.io/grammar/feed.json
-            *  https://github.com/chetabahana/chetabahana.github.io/blob/Chetabahana/assets/_feeds/skema/diagram.js
+            *  https://github.com/eq19/grammar/blob/eQ19/docs/assets/_feeds/skema/diagram.js
             *
             *                  },
             *                  {
