@@ -40,7 +40,7 @@ jQuery(function($)
 			$.ajax({
 				type: "GET",
 				dataType: "xml",
-				url: "/grammar/feeds.xml",
+				url: "{{ site.baseurl }}/feeds.xml",
 				success: draw.getJSON(2)
 			});
 		});
