@@ -14,7 +14,6 @@
         <TD>Name</TD>
         <TD>Category</TD>
         <TD>Feed URL</TD>
-        <TD>Published</TD>
       </TR>
       <xsl:apply-templates select="atom:feed/atom:entry">
         <xsl:sort select="atom:published"/>
@@ -32,7 +31,6 @@
         <TD><xsl:value-of select="atom:title"/></TD>              
         <TD><xsl:value-of select="atom:category"/></TD>              
         <TD><A><xsl:attribute name="href"><xsl:value-of select="atom:link/@href"/></xsl:attribute><xsl:value-of select="atom:id"/></A></TD>
-        <TD><xsl:value-of select="atom:published"/></TD>
       </TR>
       </xsl:template>
 </xsl:stylesheet>
