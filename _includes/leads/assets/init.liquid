@@ -39,8 +39,8 @@ jQuery(function($)
 			$('.theme').val('hand');
 			$.ajax({
 				type: "GET",
-				url: "/grammar/feeds.xml",
 				dataType: "xml",
+				url: "/grammar/feeds.xml",
 				success: draw.getJSON(2)
 			});
 		});
