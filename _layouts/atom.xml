@@ -16,7 +16,7 @@
         <TD>Feed URL</TD>
       </TR>
       <xsl:apply-templates select="atom:feed/atom:entry">
-        <xsl:sort select="atom:published"/>
+        <xsl:sort select="atom:title"/>
       </xsl:apply-templates>      
     </TABLE>
   </BODY>
