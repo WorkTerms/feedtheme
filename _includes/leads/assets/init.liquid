@@ -5,7 +5,7 @@ jQuery(function($)
     $(document).ready(function()
     {
         // to stick navbar on top and hash
-        top_menu_height = $('.templatemo-top-menu').height();
+        top_menu_height = $('.top-menu').height();
         $('html,body').scrollspy({target: '#templatemo-nav-bar', offset: top_menu_height + 10});
 
         // do scroll and clear the hash anytime someone arrives with a hash tag
@@ -40,7 +40,7 @@ jQuery(function($)
         });
 
         // scroll to specific id when click on menu
-        $('.templatemo-top-menu .navbar-nav a').click(function(e)
+        $('.top-menu .navbar-nav a').click(function(e)
         {
             e.preventDefault(); 
             var linkId = $(this).attr('href');
@@ -54,7 +54,7 @@ jQuery(function($)
         });
 
         // scrollspy to auto active the nav item
-        $('.templatemo-top-menu').stickUp(); 
+        $('.top-menu').stickUp(); 
 
         // This API has been removed in jQuery 3.0; please use .on( "load", handler ) 
         // instead of .load( handler ) and .trigger( "load" ) instead of .load().
