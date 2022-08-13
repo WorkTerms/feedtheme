@@ -251,7 +251,7 @@
 
     },
 
-    getJSON : function(feeds = null) {
+    getJSON : function(feeds) {
 
         //Inject Workflows from getJSON
 		//https://www.javatpoint.com/oprweb/test.jsp?filename=jquery-isxmldoc-method1
@@ -262,7 +262,7 @@
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
-        else if (!pad) pad = (params.pad)? (params.pad * 1): ((feeds == null)? null: 2);
+        else if (!pad) pad = (params.pad)? (params.pad * 1): ((feeds)? 2: null);
 
         $.getJSON(feed).done(function(result){
 
