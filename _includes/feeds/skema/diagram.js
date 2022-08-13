@@ -251,7 +251,7 @@
 
     },
 
-    getJSON : function(root = null) {
+    getJSON : function(feeds) {
 
         //Inject Workflows from getJSON
         if (ids == null) ids = new Array();
@@ -261,7 +261,7 @@
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
-        else if (!pad) pad = (params.pad)? (params.pad * 1): root;
+        else if (!pad) pad = (params.pad)? (params.pad * 1): ($.isXMLDoc(feeds)? 2: null);
 
         $.getJSON(feed).done(function(result){
 

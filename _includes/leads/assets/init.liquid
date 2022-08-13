@@ -40,8 +40,8 @@ jQuery(function($)
 			$.ajax({
 				type: "GET",
 				dataType: "xml",
-				url: "{{ site.baseurl }}/feeds.xml",
-				success: draw.getJSON(2)
+				success: draw.getJSON(xml),
+				url: "{{ site.baseurl }}/feeds.xml"
 			});
 		});
 	});
