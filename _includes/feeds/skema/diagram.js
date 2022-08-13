@@ -262,7 +262,7 @@
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
-        else if (!pad) pad = (params.pad)? (params.pad * 1): ((feeds)? 2: null);
+        else if (!pad) pad = (params.pad)? (params.pad * 1): {% if site.baseurl == "" %}null{% else %}((feeds)? 2: null){% endif -%};
 
         $.getJSON(feed).done(function(result){
 
