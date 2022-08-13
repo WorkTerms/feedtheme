@@ -251,9 +251,10 @@
 
     },
 
-    getJSON : function(feeds) {
+    getJSON : function(feeds = null) {
 
         //Inject Workflows from getJSON
+		//https://www.javatpoint.com/oprweb/test.jsp?filename=jquery-isxmldoc-method1
         if (ids == null) ids = new Array();
         if (!init) init = editor.getValue();
 
@@ -261,7 +262,7 @@
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
-        else if (!pad) pad = (params.pad)? (params.pad * 1): ($.isXMLDoc($.parseXML(feeds))? 2: null);
+        else if (!pad) pad = (params.pad)? (params.pad * 1): ((feeds == null)? null: 2);
 
         $.getJSON(feed).done(function(result){
 
