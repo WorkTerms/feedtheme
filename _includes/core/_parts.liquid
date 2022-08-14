@@ -5,7 +5,7 @@
 {%-   endif                                   -%}
 {%- endfor                                    -%}
 
-{%- assign data_id = '['                       -%}
+{%- assign data_id = '['                      -%}
 {%- for item in array reversed                -%}
 {%-   assign size = item | size | minus: 1    -%}
 {%-   assign lead = primes[size]              -%}
