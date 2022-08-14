@@ -67,7 +67,7 @@
 
   {%- for _head in heads -%}
 	{%- assign excerptParts = _head | split: "<!--end_excerpt-->" -%}
-	{%- capture part -%}{% include tabs.liquid size=11 %}<p class="text_3">{%- endcapture -%}
+	{%- capture part -%}{% include tabs.liquid size=11 -%}<p class="text_3">{%- endcapture -%}
 	{%- assign excerptPart = excerptParts[0] | replace: '<p>', part -%}
     {%- capture head -%}{{- excerptPart | strip -}}</p>{%- endcapture -%}
     

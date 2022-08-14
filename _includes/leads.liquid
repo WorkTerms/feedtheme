@@ -6,5 +6,5 @@
 *  https://docs.treepl.co/liquid
 *  https://stackoverflow.com/a/53693728/4058484
 *
-{% endcomment %}{% if my_index %}
-{%- include tabs.liquid size=2 %}{"branch": {{ my_index | jsonify }}}{% endif -%}
+{% endcomment %}{% if my_index -%}
+{%- include tabs.liquid size=2 -%}{"branch": {{ my_index | jsonify }}}{% endif -%}
