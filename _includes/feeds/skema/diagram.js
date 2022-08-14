@@ -10,7 +10,7 @@
 *  Documentation is currently available in bahasa only
 *  https://github.com/chetabahana/chetabahana.github.io/wiki#skema
 *
-{%- endcomment -%}var id, js, ids, pad, back, data, feed, json, link, init, size, test, type, query, click, diagram, options, elements, draw = {
+{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, diagram, options, elements, draw = {
 
     diagram : function() {
 
@@ -254,14 +254,13 @@
     getJSON : function(e) {
 
         //Inject Workflows from getJSON
-        //https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/.
-        //https://www.javatpoint.com/oprweb/test.jsp?filename=jquery-isxmldoc-method1
         if (ids == null) ids = new Array();
         if (!init) init = editor.getValue();
 
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
+        //https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/.
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): (($('ul').hasClass('sf-menu'))? 2: null);
 
@@ -353,6 +352,7 @@
 
                 //Support Asynchronous Json Data Driven on Workflows(#39)
                 data = result.items[0];
+				if ($.isXMLDoc(e)) xml = e;
                 query.setValue(draw.encode(data.skema));
 
             }
