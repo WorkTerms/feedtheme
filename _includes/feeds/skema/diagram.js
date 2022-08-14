@@ -104,7 +104,7 @@
 
         $.getScript(file + '?t=' + $.now(), function() {
 
-            try {
+            if ($('#diagram').length) try {
 
                 diagram = {};
                 var g = $('#diagram').get(0);
