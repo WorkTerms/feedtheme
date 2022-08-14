@@ -43,7 +43,7 @@
 {%- if node_type == "main"                     -%}
 
 {%-   capture nodes                            -%}
-{{      nodes                                   }}
+{{-     nodes                                  -}}
 {%-     include tabs.liquid size=13 -%}</ul>
 {%-     include tabs.liquid size=12 -%}</li>
 {%-     include tabs.liquid size=11 -%}</ul>
@@ -57,7 +57,7 @@
 {%-   else                                     -%}
 
 {%-   capture nodes                            -%}
-{{      nodes                                   }}
+{{-     nodes                                  -}}
 {%-     include tabs.liquid size=13 -%}</ul>
 {%-     include tabs.liquid size=12 -%}</li>
 {%-     include tabs.liquid size=12 -%}{{ _node }}
