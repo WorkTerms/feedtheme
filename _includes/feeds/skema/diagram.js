@@ -254,9 +254,10 @@
     getJSON : function(e) {
 
         //Inject Workflows from getJSON
+        if ($.isXMLDoc(e)) xml = e;
         if (ids == null) ids = new Array();
-        if (!init) init = editor.getValue();
 
+        if (!init) init = editor.getValue();
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
@@ -352,7 +353,6 @@
 
                 //Support Asynchronous Json Data Driven on Workflows(#39)
                 data = result.items[0];
-				if ($.isXMLDoc(e)) xml = e;
                 query.setValue(draw.encode(data.skema));
 
             }
