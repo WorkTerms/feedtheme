@@ -18,7 +18,7 @@
 
         {%- assign my_feed = site.feeds | where_exp:"item", "item.myId == myId" | first %}
         if (!data) feed = '{{ site.baseurl }}/{{ my_feed.category }}/{{ my_feed.slug }}.json?t=' + $.now();
-        //draw.getJSON();
+        if ($('#diagram').length) draw.getJSON();
 
     },
 
