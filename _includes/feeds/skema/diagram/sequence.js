@@ -3,8 +3,8 @@
 *  This layout loops through a collection called `feeds` and collect site data 
 *
 *  You may see the running code here:
-*  https://chetabahana.github.io/sequence.json
-*  https://chetabahana.github.io/diagram/sequence.js
+*  https://eq19.github.io/grammar/main/sequence.json
+*  https://eq19.github.io/grammar/diagram/sequence.js
 *
 *  Here we are defining The Document Object Model (DOM) with JavaScript
 *  as the relations between their nodes with our feeds object.

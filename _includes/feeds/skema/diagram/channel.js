@@ -3,8 +3,8 @@
 *  This layout loops through a collection called `feeds` and collect site data 
 *
 *  You may see the running code here:
-*  https://chetabahana.github.io/channel.json
-*  https://chetabahana.github.io/diagram/channel.js
+*  https://eq19.github.io/grammar/main/channel.json
+*  https://eq19.github.io/grammar/diagram/channel.js
 *
 {% endcomment %}var Channel = {
 
