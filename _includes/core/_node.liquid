@@ -1,6 +1,6 @@
-{%- assign stage = stages[layer]              -%}
-{%- assign title = titles[layer]              -%}
-{%- assign baseurl = title | prepend: "/"     -%}
+{%- assign stage = stages[layer]               -%}
+{%- assign title = titles[layer]               -%}
+{%- assign baseurl = title | prepend: "/"      -%}
 
 {%- assign node = '<li data-type="main"'
         | append: ' class="toc level-1"'
@@ -15,10 +15,10 @@
         | append: '" class="'
         | append: 'd-flex flex-items-baseline">'
         | append: title
-        | append: '</a>'                      -%}
+        | append: '</a>'                       -%}
 
-{%- assign group = group | plus: 1            -%}
-{%- assign group_title = 'group'              -%}
+{%- assign group = group | plus: 1             -%}
+{%- assign group_title = 'group'               -%}
 {%- assign _node = '<li data-type="group"'
         | append: ' class="toc level-2"'
 		| append: ' data-level="2" aria-level="'
@@ -38,30 +38,30 @@
 		| append: group_title
 		| append: '-'
 		| append: group
-		| append: '</a>'                      -%}
+		| append: '</a>'                       -%}
 
-{%- if node_type == "main"                    -%}
+{%- if node_type == "main"                     -%}
 
-{%-   capture nodes                           -%}
-{{      nodes                                  }}
-{%      include tabs.liquid size=13 %}</ul>
-{%      include tabs.liquid size=12 %}</li>
-{%      include tabs.liquid size=11 %}</ul>
-{%      include tabs.liquid size=10 %}</li>
-{%      include tabs.liquid size=10 %}{{ node  }}
-{%      include tabs.liquid size=11 %}<ul>
-{%      include tabs.liquid size=12 %}{{ _node }}
-{%      include tabs.liquid size=13 %}<ul>
-{%-   endcapture                              -%}
+{%-   capture nodes                            -%}
+{{      nodes                                   }}
+{%-     include tabs.liquid size=13 -%}</ul>
+{%-     include tabs.liquid size=12 -%}</li>
+{%-     include tabs.liquid size=11 -%}</ul>
+{%-     include tabs.liquid size=10 -%}</li>
+{%-     include tabs.liquid size=10 -%}{{ node  }}
+{%-     include tabs.liquid size=11 -%}<ul>
+{%-     include tabs.liquid size=12 -%}{{ _node }}
+{%-     include tabs.liquid size=13 -%}<ul>
+{%-   endcapture                               -%}
 
-{%-   else                                    -%}
+{%-   else                                     -%}
 
-{%-   capture nodes                           -%}
-{{      nodes                                  }}
-{%-     include tabs.liquid size=13 %}</ul>
-{%-     include tabs.liquid size=12 %}</li>
-{%-     include tabs.liquid size=12 %}{{ _node }}
-{%-     include tabs.liquid size=13 %}<ul>
-{%-   endcapture                              -%}
+{%-   capture nodes                            -%}
+{{      nodes                                   }}
+{%-     include tabs.liquid size=13 -%}</ul>
+{%-     include tabs.liquid size=12 -%}</li>
+{%-     include tabs.liquid size=12 -%}{{ _node }}
+{%-     include tabs.liquid size=13 -%}<ul>
+{%-   endcapture                               -%}
 
-{%- endif                                     -%}
+{%- endif                                      -%}
