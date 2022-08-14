@@ -194,7 +194,7 @@
         if ($('#diagram').is(':visible')) {$('#diagram').hide(); $(".loadingImg").show();}
 
         //Allow diagram to get the occurred index of a given objects 
-        if (id === undefined) $(".loadingImg").css("background-image", "url('/images/{% if site.baseurl != "" %}logo.png{% else %}loading.gif{% endif -%}')");
+        if (id === undefined) $(".loadingImg").css("background-image", "url('/images/loading.gif')");
         id = $(e).attr("id"); var ln = id.length; var ls = ids.length;
         (ln == pad)? ids.push(id): ids.pop();
 
@@ -394,7 +394,7 @@
     change : function() {
 
         //Strict Workflows default to Sequence but not the index 
-        if (id === undefined) $(".loadingImg").css("background-image", "url('/images/{% if site.baseurl != "" %}logo.png{% else %}loading.gif{% endif -%}')");
+        if (id === undefined) $(".loadingImg").css("background-image", "url('/images/loading.gif')");
         id = ids = data = feed = json = size = type = null;
         draw.getJSON();
 
