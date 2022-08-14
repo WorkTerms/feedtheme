@@ -127,8 +127,8 @@ jQuery(function($)
             $.ajax({
                 type: "GET",
                 dataType: "xml",
-                success: draw.getJSON(xml),
-                url: "{{ site.baseurl }}/feeds.xml"
+                url: $('#xml')[0].href,
+                success: draw.getJSON(xml)
             });
         });
     });
