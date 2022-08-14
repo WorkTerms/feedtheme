@@ -254,6 +254,7 @@
     getJSON : function(e) {
 
         //Inject Workflows from getJSON
+		//https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/.
 		//https://www.javatpoint.com/oprweb/test.jsp?filename=jquery-isxmldoc-method1
         if (ids == null) ids = new Array();
         if (!init) init = editor.getValue();
@@ -262,7 +263,7 @@
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         if ($(".theme").val() == 'hand' && pad) pad = null;
-        else if (!pad) pad = (params.pad)? (params.pad * 1): ($('.sf-menu')? 2: null);
+        else if (!pad) pad = (params.pad)? (params.pad * 1): ($('nav').hasClass('sf-menu')? 2: null);
 
         $.getJSON(feed).done(function(result){
 
