@@ -10,7 +10,7 @@
 *  Documentation is currently available in bahasa only
 *  https://github.com/chetabahana/chetabahana.github.io/wiki#skema
 *
-{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, editor, diagram, options, elements, draw = {
+{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, params, regex, editor, diagram, options, elements, draw = {
 
     diagram : function() {
 
@@ -269,11 +269,12 @@
         if (ids == null) ids = new Array();
 
         if (!editor) draw.editor();
+        if (!params) draw.params();
         if (!init) init = editor.getValue();
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
-        //https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/.
+        //https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): (($('ul').hasClass('sf-menu'))? 2: null);
 
@@ -400,6 +401,13 @@
         str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
         str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
         return (/^[\],:{}\s]*$/).test(str);
+
+    },
+
+    params : function() {
+
+        regex = /[?&]([^=#]+)=([^&#]*)/g, url = window.location.href, params = {}, match;
+        while(match = regex.exec(url)) {params[match[1]] = match[2];}
 
     },
 

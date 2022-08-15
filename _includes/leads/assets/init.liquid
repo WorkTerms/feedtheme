@@ -110,18 +110,6 @@ jQuery(function($)
         //chetabahana-portfolio
         $(".templatemo-project-gallery").simplyScroll();
 
-        // draw diagram
-        // https://stackoverflow.com/a/10811687/4058484
-        $.getScript($('#js')[0].href, function() {
-            $('.theme').val('hand');
-            $.ajax({
-                type: "GET",
-                dataType: "xml",
-                url: $('#xml')[0].href,
-                success: draw.getJSON(xml)
-            });
-        });
-
     });
 
     // Window.onload event will be executed only when all page resources
@@ -137,6 +125,18 @@ jQuery(function($)
             var id = uniqueId();
             var name = uniqueId();
             $(e).attr('name', name).attr('id', id);
+        });
+
+       // draw diagram
+        // https://stackoverflow.com/a/10811687/4058484
+        $.getScript($('#js')[0].href, function() {
+            $('.theme').val('hand');
+            $.ajax({
+                type: "GET",
+                dataType: "xml",
+                url: $('#xml')[0].href,
+                success: draw.getJSON(xml)
+            });
         });
     });
 
@@ -178,14 +178,10 @@ function filterBy(data, filters = {}) {
 // automatically generate unique DOM ids using jQuery-ui
 // https://stackoverflow.com/a/20061124/4058484
 var myIdcounter = 0;
+var top_menu_height = 0;
 window.uniqueId = function(){
 	return 'myid-' + myIdcounter++;
 }
-
-// set params
-var top_menu_height = 0;
-var params, regex = /[?&]([^=#]+)=([^&#]*)/g, url = window.location.href, params = {}, match;
-while(match = regex.exec(url)) {params[match[1]] = match[2];}
 
 //https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 if ($('#₠Quantum').length) $('#₠Quantum').load('/grammar/section/skema.html');
