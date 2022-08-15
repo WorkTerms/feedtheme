@@ -262,6 +262,29 @@
 
     },
 
+
+    getXML : function() {
+
+        // assign unique id
+        // https://api.jqueryui.com/uniqueId/
+        $('.theme').val('hand');
+        $('.theme').each(function (i, e) {
+            var id = uniqueId();
+            var name = uniqueId();
+            $(e).attr('name', name).attr('id', id);
+        });
+
+        // https://stackoverflow.com/a/10811687/4058484
+        $.ajax({
+            type: "GET",
+            dataType: "xml",
+            url: "$('#xml')[0].href",
+            success: draw.getJSON(xml)
+        });
+
+    },
+
+
     getJSON : function(e) {
 
         //Inject Workflows from getJSON

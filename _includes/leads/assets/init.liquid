@@ -71,18 +71,6 @@ jQuery(function($)
         // scrollspy to auto active the nav item
         $('.top-menu').stickUp(); 
 
-        // This API has been removed in jQuery 3.0; please use .on( "load", handler ) 
-        // instead of .load( handler ) and .trigger( "load" ) instead of .load().
-        // https://api.jquery.com/load-event/
-
-        // load page in sequence with Jquery via  div loaded
-        // https://stackoverflow.com/q/15674733/4058484
-        /*$('#one').load("one.php", function() {  // first div loaded
-            $('#two').load("two.php", function() { // second div loaded
-                $('#three').load("three.php", function() { // third div loaded  });
-            });
-        });*/
-
         // gallery category
         $('.templatemo-gallery-category a').click(function(e)
         {
@@ -116,30 +104,23 @@ jQuery(function($)
 
     // Window.onload event will be executed only when all page resources
     // ( images, audio, video etc ) has been downloaded in the page.
+    // This API has been removed in jQuery 3.0; please use .on( "load", handler ) 
+    // instead of .load( handler ) and .trigger( "load" ) instead of .load().
+    // https://api.jquery.com/load-event/
+
     $(window).on('load', function()
     {
-        // unbind external link
-        $('.external-link').unbind('click');
-
-        // assign unique id
-        // https://api.jqueryui.com/uniqueId/
-        $('.theme').each(function (i, e) {
-            var id = uniqueId();
-            var name = uniqueId();
-            $(e).attr('name', name).attr('id', id);
-        });
 
         // draw diagram
-        // https://stackoverflow.com/a/10811687/4058484
-        if ($('#js').length) $.getScript($('#js')[0].href, function() {
-            $('.theme').val('hand');
-            $.ajax({
-                type: "GET",
-                dataType: "xml",
-                url: "/sitemap.xml",
-                success: draw.getJSON(xml)
-            });
-        });
+        // load page in sequence with Jquery via  div loaded
+        // https://stackoverflow.com/q/15674733/4058484
+        // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
+
+        if ($('#₠Quantum').length) {
+            $('#₠Quantum').load("'/grammar/section/skema.html'", function() {
+                $.getScript($('#js')[0].href, function() { draw.getXML()});});}
+        else if ($('#js').length) $.getScript($('#js')[0].href, function() {draw.getXML()});
+
     });
 
     //catch Scrollspy event
@@ -179,11 +160,9 @@ function filterBy(data, filters = {}) {
 
 // automatically generate unique DOM ids using jQuery-ui
 // https://stackoverflow.com/a/20061124/4058484
-var myIdcounter = 0;
-var top_menu_height = 0;
 window.uniqueId = function(){
 	return 'myid-' + myIdcounter++;
 }
 
-//https://www.delftstack.com/howto/javascript/load-html-file-javascript/
-if ($('#₠Quantum').length) $('#₠Quantum').load('/grammar/section/skema.html');
+var myIdcounter = 0;
+var top_menu_height = 0;
