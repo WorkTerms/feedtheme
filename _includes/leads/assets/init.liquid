@@ -133,13 +133,6 @@ jQuery(function($)
             $(e).attr('name', name).attr('id', id);
         });
 
-        // set editor
-        var editor = ace.edit("editor");
-        editor.setOptions({fontSize: "10pt"});
-        editor.setTheme("ace/theme/crimson_editor");
-        editor.getSession().setMode("ace/mode/asciidoc");
-        editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
-
        // draw diagram
         // https://stackoverflow.com/a/10811687/4058484
         $.getScript($('#js')[0].href, function() {

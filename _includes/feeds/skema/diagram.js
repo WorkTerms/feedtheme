@@ -10,7 +10,7 @@
 *  Documentation is currently available in bahasa only
 *  https://github.com/chetabahana/chetabahana.github.io/wiki#skema
 *
-{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, diagram, options, elements, draw = {
+{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, editor, diagram, options, elements, draw = {
 
     diagram : function() {
 
@@ -251,12 +251,27 @@
 
     },
 
+    editor : function() {
+
+        // set editor
+        $.getScript('/ace-builds/src-min/ace.js', function() {
+
+            editor = ace.edit("editor");
+            editor.setOptions({fontSize: "10pt"});
+            editor.setTheme("ace/theme/crimson_editor");
+            editor.getSession().setMode("ace/mode/asciidoc");
+            editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
+
+        });
+    },
+
     getJSON : function(e) {
 
         //Inject Workflows from getJSON
         if ($.isXMLDoc(e)) xml = e;
         if (ids == null) ids = new Array();
 
+        if (!editor) draw.editor();
         if (!init) init = editor.getValue();
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
