@@ -114,10 +114,16 @@ jQuery(function($)
         // https://stackoverflow.com/q/15674733/4058484
         // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
-        if ($('#₠Quantum').length) {$('#₠Quantum').load('/grammar/section/skema.html', function() {
-			$('#js').load(function() {$.getScript($(this).href, function() {draw.getXML()});});});}
-        else if ($('#js').length) $.getScript($('#js')[0].href, function() {draw.getXML()});
-
+        if ($('#js').length) $.getScript($('#js')[0].href, function() draw.getXML())
+        else if ($('#₠Quantum').length) {
+		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
+                $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
+                        
+                    try {draw.getXML()}
+                   
+                });  
+            }); 
+        };
     });
 
     //catch Scrollspy event
@@ -158,7 +164,7 @@ function filterBy(data, filters = {}) {
 // generate unique DOM ids using jQuery-ui
 // https://api.jqueryui.com/uniqueId/
 window.uniqueId = function(){
-	return 'myid-' + myIdcounter++;
+    return 'myid-' + myIdcounter++;
 }
 
 var myIdcounter = 0;
