@@ -269,12 +269,13 @@
         if (ids == null) ids = new Array();
 
         if (!editor) draw.editor();
-        if (!params) draw.params();
         if (!init) init = editor.getValue();
+
         if (!link) link = $('#tautan a').clone();
         if (!feed) feed = $('#feed_json')[0].href + '?t=' + $.now();
 
         //https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/
+        if (!params) draw.params();
         if ($(".theme").val() == 'hand' && pad) pad = null;
         else if (!pad) pad = (params.pad)? (params.pad * 1): (($('ul').hasClass('sf-menu'))? 2: null);
 
