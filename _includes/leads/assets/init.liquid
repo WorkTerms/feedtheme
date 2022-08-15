@@ -114,13 +114,16 @@ jQuery(function($)
         // https://stackoverflow.com/q/15674733/4058484
         // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
-        if ($('#js').length) $.getScript($('#js')[0].href, function() {draw.getXML()})
+        if ($('#js').length) {
+			$.getScript($('#js')[0].href, function() {
+				draw.getXML();
+			});
+		}
         else if ($('#₠Quantum').length) {
 		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
                 $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
-                        
-                    try {draw.getXML()}
-                   
+                    try {window.requestAnimationFrame(draw.getXML());}    
+					finally {$('.download').click(function(ev) {draw.xmlData();});}
                 });  
             }); 
         };

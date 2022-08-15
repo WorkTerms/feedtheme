@@ -276,7 +276,7 @@
         });
 
         $('.theme').change(function() {draw.change();});
-        $('.download').click(function(ev) {draw.xmlData();});
+        
 		
         // https://stackoverflow.com/a/10811687/4058484
         $.ajax({
