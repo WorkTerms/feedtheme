@@ -117,7 +117,7 @@ jQuery(function($)
         // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
         if ($('#₠Quantum').length) {$('#₠Quantum').load('/grammar/section/skema.html', function() {
-			$('#js').load(function() {$.getScript('/grammar/diagram.js', function() {draw.getXML()});});});}
+			$('#js').load(function() {$.getScript($(this).href, function() {draw.getXML()});});});}
         else if ($('#js').length) $.getScript($('#js')[0].href, function() {draw.getXML()});
 
     });
