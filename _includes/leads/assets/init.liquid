@@ -2,11 +2,13 @@
  * https://tagmanager.google.com/
  * 
  * ========================================================
- * <div id='₠Quantum'><script>document.write("<scr"+"ipt async>
- *(function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
+ * <div id='₠Quantum'>
+ * <script>document.write("<scr"+"ipt async>
+ * (function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
  * a.async=1;a.src=t;a.dataset.QuantumId='172913910143';a.dataset.QuantumPlatform='gtm';
- * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');
- * </scr"+"ipt>");</script></div>
+ * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');</scr"+"ipt>");
+ * </script>
+ * </div>
  * ========================================================
  *
  * Copyright (c) 2022 eQ19.com All rights reserved.
@@ -134,7 +136,7 @@ jQuery(function($)
             $.ajax({
                 type: "GET",
                 dataType: "xml",
-                url: $('#xml')[0].href,
+                url: "/sitemap.xml",
                 success: draw.getJSON(xml)
             });
         });

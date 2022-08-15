@@ -10,7 +10,7 @@
 *  Documentation is currently available in bahasa only
 *  https://github.com/chetabahana/chetabahana.github.io/wiki#skema
 *
-{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, params, regex, editor, diagram, options, elements, draw = {
+{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, match, regex, params, editor, diagram, options, elements, draw = {
 
     diagram : function() {
 
