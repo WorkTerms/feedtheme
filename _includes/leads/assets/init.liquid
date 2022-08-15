@@ -1,3 +1,7 @@
+/*
+<div id='₠Quantum'><script>document.write("<scr"+"ipt async>(function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];a.async=1;a.src=t;a.dataset.QuantumId='172913910143';a.dataset.QuantumPlatform='gtm';x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');</scr"+"ipt>");</script></div>
+*/
+
 jQuery(function($)
 {
     // jQuery document.ready will be executed just after html dom tree has been parsed out.
@@ -123,7 +127,14 @@ jQuery(function($)
             $(e).attr('name', name).attr('id', id);
         });
 
-        // draw diagram
+         // set editor
+        var editor = ace.edit("editor");
+        editor.setOptions({fontSize: "10pt"});
+        editor.setTheme("ace/theme/crimson_editor");
+        editor.getSession().setMode("ace/mode/asciidoc");
+        editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
+
+       // draw diagram
         // https://stackoverflow.com/a/10811687/4058484
         $.getScript($('#js')[0].href, function() {
             $('.theme').val('hand');
@@ -170,13 +181,6 @@ function filterBy(data, filters = {}) {
            (laur.yearTo <= filters.yearTo);
   });
 }
-
-// set editor
-var editor = ace.edit("editor");
-editor.setOptions({fontSize: "10pt"});
-editor.setTheme("ace/theme/crimson_editor");
-editor.getSession().setMode("ace/mode/asciidoc");
-editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
 
 // set params
 var myIdcounter = 0;
