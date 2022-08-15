@@ -4,6 +4,9 @@ jQuery(function($)
     // So it is far more earlier executed than window onload.
     $(document).ready(function()
     {
+		//https://www.delftstack.com/howto/javascript/load-html-file-javascript/
+        if ($('#₠Quantum').length) $('#₠Quantum').load('/grammar/section/skema.html');
+
         // to stick navbar on top and hash
         top_menu_height = $('.top-menu').height();
         $('html,body').scrollspy({target: '#templatemo-nav-bar', offset: top_menu_height + 10});
@@ -168,10 +171,6 @@ function filterBy(data, filters = {}) {
   });
 }
 
-// set params 
-var myIdcounter = 0;
-var top_menu_height = 0;
-
 // set editor
 var editor = ace.edit("editor");
 editor.setOptions({fontSize: "10pt"});
@@ -179,6 +178,8 @@ editor.setTheme("ace/theme/crimson_editor");
 editor.getSession().setMode("ace/mode/asciidoc");
 editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
 
-// get params 
+// set params
+var myIdcounter = 0;
+var top_menu_height = 0;
 var params, regex = /[?&]([^=#]+)=([^&#]*)/g, url = window.location.href, params = {}, match;
 while(match = regex.exec(url)) {params[match[1]] = match[2];}
