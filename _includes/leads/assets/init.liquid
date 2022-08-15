@@ -110,12 +110,6 @@ jQuery(function($)
         //chetabahana-portfolio
         $(".templatemo-project-gallery").simplyScroll();
 
-        // automatically generate unique DOM ids using jQuery-ui
-        // https://stackoverflow.com/a/20061124/4058484
-        window.uniqueId = function(){
-            return 'myid-' + myIdcounter++;
-        }
-
         // draw diagram
         // https://stackoverflow.com/a/10811687/4058484
         $.getScript($('#js')[0].href, function() {
@@ -181,8 +175,14 @@ function filterBy(data, filters = {}) {
   });
 }
 
-// set params
+// automatically generate unique DOM ids using jQuery-ui
+// https://stackoverflow.com/a/20061124/4058484
 var myIdcounter = 0;
+window.uniqueId = function(){
+	return 'myid-' + myIdcounter++;
+}
+
+// set params
 var top_menu_height = 0;
 var params, regex = /[?&]([^=#]+)=([^&#]*)/g, url = window.location.href, params = {}, match;
 while(match = regex.exec(url)) {params[match[1]] = match[2];}
