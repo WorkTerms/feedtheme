@@ -184,7 +184,8 @@ while(match = regex.exec(url)) {params[match[1]] = match[2];}
 
 // DOM elements
 //https://stackoverflow.com/a/3104237/4058484
-var xmlString = "<div id='foo'>{%- include templates/nodes/skema.html -%}</div>";
+{%- capture my_skema -%}{%- include templates/nodes/skema.html -%}{%- endcapture %}
+var xmlString = "<div id='foo'>{{ my_skema | strip }}</div>";
 var doc = new DOMParser().parseFromString(xmlString, "text/xml");
 const elem = document.getElementById('chetabahana-skema');
 elem.innerHTML = doc.firstChild.innerHTML;
