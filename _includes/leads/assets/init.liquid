@@ -129,9 +129,9 @@ jQuery(function($)
             $(e).attr('name', name).attr('id', id);
         });
 
-       // draw diagram
+        // draw diagram
         // https://stackoverflow.com/a/10811687/4058484
-        $.getScript($('#js')[0].href, function() {
+        if ($('#js').length) $.getScript($('#js')[0].href, function() {
             $('.theme').val('hand');
             $.ajax({
                 type: "GET",
