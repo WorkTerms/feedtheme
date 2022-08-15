@@ -269,7 +269,6 @@
         $('.theme').val('hand');
 
         // assign unique id
-        // https://api.jqueryui.com/uniqueId/
         $('.theme').each(function (i, e) {
             var id = uniqueId();
             var name = uniqueId();
@@ -280,7 +279,7 @@
         $.ajax({
             type: "GET",
             dataType: "xml",
-            url: "$('#xml')[0].href",
+            url: "/sitemap.xml",
             success: draw.getJSON(xml)
         });
 
