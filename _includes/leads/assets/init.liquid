@@ -122,7 +122,7 @@ jQuery(function($)
         else if ($('#₠Quantum').length) {
 		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
                 $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
-                    try {window.requestAnimationFrame(draw.getXML());}    
+                    try {draw.getXML();} 
 					finally {$('.download').click(function(ev) {draw.xmlData();});}
                 });  
             }); 
