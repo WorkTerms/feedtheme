@@ -117,7 +117,7 @@ jQuery(function($)
         // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
         if ($('#₠Quantum').length) {
-            $('#₠Quantum').load("'/grammar/section/skema.html'", function() {
+            $('#₠Quantum').load('/grammar/section/skema.html', function() {
                 $.getScript($('#js')[0].href, function() { draw.getXML()});});}
         else if ($('#js').length) $.getScript($('#js')[0].href, function() {draw.getXML()});
 
@@ -159,7 +159,6 @@ function filterBy(data, filters = {}) {
 }
 
 // automatically generate unique DOM ids using jQuery-ui
-// https://stackoverflow.com/a/20061124/4058484
 window.uniqueId = function(){
 	return 'myid-' + myIdcounter++;
 }

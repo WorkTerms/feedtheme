@@ -265,9 +265,11 @@
 
     getXML : function() {
 
+        // reset theme first
+        $('.theme').val('hand');
+
         // assign unique id
         // https://api.jqueryui.com/uniqueId/
-        $('.theme').val('hand');
         $('.theme').each(function (i, e) {
             var id = uniqueId();
             var name = uniqueId();
