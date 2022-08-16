@@ -1,4 +1,4 @@
-/* This Tag Fired using Custom HTML on Google Tag Manager
+/* This Tag is fired using Custom HTML on Google Tag Manager
  * For more information please visit https://tagmanager.google.com/
  * 
  * ========================================================
@@ -11,8 +11,8 @@
  * </div>
  * ========================================================
  *
- * Copyright (c) 2022 ₠Quantum https://www.eQ19.com
- * All rights reserved.
+ * Copyright (c) 2022 All rights reserved.
+ * ₠Quantum Project https://www.eQ19.com
  */
 jQuery(function($)
 {
