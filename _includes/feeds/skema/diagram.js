@@ -1,16 +1,17 @@
-{%- comment -%}
-*
-*  Here we are defining The Document Object Model (DOM) with JavaScript
-*  as the relations between their nodes with our feeds object.
-*
-*  You may see the running code here:
-*  https://eq19.github.io/js/diagram.js
-*
-*  Note:
-*  Documentation is currently available in bahasa only
-*  https://github.com/chetabahana/chetabahana.github.io/wiki#skema
-*
-{%- endcomment -%}var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, match, regex, params, editor, diagram, options, elements, draw = {
+/* Here we are defining The Document Object Model (DOM) with JavaScript
+ * as the relations between their nodes with our feeds object.
+ *
+ * You may see the running code here:
+ * https://eq19.github.io/grammar/diagram.js
+ *
+ * Note:
+ * Documentation is currently available in bahasa only
+ * https://github.com/chetabahana/chetabahana.github.io/wiki#skema
+ *
+ * Copyright © 2022 All rights reserved.
+ * ₠Quantum Project https://www.eQ19.com
+ */
+var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, match, regex, params, editor, diagram, options, elements, draw = {
 
 	diagram : function() {
 
