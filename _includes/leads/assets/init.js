@@ -123,11 +123,9 @@ jQuery(function($)
 			});
 		}
 		else if ($('#₠Quantum').length) {
-			$('#₠Quantum').load('/grammar/section/skema.html', function() {
-				$.getScript('/grammar/diagram.js?t=' + $.now(), function() {
-					$('#₠Quantum').on('load', function(){draw.getXML();});
-				});  
-			}); 
+			$.getScript('/grammar/diagram.js?t=' + $.now(), function() {
+				$('#₠Quantum').on('load', function(){draw.getXML();});
+			});  
 		};
 	});
 
