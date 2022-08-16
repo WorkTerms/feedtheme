@@ -115,7 +115,7 @@ jQuery(function($)
 		// https://stackoverflow.com/q/15674733/4058484
 		// https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
-		if ($('#js').length) {
+		if (!$('#js').length) {
 			$('#₠Quantum').empty().append('<a id="js" href="/grammar/diagram.js">js</a>');;
 		};
 		$.getScript($('#js')[0].href, function() {
