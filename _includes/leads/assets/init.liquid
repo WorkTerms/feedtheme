@@ -6,8 +6,8 @@
  * <script>document.write("<scr"+"ipt async>
  * (function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
  * a.async=1;a.src=t;a.dataset.QuantumId='172913910143';a.dataset.QuantumPlatform='gtm';
- * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');</scr"+"ipt>");
- * </script>
+ * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');
+  * </scr"+"ipt>");</script>
  * </div>
  * ========================================================
  *
@@ -116,15 +116,14 @@ jQuery(function($)
         // https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
         if ($('#js').length) {
-			$.getScript($('#js')[0].href, function() {
-				draw.getXML();
-			});
-		}
+            $.getScript($('#js')[0].href, function() {
+                draw.getXML();
+            });
+        }
         else if ($('#₠Quantum').length) {
-		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
+            $('#₠Quantum').load('/grammar/section/skema.html', function() {
                 $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
-                    try {draw.getXML();} 
-					finally {$('.download').click(function(ev) {draw.xmlData();});}
+                    $('#js').on('load', function(){draw.getXML();});
                 });  
             }); 
         };

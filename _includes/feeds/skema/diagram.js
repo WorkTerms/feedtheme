@@ -121,6 +121,7 @@
                 //set element
                 draw.element();
                 if (type != 'Tree') $('.loadingImg').hide();
+                $('.download').click(function(ev) {draw.xmlData();});
                 $('#diagram').attr('class', 'diagram-' + type.toLowerCase());
 
             }
@@ -476,7 +477,7 @@
     feed : function() {
 
         //Support Unlimited Scripts on Workflows Algorithm (#36)
-        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
+        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js' + '?t=' + $.now();
         if (window[type]) {window[type].feed(id, size); $('.loadingImg').hide();}
         else {$.getScript(js, function() {draw.feed();});}
 
