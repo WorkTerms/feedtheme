@@ -7,7 +7,7 @@
  * (function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
  * a.async=1;a.src=t;a.dataset.QuantumId='172913910143';a.dataset.QuantumPlatform='gtm';
  * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.com/grammar/init.js');
-  * </scr"+"ipt>");</script>
+ * </scr"+"ipt>");</script>
  * </div>
  * ========================================================
  *
@@ -87,19 +87,19 @@ jQuery(function($)
 			$(linkClass).fadeIn();  
 		});
 
-		//chetabahana-gallery
+		// gallery colorbox
 		$('a.colorbox').colorbox({
 			rel: function(){
 				return $(this).data('group');
 			}
 		});
 
-		//chetabahana-skema
-
-		//chetabahana-portfolio
+		//portfolio
 		$(".templatemo-project-gallery").simplyScroll();
 
 	});
+
+	// Skema
 
 	// Window.onload event will be executed only when all page resources
 	// ( images, audio, video etc ) has been downloaded in the page.
@@ -130,7 +130,7 @@ jQuery(function($)
 		};
 	});
 
-	//catch Scrollspy event
+	// Scrollspy catch event
 	$(window).on('activate.bs.scrollspy', function (event) {
 		//if ($('#diagram svg').width() < $('#diagram').width()) draw.change();
 	})
@@ -138,6 +138,7 @@ jQuery(function($)
 });
 
 // init scrollTo 
+var top_menu_height = 0;
 function scrollTo(selectors)
 {
 	if(!$(selectors).length) return;
@@ -165,11 +166,9 @@ function filterBy(data, filters = {}) {
   });
 }
 
-// generate unique DOM ids using jQuery-ui
+// generate unique DOM ids
 // https://api.jqueryui.com/uniqueId/
+var myIdcounter = 0;
 window.uniqueId = function(){
 	return 'myid-' + myIdcounter++;
 }
-
-var myIdcounter = 0;
-var top_menu_height = 0;
