@@ -11,7 +11,7 @@
  * </div>
  * ========================================================
  *
- * Copyright (c) 2022 All rights reserved.
+ * Copyright © 2022 All rights reserved.
  * ₠Quantum Project https://www.eQ19.com
  */
 jQuery(function($)

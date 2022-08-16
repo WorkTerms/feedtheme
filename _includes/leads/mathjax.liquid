@@ -1,4 +1,4 @@
-{%- if page.content contains "$$" -%}
+{%- include tabs.liquid size=2 -%}{%- if page.content contains "$$" -%}
     <script>
       window.MathJax = {% if site.mathjax %}{{ site.mathjax | jsonify }}{% else %}{}{% endif %};
     </script>

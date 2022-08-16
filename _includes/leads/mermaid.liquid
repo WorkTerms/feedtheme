@@ -1,4 +1,4 @@
-{%- if content contains '<code class="language-mermaid">' -%}
+{%- include tabs.liquid size=2 -%}{%- if content contains '<code class="language-mermaid">' -%}
     {%- if site.mermaid.custom -%}
         <script src="{{ site.mermaid.custom }}"></script>
     {%- else -%}
