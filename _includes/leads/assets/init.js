@@ -10,9 +10,10 @@
  * </scr"+"ipt>");</script>
  * </div>
  * ========================================================
+ * you may use Container Injector point to GTM-PGWT4RS
  *
- * Copyright © 2022 All rights reserved.
  * ₠Quantum Project https://www.eQ19.com
+ * Copyright © 2022 All rights reserved.
  */
 jQuery(function($)
 {
