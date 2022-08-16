@@ -195,13 +195,14 @@
 
         //Allow diagram to get the occurred index of a given objects 
         if (id === undefined) $(".loadingImg").css("background-image", "url('/images/loading.gif')");
+        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
         id = $(e).attr("id"); var ln = id.length; var ls = ids.length;
         (ln == pad)? ids.push(id): ids.pop();
 
         //id.length vs type index (1»2 2»3 3»4 4»5 5»6 6»1)
         pad = (ln + 1 > size)? 1: ln + 1;
         type = json[pad - 1]['title'];
-        data = null; draw.feed();
+        data = null; draw.feed(js);
 
     },
 
@@ -217,7 +218,8 @@
         $(e).css({'cursor':'pointer'}).attr('class', function(index, classNames) {return draw.name(classNames);});
 
         e.parentNode.appendChild(e);
-        if(e.id == elements.filter(':last').attr('id')) {if (type == 'Tree') draw.feed();}
+        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
+        if(e.id == elements.filter(':last').attr('id')) {if (type == 'Tree') draw.feed(js);}
 
     },
 
@@ -473,12 +475,11 @@
 
     },
 
-    feed : function() {
+    feed : function(js) {
 
         //Support Unlimited Scripts on Workflows Algorithm (#36)
-        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
         if (window[type]) {window[type].feed(id, size); $('.loadingImg').hide();}
-        else {$.getScript(js, function() {draw.feed();});}
+        else {$.getScript(js, function() {draw.feed(js);});}
 
     },
 
