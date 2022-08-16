@@ -483,7 +483,7 @@
 			$('.loadingImg').hide();
 		}
         else {$.getScript(js + '?t=' + $.now(), function() {
-			window.requestAnimationFrame(draw.feed(js));});
+			draw.feed(js);});
 		}
     },
 
