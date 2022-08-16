@@ -1,5 +1,5 @@
 /* This Tag Fired using Custom HTML on Google Tag Manager
- * https://tagmanager.google.com/
+ * For more information please visit https://tagmanager.google.com/
  * 
  * ========================================================
  * <div id='₠Quantum'>
@@ -11,7 +11,8 @@
  * </div>
  * ========================================================
  *
- * Copyright (c) 2022 eQ19.com All rights reserved.
+ * Copyright (c) 2022 ₠Quantum https://www.eQ19.com
+ * All rights reserved.
  */
 jQuery(function($)
 {
@@ -121,10 +122,8 @@ jQuery(function($)
 		}
         else if ($('#₠Quantum').length) {
 		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
-                $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
-                    try {draw.getXML();} 
-					finally {$('.download').click(function(ev) {draw.xmlData();});}
-                });  
+				if ($('#js').length) {draw.getXML();}
+				else {draw.feed('/grammar/diagram.js');draw.getXML();}
             }); 
         };
     });
