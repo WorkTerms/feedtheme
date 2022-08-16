@@ -121,6 +121,7 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 				//set element
 				draw.element();
 				if (type != 'Tree') $('.loadingImg').hide();
+				$('.theme').change(function() {draw.change();});
 				$('.download').click(function(ev) {draw.xmlData();});
 				$('#diagram').attr('class', 'diagram-' + type.toLowerCase());
 
@@ -266,11 +267,8 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 	getXML : function() {
 
-		// reset first
-		$('.theme').val('hand');
-		$('.theme').change(function() {draw.change();});
-
 		// assign unique id
+		$('.theme').val('hand');
 		$('.theme').each(function (i, e) {
 			var id = uniqueId();
 			var name = uniqueId();
