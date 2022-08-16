@@ -266,8 +266,9 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 	getXML : function() {
 
-		// reset theme first
+		// reset first
 		$('.theme').val('hand');
+		$('.theme').change(function() {draw.change();});
 
 		// assign unique id
 		$('.theme').each(function (i, e) {
@@ -276,9 +277,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			$(e).attr('name', name).attr('id', id);
 		});
 
-		$('.theme').change(function() {draw.change();});
-		
-		
 		// https://stackoverflow.com/a/10811687/4058484
 		$.ajax({
 			type: "GET",

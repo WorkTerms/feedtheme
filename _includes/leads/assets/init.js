@@ -112,22 +112,15 @@ jQuery(function($)
 	{
 
 		// draw diagram
-		// load page in sequence with Jquery
-		// https://api.jquery.com/load/
 		// https://stackoverflow.com/q/15674733/4058484
 		// https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 
 		if ($('#js').length) {
-			$.getScript($('#js')[0].href, function() {
-				draw.getXML();
-			});
-		}
-		else if ($('#₠Quantum').length) {
 			$('#₠Quantum').empty().append('<a id="js" href="/grammar/diagram.js">js</a>');;
-			$.getScript($('#js')[0].href, function() {
-				draw.getXML();
-			});  
 		};
+		$.getScript($('#js')[0].href, function() {
+			draw.getXML();
+		});  
 	});
 
 	// Scrollspy catch event
