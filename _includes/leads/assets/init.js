@@ -124,6 +124,7 @@ jQuery(function($)
 		}
 		else if ($('#₠Quantum').length) {
 			$.getScript('/grammar/diagram.js?t=' + $.now(), function() {
+				$('#₠Quantum').append('<div class="book"><div class="title"></div></div>');
 				$('#₠Quantum').on('load', function(){draw.getXML();});
 			});  
 		};
