@@ -30,8 +30,8 @@ layout: tasks/compress
 		{%- include leads/adsense.liquid -%}
 		{%- include leads/sumo.liquid -%}
 	{%- else -%}
-		{%- for section in sections %}
-			{{- section.output }}
+		{%- for section in sections -%}
+			{{- section.output -}}
 		{%- endfor -%}
 	{%- endif %}
 	</body>
