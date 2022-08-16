@@ -122,8 +122,10 @@ jQuery(function($)
 		}
         else if ($('#₠Quantum').length) {
 		    $('#₠Quantum').load('/grammar/section/skema.html', function() {
-				if ($('#js').length) {draw.getXML();}
-				else {draw.feed('/grammar/diagram.js');draw.getXML();}
+                $.getScript('/grammar/diagram.js?t=' + $.now(), function() {
+                    try {draw.getXML();} 
+					finally {$('.download').click(function(ev) {draw.xmlData();});}
+                });  
             }); 
         };
     });

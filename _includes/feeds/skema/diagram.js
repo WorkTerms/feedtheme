@@ -122,7 +122,7 @@
                 draw.element();
                 if (type != 'Tree') $('.loadingImg').hide();
                 $('#diagram').attr('class', 'diagram-' + type.toLowerCase());
-                $('.download').click(function(ev) {draw.xmlData();});
+
             }
 
         });
@@ -195,14 +195,13 @@
 
         //Allow diagram to get the occurred index of a given objects 
         if (id === undefined) $(".loadingImg").css("background-image", "url('/images/loading.gif')");
-        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js';
         id = $(e).attr("id"); var ln = id.length; var ls = ids.length;
         (ln == pad)? ids.push(id): ids.pop();
 
         //id.length vs type index (1»2 2»3 3»4 4»5 5»6 6»1)
         pad = (ln + 1 > size)? 1: ln + 1;
         type = json[pad - 1]['title'];
-        data = null; draw.feed(js);
+        data = null; draw.feed();
 
     },
 
@@ -218,8 +217,7 @@
         $(e).css({'cursor':'pointer'}).attr('class', function(index, classNames) {return draw.name(classNames);});
 
         e.parentNode.appendChild(e);
-        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js';
-        if(e.id == elements.filter(':last').attr('id')) {if (type == 'Tree') draw.feed(js);}
+        if(e.id == elements.filter(':last').attr('id')) {if (type == 'Tree') draw.feed();}
 
     },
 
@@ -475,16 +473,13 @@
 
     },
 
-    feed : function(js) {
+    feed : function() {
 
         //Support Unlimited Scripts on Workflows Algorithm (#36)
-        if (window[type] && $('.loadingImg')) {
-			window[type].feed(id, size);
-			$('.loadingImg').hide();
-		}
-        else {$.getScript(js + '?t=' + $.now(), function() {
-			draw.feed(js);});
-		}
+        js = '{{ site.baseurl }}/diagram/' + type.toLowerCase() + '.js?t=' + $.now();
+        if (window[type]) {window[type].feed(id, size); $('.loadingImg').hide();}
+        else {$.getScript(js, function() {draw.feed();});}
+
     },
 
     clone : function(e, path) {
