@@ -86,18 +86,19 @@ jQuery(function($)
 		});
 
 		// https://stackoverflow.com/q/15674733/4058484
+		{%- capture skema -%}{%- include extra/rest/script.liquid -%}{%- endcapture %}
 		if (!$('#diagram').length) {
 			{%- capture skema -%}
 				{%- assign sections = site.feeds | where_exp:"item", "item.category == 'section'" -%}
 				{%- for section in sections -%}
 					{%- if section.output contains '<div id="diagram" class="diagram">' -%}
 						{{- section.output -}}
-						{%- include extra/rest/script.liquid -%}
 					{%- endif -%}
 				{%- endfor -%}
+				{{- skema -}}
 			{%- endcapture %}
-			$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
+		$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
 
 		// https://api.jqueryui.com/uniqueId/
 		window.uniqueId = function(){return 'myid-' + myIdcounter++;}
