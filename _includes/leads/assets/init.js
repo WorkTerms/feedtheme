@@ -112,9 +112,8 @@ jQuery(function($)
 
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
-			// https://www.delftstack.com/howto/javascript/load-html-file-javascript/
 			{%- capture skema %}{% include feeds/skema.html -%}{% endcapture %}
-			$('#₠Quantum').empty().append({{ skema | strip }});
+			$('#₠Quantum').empty().append({'{ skema | strip }}');
 		};
 
 		// https://api.jqueryui.com/uniqueId/
