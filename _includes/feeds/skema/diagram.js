@@ -264,28 +264,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 	},
 
-
-	getXML : function() {
-
-		// assign unique id
-		$('.theme').val('hand');
-		$('.theme').each(function (i, e) {
-			var id = uniqueId();
-			var name = uniqueId();
-			$(e).attr('name', name).attr('id', id);
-		});
-
-		// https://stackoverflow.com/a/10811687/4058484
-		$.ajax({
-			type: "GET",
-			dataType: "xml",
-			url: "/sitemap.xml",
-			success: draw.getJSON(xml)
-		});
-
-	},
-
-
 	getJSON : function(e) {
 
 		//Inject Workflows from getJSON

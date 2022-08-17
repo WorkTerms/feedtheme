@@ -100,8 +100,7 @@ jQuery(function($)
 
 	});
 
-	// Skema
-
+	// Draw #₠Quantum Skema
 	// Window.onload event will be executed only when all page resources
 	// ( images, audio, video etc ) has been downloaded in the page.
 	// This API has been removed in jQuery 3.0; please use .on( "load", handler ) 
@@ -111,16 +110,31 @@ jQuery(function($)
 	$(window).on('load', function()
 	{
 
-		// draw diagram
 		// https://stackoverflow.com/q/15674733/4058484
-		// https://www.delftstack.com/howto/javascript/load-html-file-javascript/
-
-		if (!$('#js').length) {
-			$('#₠Quantum').empty().append('<a id="js" href="/grammar/diagram.js">js</a>');;
+		if (!$('#diagram').length) {
+			// https://www.delftstack.com/howto/javascript/load-html-file-javascript/
+			{%- capture skema %}{% include feeds/skema.html -%}{% endcapture %}
+			$('#₠Quantum').empty().append({{ skema | strip }});
 		};
+
+		// https://api.jqueryui.com/uniqueId/
+		$('.theme').val('hand');
+		$('.theme').each(function (i, e) {
+			var id = uniqueId();
+			var name = uniqueId();
+			$(e).attr('name', name).attr('id', id);
+		});
+
+		// https://stackoverflow.com/a/10811687/4058484
 		$.getScript($('#js')[0].href, function() {
-			draw.getXML();
+			$.ajax({
+				type: "GET",
+				dataType: "xml",
+				url: "/sitemap.xml",
+				success: draw.getJSON(xml)
+			});
 		});  
+
 	});
 
 	// Scrollspy catch event
@@ -160,7 +174,6 @@ function filterBy(data, filters = {}) {
 }
 
 // generate unique DOM ids
-// https://api.jqueryui.com/uniqueId/
 var myIdcounter = 0;
 window.uniqueId = function(){
 	return 'myid-' + myIdcounter++;
