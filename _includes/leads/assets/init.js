@@ -15,7 +15,6 @@
  * ₠Quantum Project https://www.eQ19.com
  * Copyright © 2022 All rights reserved.
  */
-{% include feeds/skema.html -%}
  /* jQuery(function
 */jQuery(function($)
 {
