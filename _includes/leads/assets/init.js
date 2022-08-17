@@ -70,9 +70,6 @@ jQuery(function($)
 			return false;
 		});
 
-		// scrollspy to auto active the nav item
-		$('.top-menu').stickUp(); 
-
 		// gallery category
 		$('.templatemo-gallery-category a').click(function(e)
 		{
