@@ -89,8 +89,8 @@ jQuery(function($)
 		if (!$('#diagram').length) {
 			{%- capture skema -%}
 				{%- assign sections = site.feeds | where_exp:"item", "item.category == 'section'" -%}
-				{%- for section in sections -%}
-					{%- if page.title == 'skema' %}{{ section.output }}{% endif -%}
+				{%- for section in sections -%}{{ page.title }}
+					{%- if page.title == 'Skema' %}{{ section.output }}{% endif -%}
 				{%- endfor -%}
 				{%- include extra/rest/script.liquid -%}
 			{%- endcapture %}
