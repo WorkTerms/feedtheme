@@ -109,7 +109,6 @@ jQuery(function($)
 
 	$(window).on('load', function()
 	{
-
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
 			{%- capture skema %}{% include feeds/skema.html -%}{% endcapture %}
@@ -133,7 +132,6 @@ jQuery(function($)
 				success: draw.getJSON(xml)
 			});
 		});  
-
 	});
 
 	// Scrollspy catch event
