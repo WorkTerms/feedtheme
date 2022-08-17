@@ -112,7 +112,7 @@ jQuery(function($)
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
 			{%- capture skema %}{% include feeds/skema.html -%}{% endcapture %}
-			$('#₠Quantum').empty().append('<a id="js" href="/grammar/diagram.js">js</a>');
+			$('#₠Quantum').empty().append('{{ skema | split: " " | join: " " }}');
 		};
 
 		// https://api.jqueryui.com/uniqueId/
