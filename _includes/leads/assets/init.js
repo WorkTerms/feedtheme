@@ -90,9 +90,11 @@ jQuery(function($)
 			{%- capture skema -%}
 				{%- assign sections = site.feeds | where_exp:"item", "item.category == 'section'" -%}
 				{%- for section in sections -%}
-					{%- if section.title == 'skema' %}{{ section.output }}{% endif -%}
+					{%- if section.output contains '<div id="diagram" class="diagram">' -%}
+						{{- section.output -}}
+						{%- include extra/rest/script.liquid -%}
+					{%- endif -%}
 				{%- endfor -%}
-				{%- include extra/rest/script.liquid -%}
 			{%- endcapture %}
 			$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
