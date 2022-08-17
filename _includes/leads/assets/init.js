@@ -102,7 +102,7 @@ jQuery(function($)
 				{%- include extra/rest/script.liquid -%}
 				{%- include feeds/skema.html -%}
 			{%- endcapture -%}
-			{%- include tabs.liquid size=5 -%}$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
+			{%- include tabs.liquid size=5 -%}$('#₠Quantum').empty().append('<a id="js" href="/grammar/diagram.js">js</a>');
 		};
 
 		// https://api.jqueryui.com/uniqueId/
