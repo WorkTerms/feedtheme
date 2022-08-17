@@ -97,13 +97,7 @@ jQuery(function($)
 	$(window).on('load', function()
 	{
 		// https://stackoverflow.com/q/15674733/4058484
-		if (!$('#diagram')) {
-			{%- capture skema -%}
-				{%- include extra/rest/script.liquid -%}
-				{%- include feeds/skema.html -%}
-			{%- endcapture -%}
-			{%- include tabs.liquid size=5 -%}$('#₠Quantum').append('<a id="js" href="/grammar/diagram.js">js</a>');
-		};
+		$('#₠Quantum').append('<a id="js" href="/grammar/diagram.js">js</a>');
 
 		// https://api.jqueryui.com/uniqueId/
 		$('.theme').val('hand');
