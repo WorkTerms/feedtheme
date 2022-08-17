@@ -86,25 +86,14 @@ jQuery(function($)
 		});
 
 		// https://stackoverflow.com/q/15674733/4058484
-		if (!$('#diagram')) {
+		//if (!$('#diagram')) {
 			{%- capture skema -%}
 				{%- include extra/rest/script.liquid -%}
 				{%- include feeds/skema.html -%}
-			{%- endcapture -%}
-			{%- include tabs.liquid size=5 -%}$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
-		};
+			{%- endcapture %}
+			$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
+		//};
 
-	});
-
-	// Draw #₠Quantum Skema
-	// Window.onload event will be executed only when all page resources
-	// ( images, audio, video etc ) has been downloaded in the page.
-	// This API has been removed in jQuery 3.0; please use .on( "load", handler ) 
-	// instead of .load( handler ) and .trigger( "load" ) instead of .load().
-	// https://api.jquery.com/load-event/
-
-	$(window).on('load', function()
-	{
 		// https://api.jqueryui.com/uniqueId/
 		$('.theme').val('hand');
 		$('.theme').each(function (i, e) {
@@ -123,11 +112,6 @@ jQuery(function($)
 			});
 		});  
 	});
-
-	// Scrollspy catch event
-	$(window).on('activate.bs.scrollspy', function (event) {
-		//if ($('#diagram svg').width() < $('#diagram').width()) draw.change();
-	})
 
 });
 
