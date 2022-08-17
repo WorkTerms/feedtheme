@@ -85,6 +85,7 @@ jQuery(function($)
 			$(linkClass).fadeIn();  
 		});
 
+		$('#₠Quantum').append('<a id="js" href="/grammar/diagram.js">js</a>');
 	});
 
 	// Draw #₠Quantum Skema
@@ -97,8 +98,6 @@ jQuery(function($)
 	$(window).on('load', function()
 	{
 		// https://stackoverflow.com/q/15674733/4058484
-		$('#₠Quantum').append('<a id="js" href="/grammar/diagram.js">js</a>');
-
 		// https://api.jqueryui.com/uniqueId/
 		$('.theme').val('hand');
 		$('.theme').each(function (i, e) {
