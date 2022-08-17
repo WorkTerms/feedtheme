@@ -100,7 +100,7 @@ jQuery(function($)
 		};
 
 		// https://api.jqueryui.com/uniqueId/
-		$('.theme').val('hand');
+		window.uniqueId = function(){return 'myid-' + myIdcounter++;}
 		$('.theme').each(function (i, e) {
 			var id = uniqueId();
 			var name = uniqueId();
@@ -108,6 +108,7 @@ jQuery(function($)
 		});
 
 		// https://stackoverflow.com/a/10811687/4058484
+		$('.theme').val('hand');
 		$.getScript($('#js')[0].href, function() {
 			$.ajax({
 				type: "GET",
@@ -121,6 +122,7 @@ jQuery(function($)
 });
 
 // init scrollTo 
+var myIdcounter = 0;
 var top_menu_height = 0;
 function scrollTo(selectors)
 {
@@ -147,10 +149,4 @@ function filterBy(data, filters = {}) {
 		return (laur.yearFrom >= filters.yearFrom) &&
 		   (laur.yearTo <= filters.yearTo);
   });
-}
-
-// generate unique DOM ids
-var myIdcounter = 0;
-window.uniqueId = function(){
-	return 'myid-' + myIdcounter++;
 }
