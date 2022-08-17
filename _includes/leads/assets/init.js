@@ -85,12 +85,6 @@ jQuery(function($)
 			$(linkClass).fadeIn();  
 		});
 
-		// gallery colorbox
-		$('a.colorbox').colorbox({
-			rel: function(){
-				return $(this).data('group');
-			}
-		});
 
 		//portfolio
 		$(".templatemo-project-gallery").simplyScroll();
