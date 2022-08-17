@@ -90,7 +90,7 @@ jQuery(function($)
 			{%- capture skema -%}
 				{%- assign sections = site.feeds | where_exp:"item", "item.category == 'section'" -%}
 				{%- for section in sections -%}
-					{{ section.output -}}
+					{%- if section.title == 'skema' %}{{ section.output }}{% endif -%}
 				{%- endfor -%}
 				{%- include extra/rest/script.liquid -%}
 			{%- endcapture %}
