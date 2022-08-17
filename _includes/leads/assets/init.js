@@ -82,14 +82,17 @@ jQuery(function($)
 				   $(this).hide();
 				};
 			});
-			$(linkClass).fadeIn();  
+			$(linkClass).fadeIn();
 		});
 
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
 			{%- capture skema -%}
+				{%- assign sections = site.feeds | where_exp:"item", "item.category == 'section'" -%}
+				{%- for section in sections -%}
+					{%- if page.title == 'skema' %}{{ section.output }}{% endif -%}
+				{%- endfor -%}
 				{%- include extra/rest/script.liquid -%}
-				{%- include feeds/skema.html -%}
 			{%- endcapture %}
 			$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
