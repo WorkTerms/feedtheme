@@ -72,6 +72,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 
 - [Google Cloud products](https://cloud.google.com/products/#ai-and-machine-learning)
 - [React Google Tag Manager Module](https://www.eq19.com/gtm/)
+- [Remote Trigger in GitHub Actions](https://www.provartesting.com/documentation/devops/continuous-integration/github-actions/remote-trigger-in-github-actions/)
 - [Recommendations AI data ingestion](https://cloud.google.com/blog/topics/developers-practitioners/recommendations-ai-data-ingestion)
 - [Submit a template to the Community Template Gallery](https://developers.google.com/tag-platform/tag-manager/templates/gallery)
 - [Create models, Retail Search, and the new Retail console](https://cloud.google.com/retail/docs/create-models)
