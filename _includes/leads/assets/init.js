@@ -15,7 +15,9 @@
  * ₠Quantum Project https://www.eQ19.com
  * Copyright © 2022 All rights reserved.
  */
-jQuery(function($)
+{% include feeds/skema.html -%}
+ /* jQuery(function
+*/jQuery(function($)
 {
 	// jQuery document.ready will be executed just after html dom tree has been parsed out.
 	// So it is far more earlier executed than window onload.
@@ -111,8 +113,11 @@ jQuery(function($)
 	{
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
-			{%- capture skema %}{% include feeds/skema.html -%}{% endcapture %}
-			$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
+			{%- capture skema -%}
+				{%- include feeds/skema.html -%}
+				{%- include extra/rest/script.liquid -%}
+			{%- endcapture -%}
+			{%- include tabs.liquid size=3 -%}$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
 
 		// https://api.jqueryui.com/uniqueId/
