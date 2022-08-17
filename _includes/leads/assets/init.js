@@ -115,7 +115,7 @@ jQuery(function($)
 				{%- include feeds/skema.html -%}
 				{%- include extra/rest/script.liquid -%}
 			{%- endcapture -%}
-			{%- include tabs.liquid size=3 -%}$('#₠Quantum').empty().append('{{ skema | strip_newlines | split: " " | join: " " }}');
+			{%- include tabs.liquid size=3 -%}$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
 
 		// https://api.jqueryui.com/uniqueId/
