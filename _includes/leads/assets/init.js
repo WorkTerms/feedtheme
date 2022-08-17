@@ -15,8 +15,7 @@
  * ₠Quantum Project https://www.eQ19.com
  * Copyright © 2022 All rights reserved.
  */
- /* jQuery(function
-*/jQuery(function($)
+jQuery(function($)
 {
 	// jQuery document.ready will be executed just after html dom tree has been parsed out.
 	// So it is far more earlier executed than window onload.
