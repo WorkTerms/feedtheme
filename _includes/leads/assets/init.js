@@ -112,8 +112,8 @@ jQuery(function($)
 		// https://stackoverflow.com/q/15674733/4058484
 		if (!$('#diagram').length) {
 			{%- capture skema -%}
-				{%- include feeds/skema.html -%}
 				{%- include extra/rest/script.liquid -%}
+				{%- include feeds/skema.html -%}
 			{%- endcapture -%}
 			{%- include tabs.liquid size=3 -%}$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};
