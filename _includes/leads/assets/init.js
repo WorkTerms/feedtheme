@@ -85,10 +85,6 @@ jQuery(function($)
 			$(linkClass).fadeIn();  
 		});
 
-
-		//portfolio
-		$(".templatemo-project-gallery").simplyScroll();
-
 	});
 
 	// Draw #₠Quantum Skema
