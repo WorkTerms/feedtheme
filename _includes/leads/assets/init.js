@@ -38,6 +38,7 @@ jQuery(function($)
 		$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 
 		// https://api.jqueryui.com/uniqueId/
+		var myIdcounter = 0;
 		window.uniqueId = function(){return 'myid-' + myIdcounter++;}
 		$('.theme').each(function (i, e) {
 			var id = uniqueId();
@@ -59,8 +60,3 @@ jQuery(function($)
 	});
 
 });
-
-function include(url) {
-	
-}
-
