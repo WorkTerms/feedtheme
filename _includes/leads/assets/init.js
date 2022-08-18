@@ -41,7 +41,6 @@ jQuery(function($)
 		}).attr('target', '_blank'); 
 
 		// scroll to top
-		$('.top-menu').stickUp();
 		$('#btn-back-to-top').click(function(e)
 		{
 			e.preventDefault();
@@ -69,27 +68,6 @@ jQuery(function($)
 			}
 			$(this).blur();
 			return false;
-		});
-
-		// gallery category
-		$('a.colorbox').colorbox({
-			rel: function(){
-				return $(this).data('group');
-			}
-		});
-		$(".templatemo-project-gallery").simplyScroll();
-		$('.templatemo-gallery-category a').click(function(e)
-		{
-			e.preventDefault(); 
-			$(this).parent().children('a').removeClass('active');
-			$(this).addClass('active');
-			var linkClass = $(this).attr('href');
-			$('.gallery').each(function(){
-				if($(this).is(":visible") == true){
-				   $(this).hide();
-				};
-			});
-			$(linkClass).fadeIn();
 		});
 
 		// https://stackoverflow.com/q/15674733/4058484
