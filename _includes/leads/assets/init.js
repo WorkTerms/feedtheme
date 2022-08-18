@@ -41,6 +41,7 @@ jQuery(function($)
 		}).attr('target', '_blank'); 
 
 		// scroll to top
+		$('.top-menu').stickUp();
 		$('#btn-back-to-top').click(function(e)
 		{
 			e.preventDefault();
@@ -71,6 +72,12 @@ jQuery(function($)
 		});
 
 		// gallery category
+		$('a.colorbox').colorbox({
+			rel: function(){
+				return $(this).data('group');
+			}
+		});
+		$(".templatemo-project-gallery").simplyScroll();
 		$('.templatemo-gallery-category a').click(function(e)
 		{
 			e.preventDefault(); 
