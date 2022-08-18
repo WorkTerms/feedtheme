@@ -2,6 +2,16 @@ function include(url) {
 	$('#₠Quantum').append('<script src="{{ site.url }} + url + '"></script>');
 	return false;
 }
+/* core.JS
+ ========================================================*/
+include('ace-builds/src-min/ace.js');
+include('stickUp/js/stickUp.min.js');
+include('slick/slick/slick.min.js');
+include('sequence/js/svginnerhtml.min.js');
+include('sequence/js/snap.svg-min.js');
+include('flowchart/raphael-min.js');
+include('route/d3.min.js');
+include('cards/widget.js');
 
 /* cookie.JS
  ========================================================*/
