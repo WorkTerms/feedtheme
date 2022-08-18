@@ -119,6 +119,7 @@ jQuery(function($)
 		// https://stackoverflow.com/a/10811687/4058484
 		$('.theme').val('hand');
 		$.getScript($('#js')[0].href, function() {
+			if (!editor) draw.editor();
 			$.ajax({
 				type: "GET",
 				dataType: "xml",

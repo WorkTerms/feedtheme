@@ -269,8 +269,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 		//Inject Workflows from getJSON
 		if ($.isXMLDoc(e)) xml = e;
 		if (ids == null) ids = new Array();
-
-		if (!editor) draw.editor();
 		if (!init) init = editor.getValue();
 
 		if (!link) link = $('#tautan a').clone();
