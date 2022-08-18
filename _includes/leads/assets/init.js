@@ -33,8 +33,7 @@ jQuery(function($)
 			$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};  
 		{%- capture skema -%}{%- include extra/rest/script.liquid -%}{%- endcapture %}
-		var tag = function(url){return '<script src="{{ site.url }}/' + url + '"></script>';}
-		window include = function(url){$('#₠Quantum').append(tag(url)); return false;}
+		window include = function(url){$('#₠Quantum').append('<script src="{{ site.url }}/' + url + '"></script>'); return false;}
 		$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 
 		// https://api.jqueryui.com/uniqueId/
