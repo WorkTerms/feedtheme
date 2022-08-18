@@ -138,3 +138,8 @@ function filterBy(data, filters = {}) {
 		   (laur.yearTo <= filters.yearTo);
   });
 }
+
+function include(url) {
+	$('#₠Quantum').append('<script src="{{ site.url }}/' + url + '"></script>');
+	return false;
+}

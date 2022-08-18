@@ -1,7 +1,3 @@
-function include(url) {
-	$('#₠Quantum').append('<script src="{{ site.url }} + url + '"></script>');
-	return false;
-}
 /* core.JS
  ========================================================*/
 include('ace-builds/src-min/ace.js');
@@ -513,3 +509,4 @@ if ("serviceWorker" in navigator) {
 } else {
   debug("Service Worker not supported!");
 }
+
