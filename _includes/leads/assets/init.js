@@ -108,38 +108,3 @@ jQuery(function($)
 	});
 
 });
-
-// init scrollTo 
-var myIdcounter = 0;
-var top_menu_height = 0;
-function scrollTo(selectors)
-{
-	if(!$(selectors).length) return;
-	var selector_top = $(selectors).offset().top - top_menu_height;
-	$('html,body').animate({scrollTop: selector_top }, 'slow');
-}
-
-// filtering json object
-function filterBy(data, filters = {}) {
-	// Set up the specific defaults that will show everything:
-	const defaults = {
-		category: null,
-		yearFrom: 1895,
-		yearTo: 2100,
-		gender: null
-	}
-
-	// Merge any filters with the defaults
-	filters = Object.assign({}, defaults, filters);
-
-	// Filter based on that filters object:
-	return data.filter(laur => {
-		return (laur.yearFrom >= filters.yearFrom) &&
-		   (laur.yearTo <= filters.yearTo);
-  });
-}
-
-function include(url) {
-	$('#₠Quantum').append('<script src="{{ site.url }}/' + url + '"></script>');
-	return false;
-}
