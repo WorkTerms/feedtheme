@@ -256,13 +256,11 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 	editor : function() {
 
 		// set editor
-		$.getScript($('#file')[0].href + '?t=' + $.now(), function() {
-			editor = ace.edit("editor");
-			editor.setOptions({fontSize: "10pt"});
-			editor.setTheme("ace/theme/crimson_editor");
-			editor.getSession().setMode("ace/mode/asciidoc");
-			editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
-		});
+		editor = ace.edit("editor");
+		editor.setOptions({fontSize: "10pt"});
+		editor.setTheme("ace/theme/crimson_editor");
+		editor.getSession().setMode("ace/mode/asciidoc");
+		editor.getSession().on('change', _.debounce(function() {draw.diagram();}, 100));
 
 	},
 
