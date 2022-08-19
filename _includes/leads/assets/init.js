@@ -36,27 +36,5 @@ jQuery(function($)
 		window.tag = function(url){return '<script src="{{ site.url }}/' + url + '"></script>';}
 		window.include = function(url){$('#₠Quantum').append(tag(url)); return false;}
 		$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
-
-		// https://api.jqueryui.com/uniqueId/
-		var myIdcounter = 0;
-		window.uniqueId = function(){return 'myid-' + myIdcounter++;}
-		$('.theme').each(function (i, e) {
-			var id = uniqueId();
-			var name = uniqueId();
-			$(e).attr('name', name).attr('id', id);
-		});
-
-		// https://stackoverflow.com/a/10811687/4058484
-		$('.theme').val('hand');
-		$.getScript($('#js')[0].href, function() {
-			if (!editor) draw.editor();
-			$.ajax({
-				type: "GET",
-				dataType: "xml",
-				url: "/sitemap.xml",
-				success: draw.getJSON(xml)
-			});
-		});  
 	});
-
 });
