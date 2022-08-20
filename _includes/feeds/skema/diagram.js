@@ -271,7 +271,7 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 		if (!init) init = editor.getValue();
 
 		if (!link) link = $('#tautan a').clone();
-		if (!feed) feed = $('#json')[0].href + '?t=' + $.now();
+		if (!feed) feed = '{{ site.baseurl }}/feed.json?t=' + $.now();
 
 		//https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/
 		if (!params) draw.params();
