@@ -33,7 +33,6 @@ jQuery(function($)
 			$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 		};  
 		{%- capture skema -%}{%- include extra/rest/script.liquid -%}{%- endcapture %}
-		//window.include = function(url){$('#₠Quantum').append('<script src="{{ site.url }}/' + url + '"></script>'); return false;}
 		$('#₠Quantum').append('{{ skema | strip_newlines | split: " " | join: " " }}');
 	});
 });
