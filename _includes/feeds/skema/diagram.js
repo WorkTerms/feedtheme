@@ -121,7 +121,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 				//set element
 				draw.element();
 				if (type != 'Tree') $('.loadingImg').hide();
-				$('.theme').change(function() {draw.change();});
 				$('.download').click(function(ev) {draw.xmlData();});
 				$('#diagram').attr('class', 'diagram-' + type.toLowerCase());
 
