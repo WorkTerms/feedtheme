@@ -10,7 +10,7 @@
  * ₠Quantum Project https://www.eQ19.com
  * Copyright © 2022 All rights reserved.
  */
-var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, match, regex, params, editor, diagram, options, elements, draw = {
+var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type, query, click, editor, diagram, options, elements, draw = {
 
 	diagram : function() {
 
@@ -274,7 +274,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 		if (!feed) feed = '{{ site.baseurl }}/feed.json?t=' + $.now();
 
 		//https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/
-		if (!params) draw.params();
 		if ($(".theme").val() == 'hand' && pad) pad = null;
 		else if (!pad) pad = (params.pad)? (params.pad * 1): (($('ul').hasClass('sf-menu'))? 2: null);
 
@@ -401,13 +400,6 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 		str = str.replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']');
 		str = str.replace(/(?:^|:|,)(?:\s*\[)+/g, '');
 		return (/^[\],:{}\s]*$/).test(str);
-
-	},
-
-	params : function() {
-
-		regex = /[?&]([^=#]+)=([^&#]*)/g, url = window.location.href, params = {}, match;
-		while(match = regex.exec(url)) {params[match[1]] = match[2];}
 
 	},
 
