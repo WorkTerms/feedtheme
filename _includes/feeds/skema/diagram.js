@@ -161,6 +161,14 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			if (type != 'Tree') {elements.on('click', function(){draw.click(this);});}
 			if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});}
 
+			// assign unique id
+			// https://api.jqueryui.com/uniqueId/
+			$('html').each(function (i, e) {
+				var id = uniqueId();
+				var name = uniqueId();
+				$(e).attr('name', name).attr('id', id);
+			});
+
 		}
 
 	},
