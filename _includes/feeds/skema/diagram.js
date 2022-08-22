@@ -159,7 +159,7 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			//set each id and its handle 
 			// https://api.jqueryui.com/uniqueId/
 			if (elements) {
-				elements.each(function(index) {draw.node(index, this); this.uniqueId();});
+				elements.each(function(index) {draw.node(index, this); this.uniqueId().attr('id');});
 				if (type != 'Tree') {elements.on('click', function(){draw.click(this);});}
 				if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});}
 			}
