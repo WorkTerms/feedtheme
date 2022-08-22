@@ -157,18 +157,12 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			else if (type == 'Pattern') {elements = $('svg path').first().add($('svg rect')).add($('svg path').last());}
 
 			//set each id and its handle 
-			if (elements) {elements.each(function(index) {draw.node(index, this);});}
-			if (type != 'Tree') {elements.on('click', function(){draw.click(this);});}
-			if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});}
-
-			// assign unique id
 			// https://api.jqueryui.com/uniqueId/
-			$('html').each(function (i, e) {
-				var id = uniqueId();
-				var name = uniqueId();
-				$(e).attr('name', name).attr('id', id);
-			});
-
+			if (elements) {
+				elements.each(function(index) {draw.node(index, this); this.uniqueId()});
+				if (type != 'Tree') {elements.on('click', function(){draw.click(this);});}
+				if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});}
+			}
 		}
 
 	},
