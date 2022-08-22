@@ -158,7 +158,7 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 			//set each id and its handle 
 			//https://stackoverflow.com/a/18266882/4058484
-			if (elements) {
+			if (elements.length) {
 				elements.each(function(index) {draw.node(index, this);});
 				$('#diagram').find('*').each(function() {$(this).uniqueId();});
 				if (type != 'Tree') {elements.on('click', function(){draw.click(this);});};
