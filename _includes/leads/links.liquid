@@ -30,5 +30,5 @@
 		{% if extra_scss.size > 0 %}
 		<style>{{ extra_scss | scssify | strip_newlines }}</style>
 		{% endif %}
-		{% feed_meta %}
 		<link type="application/feed+json" rel="alternate" href="/grammar/feed.json" title="Site Feed" />
+		{% feed_meta %}
