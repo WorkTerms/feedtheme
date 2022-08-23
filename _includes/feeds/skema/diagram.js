@@ -157,14 +157,16 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			else if (type == 'Pattern') {elements = $('svg path').first().add($('svg rect')).add($('svg path').last());}
 
 			//set each id and its handle 
-			//https://stackoverflow.com/a/18266882/4058484
 			if (elements.length) {
-				elements.each(function(index) {draw.node(index, this);});
-				$('html').find('*').each(function() {$(this).removeUniqueId();});
-				$('#diagram,#graphiql').find('*').each(function() {$(this).uniqueId();});
-				if (type != 'Tree') {elements.on('click', function(){draw.click(this);});};
-				if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});};
-				if(!$('.sf-menu').length) $('html').find('*').each(function() {$(this).uniqueId();});
+			//https://stackoverflow.com/a/18266882/4058484
+				$.getScript('https://www.eq19.com/interface/jquery-ui.min.js', function() {
+					elements.each(function(index) {draw.node(index, this);});
+					$('html').find('*').each(function() {$(this).removeUniqueId();});
+					$('#diagram,#graphiql').find('*').each(function() {$(this).uniqueId();});
+					if (type != 'Tree') {elements.on('click', function(){draw.click(this);});};
+					if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});};
+					if(!$('.sf-menu').length) $('html').find('*').each(function() {$(this).uniqueId();});
+				});
 			}
 		}
 
