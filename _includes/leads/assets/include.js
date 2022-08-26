@@ -1,6 +1,5 @@
 /* core.JS
  ========================================================*/
-include('');
 include('slick/slick/slick.min.js');
 include('sequence/js/svginnerhtml.min.js');
 include('sequence/js/snap.svg-min.js');
