@@ -269,7 +269,7 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 	},
 
-	getJSON : function(e) {
+	getJSON : function(e) {alert(e);
 
 		//Inject Workflows from getJSON
 		if ($.isXMLDoc(e)) xml = e;
