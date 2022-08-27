@@ -157,21 +157,18 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 			else if (type == 'Pattern') {elements = $('svg path').first().add($('svg rect')).add($('svg path').last());}
 
 			//set each id and its handle 
-			if (elements.length) {draw.uniqueId();};
+			if (elements.length) {draw.uniqueId(elements);};
 		}
 
 	},
 
-	uniqueId : function() {
+	uniqueId : function(e) {
 
 		//https://stackoverflow.com/a/18266882/4058484
-		$.getScript('https://www.eq19.com/interface/jquery-ui.min.js', function() {
-			elements.each(function(index) {draw.node(index, this);});
-			$('html').find('*').each(function() {$(this).removeUniqueId();});
-			if (type != 'Tree') {elements.on('click', function(){draw.click(this);});};
-			if (type != 'Route') {elements.on('dblclick', function(){draw.dblclick(this);});};
-			if(!$('.sf-menu').length) $('html').find('*').each(function() {$(this).uniqueId();});
-		});
+		e.each(function(index) {draw.node(index, this);});
+		$('#diagram').find('*').each(function() {$(this).uniqueId();});
+		if (type != 'Tree') {e.on('click', function(){draw.click(this);});};
+		if (type != 'Route') {e.on('dblclick', function(){draw.dblclick(this);});};
 
 	},
 
