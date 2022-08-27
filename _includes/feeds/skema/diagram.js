@@ -269,13 +269,13 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 
 	},
 
-	getJSON : function(e) {alert(e);
+	getJSON : function(e) {
 
 		//Inject Workflows from getJSON
-		if ($.isXMLDoc(e)) xml = e;
 		if (ids == null) ids = new Array();
-		if (!init) init = editor.getValue();
+		if (xml == null) xml = (e)? e: null;
 
+		if (!init) init = editor.getValue();
 		if (!link) link = $('#tautan a').clone();
 		if (!feed) feed = '{{ site.baseurl }}/feed.json?t=' + $.now();
 
