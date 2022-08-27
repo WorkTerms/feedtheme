@@ -15,14 +15,14 @@
 {% endcomment %}var Sequence = {
 
     feed : function(id, size) {
-		
+		{%- assign my_feed = site.feeds | where_exp:"item", "item.myId == myId" | first %}
+		if (!data) feed = '{{ site.baseurl }}/{{ my_feed.category }}/{{ my_feed.slug }}.json?t=' + $.now();
+
 		xml.find('url').each(function(){
-			alert($(this).find('loc').text());
+			//alert($(this).find('loc').text());
 		});
 
-        {%- assign my_feed = site.feeds | where_exp:"item", "item.myId == myId" | first %}
-        if (!data) feed = '{{ site.baseurl }}/{{ my_feed.category }}/{{ my_feed.slug }}.json?t=' + $.now();
-        draw.getJSON();
+		draw.getJSON();
 
     },
 
