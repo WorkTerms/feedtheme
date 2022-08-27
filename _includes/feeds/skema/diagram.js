@@ -272,14 +272,13 @@ var id, js, ids, pad, xml, back, data, feed, json, link, init, size, test, type,
 	getJSON : function(e) {
 
 		//Inject Workflows from getJSON
-		if (ids == null) ids = new Array();
-		if (xml == null) xml = (e)? e: null;
-
+		if (!xml) xml = $(e)? $(e): null;
 		if (!init) init = editor.getValue();
 		if (!link) link = $('#tautan a').clone();
 		if (!feed) feed = '{{ site.baseurl }}/feed.json?t=' + $.now();
 
 		//https://tutorialdeep.com/jquery-reference/jquery-hasclass-method/
+		if (ids == null) ids = new Array();
 		if ($(".theme").val() == 'hand' && pad) pad = null;
 		else if (!pad) pad = (params.pad)? (params.pad * 1): (($('ul').hasClass('sf-menu'))? 2: null);
 
