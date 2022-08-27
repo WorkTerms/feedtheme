@@ -1,7 +1,8 @@
 /* core.JS
  ========================================================*/
+include('js/modal.js');
 include('js/legacy.js');
-include('js/camera.js');
+include('js/TMForm.js');
 include('js/isotope.min.js');
 include('js/owl.carousel.js');
 
