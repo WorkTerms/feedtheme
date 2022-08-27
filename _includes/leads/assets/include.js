@@ -1,14 +1,18 @@
 /* core.JS
  ========================================================*/
-include('js/jquery.cookie.js');
-include('js/jquery.easing.1.3.js');
-include('js/jquery-migrate-1.2.1.js');
+include('js/legacy.js');
+include('js/camera.js');
+include('js/isotope.min.js');
+include('js/owl.carousel.js');
 
 /* library
  ========================================================*/
 include('js/device.min.js');
+include('js/jquery.cookie.js');
 include('js/jquery.ui.totop.js');
+include('js/jquery.easing.1.3.js');
 include('js/jquery.equalheights.js');
+include('js/jquery-migrate-1.2.1.js');
 
 
 /* Smooth scrolling
