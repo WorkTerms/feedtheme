@@ -20,7 +20,7 @@
 
 		//https://stackoverflow.com/a/73515443/4058484
 		xml.find('url').each(function(){
-			//alert($(this).find('loc').text());
+			console.log($(this).find('loc').text());
 		});
 
 		draw.getJSON();
