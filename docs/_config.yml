@@ -80,20 +80,20 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-avatar
+  - jekyll-sitemap
   - jekyll-mentions
   - jekyll-coffeescript
   - jekyll-redirect-from
-# - jekyll-sitemap
 
 whitelist:
   - jemoji
   - jekyll-feed
   - jekyll-gist
   - jekyll-avatar
+  - jekyll-sitemap
   - jekyll-mentions
   - jekyll-coffeescript
   - jekyll-redirect-from
-# - jekyll-sitemap
   
 # Default Setting
 # https://stackoverflow.com/a/49428493
