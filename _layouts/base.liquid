@@ -19,7 +19,11 @@
 	| size -%}
 {%- if size == 0 or site.github.source.branch == "eQ19" -%}
 	{%- unless page.path contains 'feed.json' -%}
-		{{ content }}
+		{%- if page.path contains '.xml' -%}
+			{%- include sitemap.xml -%}
+		{%- else -%}
+			{{ content }}
+		{%- endif -%}
 	{%- else -%}
 		{%- include base.liquid -%}
 	{%- endunless -%}
