@@ -18,6 +18,7 @@
 		{%- assign my_feed = site.feeds | where_exp:"item", "item.myId == myId" | first %}
 		if (!data) feed = '{{ site.baseurl }}/{{ my_feed.category }}/{{ my_feed.slug }}.json?t=' + $.now();
 
+		//https://stackoverflow.com/a/73515443/4058484
 		xml.find('url').each(function(){
 			//alert($(this).find('loc').text());
 		});
