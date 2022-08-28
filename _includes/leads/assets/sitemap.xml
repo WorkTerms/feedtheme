@@ -1,7 +1,7 @@
 {%- include leads/rest/site_pages.liquid -%}
 
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://www.eq19.com/stylesheet/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="/stylesheet/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {%- for page in site_pages -%}
         <url>
