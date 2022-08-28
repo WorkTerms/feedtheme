@@ -36,4 +36,3 @@ include('flowchart/raphael-min.js');
 include('route/d3.min.js');
 include('cards/widget.js');
 include('js/function.js');
-
