@@ -16,12 +16,12 @@
                     Sitemap
                     <xsl:if test="sitemap:sitemapindex">Index</xsl:if>
                 </title>
-                <link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
+                <link rel="stylesheet" href="/css/tachyons.min.css"/>
             </head>
             <body class="ph3 pb3 mid-gray">
                 <header class="mw8 pv4 center">
                     <div class="flex items-center">
-                        <h1 class="ma0 mr2 f2 blue">Sitemap</h1>
+                        <h1 class="ma0 mr2 f2 blue"><a href="/sitemap.xml" class="link blue">Sitemap</a></h1>
                         <xsl:if test="sitemap:sitemapindex">
                             <span class="dib mr2 ph3 pv1 f6 normal mid-gray bg-light-blue br-pill">Index</span>
                         </xsl:if>
