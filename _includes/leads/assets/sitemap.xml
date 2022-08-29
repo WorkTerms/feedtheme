@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/stylesheet/sitemap.xsl"?>
-{%- if site.baseurl == "" -%}
+{%- if site.baseurl == "" %}
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{%- for i in (1..1000) -%}
 	<sitemap>
