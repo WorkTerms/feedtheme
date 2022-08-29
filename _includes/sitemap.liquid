@@ -1,11 +1,11 @@
 {%- comment -%}
 *
 *  This loop loops through all collection called `feeds` with category 'section'
-*  and sorts it by the front matter variable 'weight' and than render
-*  each of the {{ output }} with their own layout
+*  and sorts it by the front matter variable 'weight' and than collect
+*  each of the location into the indexed sitemap
 *
 *  You may see the running code here:
-*  https://eq19.github.io/grammar/feed.json
+*  https://eq19.github.io/sitemap.xml
 *
 {%- endcomment -%}
 {%- include sitemap/urlset.xml -%}
