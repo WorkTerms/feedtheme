@@ -1,6 +1,6 @@
 ---
 layout: null
-permalink: /stylesheet/sitemap.xsl
+permalink: /sitemap.xsl
 ---
 
 {%- include leads/assets/sitemap.xsl -%}
