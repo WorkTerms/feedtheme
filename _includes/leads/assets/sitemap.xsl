@@ -16,7 +16,7 @@
                     Sitemap
                     <xsl:if test="sitemap:sitemapindex">Index</xsl:if>
                 </title>
-                <link rel="stylesheet" href="/css/tachyons.min.css"/>
+                <link rel="stylesheet" href="/stylesheet/sitemap.css"/>
             </head>
             <body class="ph3 pb3 mid-gray">
                 <header class="mw8 pv4 center">
