@@ -18,7 +18,7 @@
 	| where_exp:"item", "item.category == 'section'"
 	| size -%}
 {%- if size == 0 or site.github.source.branch == "eQ19" -%}
-	{%- unless page.path contains 'feed.json' -%}
+	{%- unless page.path contains 'feed.json' -%}{{ page.url }}
 		{%- if page.url contains '.xml' -%}
 			{%- include sitemap.xml -%}
 		{%- else -%}
