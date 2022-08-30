@@ -1,16 +1,16 @@
 /* This Tag is fired using Custom HTML on Google Tag Manager
  * For more information please visit https://tagmanager.google.com/
  * 
- * ========================================================
+ * ================================================================
  * <div id='₠Quantum'>
  * <script>document.write("<scr"+"ipt async>
  * (function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
  * a.async=1;a.src=t;a.dataset.GrammarId='172913910143';a.dataset.QuantumPlatform='gtm';
- * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.github.io/sitemap/init.js');
+ * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.github.io/grammar/init.js');
  * </scr"+"ipt>");</script>
  * </div>
- * ========================================================
- * you may use Container Injector point to GTM-PGWT4RS
+ * ================================================================
+ * you may use Container Injector (Community) point to GTM-PGWT4RS.
  *
  * ₠Quantum Project https://www.eQ19.com
  * Copyright © 2022 All rights reserved.
