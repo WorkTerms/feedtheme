@@ -66,8 +66,8 @@ livereload: true
 limit_posts: 1000
 data_dir: docs/_data
 timezone: Asia/Jakarta
-collections_dir: assets
 remote_theme: eQ19/parser
+collections_dir: assets/mapping
 excerpt_separator: <!--end_excerpt-->
 
 # Plugins Setting
