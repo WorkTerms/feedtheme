@@ -16,10 +16,9 @@ permalink: /sitemap.xml
 {%- include extra/rest/defaults.liquid -%}
 {%- include leads/rest/defaults.liquid -%}
 
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-
 {%- if site.baseurl == "" and branch == "eQ19"%}
+	{%- include tabs.liquid -%}<?xml version="1.0" encoding="UTF-8"?>
+	{%- include tabs.liquid -%}<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 	{%- include tabs.liquid -%}<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{%- for i in (1..1000) -%}
 		{%- include tabs.liquid size=1 -%}<sitemap>
