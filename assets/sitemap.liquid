@@ -16,9 +16,7 @@ permalink: /sitemap.xml
 {%- include extra/rest/defaults.liquid -%}
 {%- include leads/rest/defaults.liquid -%}
 
-{%- unless site.baseurl == "" %}
-	{%- include sitemap.liquid -%}
-{%- else -%}
+{%- if site.baseurl == "" and branch == "eQ19"%}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
@@ -31,4 +29,6 @@ permalink: /sitemap.xml
 	{%- endfor -%}
 </sitemapindex>
 
-{%- endunless -%}
+{%- else -%}
+	{%- include sitemap.liquid -%}
+{%- endif -%}
