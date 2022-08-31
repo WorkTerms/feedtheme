@@ -21,7 +21,7 @@
             <body class="ph3 pb3 mid-gray">
                 <header class="mw8 pv4 center">
                     <div class="flex items-center">
-                        <h1 class="ma0 mr2 f2 blue"><a href="https://eq19.github.io/sitemap.xml" class="link blue">Sitemap</a></h1>
+                        <h1 class="ma0 mr2 f2 blue"><a href="/sitemap.xml" class="link blue">Sitemap</a></h1>
                         <xsl:if test="sitemap:sitemapindex">
                             <span class="dib mr2 ph3 pv1 f6 normal mid-gray bg-light-blue br-pill">Index</span>
                         </xsl:if>
