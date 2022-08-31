@@ -17,20 +17,17 @@
 {%- include extra/rest/defaults.liquid -%}
 {%- include leads/rest/defaults.liquid -%}
 
-{%- assign size = site.feeds
-	| sort: 'weight'
-	| where_exp:"item", "item.category == 'section'"
-	| size -%}
+{%- assign size = sections | size -%}
 {%- if size == 0 or site.github.source.branch == "eQ19" -%}
 	{%- unless page.path contains 'feed.json' -%}
-		{%- if page.url contains '/index_' -%}
-			{%- include sitemap.liquid -%}
-		{%- else -%}
-			{{ content }}
-		{%- endif -%}
+		{{ content }}
 	{%- else -%}
 		{%- include base.liquid -%}
 	{%- endunless -%}
 {%- else -%}
-	{%- include base.liquid -%}
+	{%- if page.url contains '/index_' -%}
+		{%- include sitemap.liquid -%}
+	{%- else -%}
+		{%- include base.liquid -%}
+	{%- endif -%}
 {%- endif -%}
