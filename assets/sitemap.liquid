@@ -22,7 +22,8 @@ permalink: /sitemap.xml
 	<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{%- for i in (1..1000) -%}
 		{%- include tabs.liquid size=1 -%}<sitemap>
-		{%- include tabs.liquid size=2 -%}<loc>/sitemap/index_{{ i }}.xml</loc>
+		{%- assign page_url = "/sitemap/index_" | append: i | append: ".xml" -%}
+		{%- include tabs.liquid size=2 -%}<loc>{{ page_url | absolute_url | xml_escape }}</loc>
 		{%- include tabs.liquid size=2 -%}<lastmod>2017-02-16T04:00:08-05:00</lastmod>
 		{%- include tabs.liquid size=1 -%}</sitemap>
 	{%- endfor -%}
