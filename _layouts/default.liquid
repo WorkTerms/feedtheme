@@ -9,7 +9,7 @@ layout: tasks/compress
 <html lang="{{ lang }}" dir="{{ direction }}">
 	<head>
 	{%- assign size = sections | size -%}
-	{%- if size == 0 or branch == "eQ19" -%}
+	{%- if size == 0 or source == "grammar" -%}
 		{%- include leads/metadata.liquid -%}
 		{%- include leads/cards.liquid -%}
 		{%- include leads/opengraph.liquid -%}

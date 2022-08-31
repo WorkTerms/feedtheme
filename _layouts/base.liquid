@@ -18,7 +18,7 @@
 {%- include leads/rest/defaults.liquid -%}
 
 {%- assign size = sections | size -%}
-{%- if size == 0 or site.github.source.branch == "eQ19" -%}
+{%- if size == 0 or source == "grammar" -%}
 	{%- unless page.path contains 'feed.json' -%}
 		{{ content }}
 	{%- else -%}
