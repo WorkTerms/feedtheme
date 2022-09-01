@@ -16,10 +16,10 @@
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{%- if page.url contains '/index_1' -%}
-		{%- include sitemap/default.xml %}
+		{%- include sitemap/default.xml -%}
 	{%- elsif page.url contains '/index_' -%}
-		{%- include sitemap/urlset.xml %}
+		{%- include sitemap/urlset.xml -%}
 	{%- else -%}
-		{%- include sitemap/default.xml %}
+		{%- include sitemap/default.xml -%}
 	{%- endif -%}
 </urlset>
