@@ -5,9 +5,9 @@ layout: tasks/compress
 {%- include extra/rest/defaults.liquid -%}
 {%- include leads/rest/defaults.liquid -%}
 
+{%- if branch == "eQ19" -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
-	{%- if branch == "eQ19" -%}
 	<head>
 		{%- include leads/metadata.liquid -%}
 		{%- include leads/cards.liquid -%}
@@ -27,10 +27,10 @@ layout: tasks/compress
 		{%- include leads/mathjax.liquid -%}
 		{%- include leads/adsense.liquid -%}
 		{%- include leads/sumo.liquid -%}
-	{%- else -%}
-		{%- for section in sections -%}
-			{{- section.output -}}
-		{%- endfor -%}
-	{%- endif %}
 	</body>
 </html>
+{%- else -%}
+	{%- for section in sections -%}
+		{{- section.output -}}
+	{%- endfor -%}
+{%- endif %}
