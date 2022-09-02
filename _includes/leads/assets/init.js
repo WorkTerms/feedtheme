@@ -6,7 +6,7 @@
  * <script>document.write("<scr"+"ipt async>
  * (function(s,y,n,t,a,x){a=y.createElement(n);x=y.getElementsByTagName(n)[0];
  * a.async=1;a.src=t;a.dataset.GrammarId='172913910143';a.dataset.QuantumPlatform='gtm';
- * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.github.io/grammar/init.js');
+ * x.parentNode.insertBefore(a,x)})(window,document,'script','//eq19.github.io/init.js');
  * </scr"+"ipt>");</script>
  * </div>
  * ================================================================
