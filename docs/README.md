@@ -35,6 +35,7 @@ https://primes.utm.edu/curios/page.php?curio_id=2817
 
 ou may find our documentation explaining in detail of this formation which is based on a route of query and result that lies to an hexagonal configuration formed by their channels pairing.
 Assuring you of our best intentions, there is no such thing similar with this kind of concept.
+
 ```
 
 True Prime Pairs:
