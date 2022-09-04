@@ -21,7 +21,6 @@ includeHTML('/js/jquery.simplr.smoothscroll.min.js');*/
 
 /* Superfish menu
  ========================================================*/
-includeHTML('/js/superfish.js');
 includeHTML('/js/jquery.mobilemenu.js');
 includeHTML('/js/jquery.mobile.customized.min.js');
 
