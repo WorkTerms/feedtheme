@@ -7,7 +7,7 @@ images:
 # Mapping System
  
 The Chronological Order:
-{% gist d2336e28e79702acf38edd182003d5e0 prime.md %}
+{% gist 0ce5848f7ad62dc46dedfaa430069857 %}
 
 ## Rich Results Test
 
@@ -21,9 +21,11 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 ## Jekyll - How to build a [REST API](https://gist.github.com/MichaelCurrin/f8d908596276bdbb2044f04c352cb7c7)
 {% gist f8d908596276bdbb2044f04c352cb7c7 %}
 
-## Site Metadata
+## Jekyll Liquid Cheatsheet
+{% gist a466eed62cee30ad45e2 %}
 
-{% for item in site | sort -%}
+## Site Metadata
+{% for item in site -%}
 	{%- if site[item].first -%}
 		{%- if site[item].first.first -%}
 			{%- include tabs.liquid %}- {{ item }}: hash
@@ -36,9 +38,8 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {%- endfor %}
 
 ## Github Metadata
-
 {% assign github = site.github -%}
-{%- for item in github | sort -%}
+{%- for item in github -%}
 	{%- if github[item].first -%}
 		{%- if github[item].first.first -%}
 			{%- include tabs.liquid %}- {{ item }}: hash
@@ -51,9 +52,8 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 {%- endfor %}
 
 ## Source Metadata
-
 {% assign source = github.source -%}
-{%- for item in source | sort -%}
+{%- for item in source -%}
 	{%- if source[item].first -%}
 		{%- if source[item].first.first -%}
 			{%- include tabs.liquid %}- {{ item }}: hash
@@ -65,8 +65,6 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 	{%- endif -%}
 {%- endfor %}
 
-## Jekyll Liquid Cheatsheet
-{% gist a466eed62cee30ad45e2 %}
 
 ## Recommendations AI
 
