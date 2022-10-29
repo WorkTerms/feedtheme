@@ -67,14 +67,6 @@ limit_posts: 1000
 timezone: Asia/Jakarta
 remote_theme: eQ19/parser
 
-# Modul Setting
-# https://stackoverflow.com/a/49427199/4058484
-
-sass:
-    sass_dir: modules/grammar/_sass
-data_dir: modules/grammar/docs/assets/_data
-collections_dir: modules/grammar/docs/assets
-
 # Plugins Setting
 # https://pages.github.com/versions/
 # https://github.com/jekyll/jekyll-feed
