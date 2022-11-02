@@ -1,0 +1,13 @@
+title: MarketLeader
+description: Attorney, open source developer, product manager
+encoding: utf-8
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-coffeescrip
+# remote_theme: FeedTheme/retlab
+nav_pages:
+  - index.html
+  - about.md
+
+theme: jekyll-theme-tactile
